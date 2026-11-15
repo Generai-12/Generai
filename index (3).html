@@ -1,0 +1,1082 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:13px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>GENERIA</title><link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 40 40%27%3E%3Crect width=%2740%27 height=%2740%27 rx=%2712%27 fill=%27%236d28d9%27/%3E%3Cpath d=%27M31 13.5A12.5 12.5 0 1 0 32.5 22H21%27 stroke=%27white%27 stroke-width=%274.5%27 fill=%27none%27 stroke-linecap=%27round%27/%3E%3Ccircle cx=%2732%27 cy=%278%27 r=%274%27 fill=%27%23fbbf24%27/%3E%3C/svg%3E">
+<style>
+:root{--bg:#fff;--card:#faf8ff;--tx:#1f1633;--mu:#6b6280;--pu:#6d28d9;--pl:#ede9fe;--go:#d4a017;--bd:#e4def5;color-scheme:light;background:#fff;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*{box-sizing:border-box}html{background:#fff}body{margin:0;background:#fff;color:var(--tx);font-family:system-ui,"Noto Sans Thai",sans-serif;max-width:900px;margin:auto;padding:12px 12px 80px}
+h1{color:var(--pu);margin:4px 0}h3{margin:.4em 0}.card{background:var(--card);border:1px solid var(--bd);border-radius:16px;padding:14px;margin:10px 0}
+.nav{display:flex;gap:6px;overflow-x:auto;padding:6px 0}.nav button,.btn{border:1px solid var(--bd);background:var(--bg);color:var(--tx);border-radius:999px;padding:8px 14px;white-space:nowrap;cursor:pointer;font:inherit}
+.nav button.on,.btn.p{background:var(--pu);color:#fff;border-color:var(--pu)}.btn.g{background:var(--go);color:#1f1633;border-color:var(--go)}
+input,select,textarea{width:100%;padding:9px;margin:4px 0;border:1px solid var(--bd);border-radius:10px;background:var(--bg);color:var(--tx);font:inherit}
+.tag{display:inline-block;background:var(--pl);color:var(--pu);border-radius:999px;padding:2px 10px;font-size:11px}.gold{color:var(--go);font-weight:700}.mu{color:var(--mu);font-size:12px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:10px}.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.hd{display:flex;align-items:center;gap:10px}.logo{width:40px;height:40px;border-radius:12px;background:var(--pu);display:grid;place-items:center;font-size:20px}.hd h1{flex:1;font-size:20px}.bell{font-size:22px;position:relative}.av{width:42px;height:42px;border-radius:50%;background:var(--pl);border:2px solid var(--pu);display:grid;place-items:center;cursor:pointer;font-weight:700;color:var(--pu)}
+.ci{background:linear-gradient(135deg,#f3ecff,#e4d8ff);border:1px solid var(--bd);border-radius:20px;padding:14px;margin:12px 0}.pill{background:var(--pu);color:#fff;border-radius:999px;padding:4px 12px;font-weight:700;font-size:12px}.coin{font-size:31px}.bar{height:6px;background:#fff;border-radius:9px;margin-top:8px;overflow:hidden}.bar i{display:block;height:100%;background:var(--pu)}
+.sec{display:flex;justify-content:space-between;align-items:center;margin:18px 0 8px;font-size:17px;font-weight:700}.sec a{font-size:13px;color:var(--pu);cursor:pointer;font-weight:500}
+.hs{display:flex;gap:10px;overflow-x:auto;padding-bottom:6px}.fc{min-width:150px;width:150px;background:#fff;border:1px solid var(--bd);border-radius:16px;overflow:hidden;padding-bottom:10px}.fc b{display:block;padding:8px 10px;min-height:48px}.fc .btn{margin:0 10px;width:calc(100% - 20px)}.ph{height:90px;display:grid;place-items:center;font-size:36px;background:linear-gradient(135deg,#c4b5fd,#f0abfc);position:relative}.cnt{position:absolute;right:6px;bottom:6px;background:rgba(0,0,0,.55);color:#fff;border-radius:999px;font-size:11px;padding:2px 8px}
+.pop{display:flex;align-items:center;gap:10px;padding:10px;border-bottom:1px solid var(--bd)}.pop:last-child{border:0}.pop .t{flex:1}.pb{display:flex;align-items:center;gap:12px;background:linear-gradient(90deg,#1f1633,#4a2b5f);color:#fff;border-radius:18px;padding:14px;margin:14px 0}.pb .t{flex:1}.pb .btn{background:var(--go);color:#1f1633;border-color:var(--go);font-weight:700}
+#nav{position:fixed;bottom:0;left:0;right:0;background:#fff;border-top:1px solid var(--bd);justify-content:space-around;padding:6px 2px calc(6px + env(safe-area-inset-bottom,0px));z-index:10;margin:0;overflow:hidden}#nav button{border:0;border-radius:0;background:none;display:flex;flex-direction:column;align-items:center;font-size:11px;padding:4px 6px;color:var(--mu)}#nav button.on{background:none;color:var(--pu);border-bottom:3px solid var(--pu)}
+#nav button{color:#8b5cf6}.ic svg{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;display:block;transition:.2s}#nav button.on{color:#7c3aed;font-weight:700;text-shadow:0 0 8px rgba(168,85,247,.6);box-shadow:0 6px 10px -6px #a855f7}#nav button.on .ic svg{stroke:#a855f7;filter:drop-shadow(0 0 3px #a855f7) drop-shadow(0 0 8px #8b5cf6)}
+body{background:transparent}
+body::before,body::after{content:"";position:fixed;z-index:-1;width:360px;height:360px;border-radius:50%;filter:blur(70px);opacity:.45;pointer-events:none}
+body::before{top:-80px;left:-100px;background:#a78bfa;animation:fl1 14s ease-in-out infinite alternate}
+body::after{bottom:-100px;right:-120px;background:#e879f9;animation:fl2 17s ease-in-out infinite alternate}
+@keyframes fl1{to{transform:translate(160px,220px) scale(1.25)}}@keyframes fl2{to{transform:translate(-180px,-200px) scale(1.2)}}
+@keyframes grad{50%{background-position:100% 50%}}@keyframes shine{to{left:130%}}@keyframes bob{50%{transform:translateY(-6px) rotate(12deg)}}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(168,85,247,.6)}70%,100%{box-shadow:0 0 0 14px rgba(168,85,247,0)}}
+@keyframes glow{50%{box-shadow:0 0 22px #a855f7}}@keyframes ring{0%,90%,100%{transform:rotate(0)}93%{transform:rotate(14deg)}96%{transform:rotate(-12deg)}}
+.ci{background:linear-gradient(120deg,#ede9fe,#d8b4fe,#c4b5fd,#f5d0fe);background-size:300% 300%;animation:grad 8s ease infinite;box-shadow:0 8px 30px rgba(124,58,237,.25);position:relative;overflow:hidden}
+.ci::after{content:"";position:absolute;top:0;left:-60%;width:40%;height:100%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.55),transparent);animation:shine 4s ease-in-out infinite;pointer-events:none}
+.coin{display:inline-block;animation:bob 2.2s ease-in-out infinite;filter:drop-shadow(0 4px 6px rgba(212,160,23,.5))}
+.btn.p:not([disabled]){background:linear-gradient(90deg,#7c3aed,#a855f7,#7c3aed);background-size:200% 100%;animation:grad 3s linear infinite}
+.ci .btn.p:not([disabled]){animation:grad 3s linear infinite,pulse 2s ease-out infinite}
+.fc,.card{transition:transform .25s,box-shadow .25s}.fc:hover{transform:translateY(-3px)}.fc:hover,.card:hover{box-shadow:0 10px 26px rgba(124,58,237,.22)}
+.ph{background:linear-gradient(135deg,#c4b5fd,#f0abfc,#a78bfa);background-size:300% 300%;animation:grad 6s ease infinite;font-size:40px}
+.logo{animation:glow 3s ease-in-out infinite}.bell{display:inline-block;animation:ring 4s ease-in-out infinite;transform-origin:top center}
+.hd h1{background:linear-gradient(90deg,#6d28d9,#c026d3,#6d28d9);background-size:200% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:grad 5s linear infinite}
+.pb{background:linear-gradient(120deg,#1f1633,#4a2b5f,#2b1750);background-size:300% 300%;animation:grad 9s ease infinite}
+@media(prefers-reduced-motion:reduce){*,::before,::after{animation:none!important}}
+.fire{display:inline-block;transform-origin:50% 90%;animation:flame 1.1s ease-in-out infinite;filter:drop-shadow(0 0 4px #f97316)}
+@keyframes flame{0%,100%{transform:scale(1) rotate(-3deg)}25%{transform:scale(1.15,1.28) rotate(3deg);filter:drop-shadow(0 0 9px #fb923c)}50%{transform:scale(.95,1.1) rotate(-2deg)}75%{transform:scale(1.1,1.22) rotate(4deg);filter:drop-shadow(0 0 8px #f97316)}}
+.bdg{display:inline-block;border:1.5px solid;border-radius:8px;padding:0 7px;font-size:11px;font-weight:700;margin-left:6px;vertical-align:middle}
+.rbw{position:relative;display:inline-block;isolation:isolate}
+
+
+.rbw .rb{filter:drop-shadow(0 -2px 3px rgba(255,170,40,.95)) drop-shadow(0 0 6px rgba(255,60,200,.7));animation:grad2 2.5s linear infinite,burn .5s ease-in-out infinite alternate}
+@keyframes burn{0%{filter:drop-shadow(0 -1px 2px rgba(255,170,40,.9)) drop-shadow(0 0 4px rgba(255,60,200,.6))}100%{filter:drop-shadow(0 -4px 5px rgba(255,220,60,1)) drop-shadow(0 0 9px rgba(60,200,255,.8))}}
+.bdg.frm{color:var(--tx);border-color:var(--mu)}
+.bdg.wh{color:#fff;border-color:#fff;background:#9ca3af}
+.tp{display:inline-block;background:var(--go);color:#1f1633;border-radius:6px;padding:0 6px;font-size:11px;font-weight:800;margin-left:4px}
+.rb{font-weight:800;background:linear-gradient(90deg,#ff3b3b,#ff9f1a,#ffe53b,#3bff6a,#3bc8ff,#8b5cf6,#ff3bd4,#ff3b3b);background-size:300% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:grad2 2.5s linear infinite}
+.bdg.rbw{border-color:transparent!important;background:linear-gradient(#fff,#fff) padding-box,linear-gradient(90deg,#ff3b3b,#ff9f1a,#ffe53b,#3bff6a,#3bc8ff,#8b5cf6,#ff3bd4,#ff3b3b) border-box;background-size:100% 100%,300% 100%;animation:bdr 2.5s linear infinite}
+.crw{position:relative;display:inline-block;padding:0 7px;margin:7px 3px 5px 3px}
+.cr{position:absolute;font-style:normal;line-height:1;pointer-events:none;transform:rotate(var(--r,0deg));filter:drop-shadow(0 0 3px rgba(255,190,0,.95));animation:crt 1.8s ease-in-out infinite}
+.cr.c1{left:-5px;top:-11px;font-size:11px;--r:-22deg}
+.cr.c2{left:28%;top:-12px;font-size:9px;--r:8deg;animation-delay:.3s}
+.cr.c3{left:62%;top:-11px;font-size:11px;--r:16deg;animation-delay:.6s}
+.cr.c4{right:-6px;top:-7px;font-size:10px;--r:26deg;animation-delay:.9s}
+.cr.c5{right:-5px;bottom:-9px;font-size:9px;--r:-12deg;animation-delay:1.2s}
+.cr.c6{left:42%;bottom:-11px;font-size:8px;--r:6deg;animation-delay:.2s}
+.cr.c7{left:-6px;bottom:-8px;font-size:10px;--r:-16deg;animation-delay:.7s}
+@keyframes crt{0%,100%{transform:rotate(var(--r,0deg)) scale(1);opacity:1}50%{transform:rotate(var(--r,0deg)) scale(1.25);opacity:.65}}
+.ava[class*=sk-],.av[class*=sk-]{position:relative;overflow:visible}
+.ava[class*=sk-]::after,.av[class*=sk-]::after{content:'';position:absolute;inset:-5px;border-radius:50%;pointer-events:none;-webkit-mask:radial-gradient(farthest-side,transparent calc(100% - 4px),#000 calc(100% - 3px));mask:radial-gradient(farthest-side,transparent calc(100% - 4px),#000 calc(100% - 3px))}
+.ava[class*=sk-]::before,.av[class*=sk-]::before{position:absolute;z-index:2;line-height:1;pointer-events:none;font-size:calc(var(--s,40px)*.42)}
+.sk-gold{box-shadow:0 0 10px rgba(255,200,0,.75)!important}
+.sk-gold::after{background:conic-gradient(#fff3a0,#f5c518,#b8860b,#ffe066,#f5c518,#fff3a0);animation:skspin 4s linear infinite}
+.sk-gold::before{content:'👑';left:50%;top:-.85em;transform:translateX(-50%) rotate(-8deg);animation:skcrown 2s ease-in-out infinite}
+.sk-rainbow::after{background:conic-gradient(#ff3b3b,#ff9f1a,#ffe53b,#3bff6a,#3bc8ff,#8b5cf6,#ff3bd4,#ff3b3b);animation:skspin 3s linear infinite}
+.sk-neon{box-shadow:0 0 12px rgba(217,70,239,.8)!important}
+.sk-neon::after{background:conic-gradient(#a855f7,#ec4899,#22d3ee,#a855f7);filter:drop-shadow(0 0 4px #d946ef);animation:skspin 2.2s linear infinite}
+.sk-fire{box-shadow:0 0 10px rgba(255,90,0,.7)!important}
+.sk-fire::after{background:conic-gradient(#ff3b00,#ffb300,#ff3b00,#ffd54a,#ff3b00);animation:skspin 1.5s linear infinite}
+.sk-fire::before{content:'🔥';right:-.5em;bottom:-.35em;animation:skpop 1s ease-in-out infinite}
+.sk-ice::after{background:conic-gradient(#e0f7ff,#38bdf8,#ffffff,#7dd3fc,#e0f7ff);animation:skspin 5s linear infinite}
+.sk-ice::before{content:'❄️';right:-.45em;top:-.5em;animation:skpop 2s ease-in-out infinite}
+.sk-sakura::after{background:conic-gradient(#ffd1e6,#f472b6,#ffd1e6,#fb7185,#ffd1e6);animation:skspin 6s linear infinite}
+.sk-sakura::before{content:'🌸';left:-.5em;top:-.5em;animation:skpop 2.4s ease-in-out infinite}
+.sk-galaxy::after{background:conic-gradient(#312e81,#7c3aed,#0ea5e9,#312e81,#c026d3,#312e81);animation:skspin 3.5s linear infinite}
+.sk-galaxy::before{content:'✨';right:-.4em;top:-.5em;animation:skpop 1.2s ease-in-out infinite}
+.sk-heart::after{background:conic-gradient(#ff5d8f,#ffc0d9,#ff2d6f,#ffc0d9,#ff5d8f);animation:skspin 4s linear infinite}
+.sk-heart::before{content:'💖';right:-.5em;bottom:-.4em;animation:skpop 1.1s ease-in-out infinite}
+@keyframes skspin{to{transform:rotate(360deg)}}
+@keyframes skpop{0%,100%{transform:scale(1)}50%{transform:scale(1.25)}}
+@keyframes skcrown{0%,100%{transform:translateX(-50%) rotate(-8deg)}50%{transform:translateX(-50%) rotate(8deg) translateY(-2px)}}
+.skg{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:6px 0}
+.skt{display:flex;flex-direction:column;align-items:center;gap:8px;padding:18px 2px 8px;border-radius:14px;border:1.5px solid var(--bd);background:#fff;cursor:pointer;font:inherit;color:var(--tx)}
+.skt i{font-style:normal;font-size:11px}
+.skt.on{border-color:var(--pu);background:var(--pl)}
+.gldw{font-size:11px;font-weight:900;transform:rotate(-24deg);transform-origin:left bottom;position:relative;top:-9px;margin:0 8px 0 -7px;z-index:2;line-height:1}
+.rb.rr{background:linear-gradient(90deg,#ff1f1f,#ff7a5c,#b80000,#ff3b3b,#ff1f1f);background-size:300% 100%;-webkit-background-clip:text;background-clip:text;color:transparent}
+.rbw .rb.rr{filter:drop-shadow(0 -1px 3px rgba(255,60,40,.9)) drop-shadow(0 0 5px rgba(200,0,0,.6));animation:grad2 2.5s linear infinite,burnr .5s ease-in-out infinite alternate}
+@keyframes burnr{0%{filter:drop-shadow(0 -1px 2px rgba(255,60,40,.85)) drop-shadow(0 0 4px rgba(200,0,0,.5))}100%{filter:drop-shadow(0 -3px 5px rgba(255,120,60,1)) drop-shadow(0 0 8px rgba(255,0,0,.75))}}
+.bdg.rbw.rbr{background:linear-gradient(#fff,#fff) padding-box,linear-gradient(90deg,#ff1f1f,#ff7a5c,#b80000,#ff3b3b,#ff1f1f) border-box;background-size:100% 100%,300% 100%}
+.vid{width:100%;max-height:460px;background:#000;display:block;margin:0 0 8px}.cmb img,.cmb video{max-width:100%;border-radius:12px;margin-top:6px;display:block}.cmb img{cursor:zoom-in}.comp .bt{flex-wrap:wrap}
+.gd{font-weight:800;background:linear-gradient(90deg,#b8860b,#ffd700,#fff6bf,#ffd700,#b8860b);background-size:300% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:grad2 2.2s linear infinite,gtw 1.3s ease-in-out infinite}
+.bdg.gdb{border-color:#e0a800;animation:gbd 1.3s ease-in-out infinite}
+@keyframes gtw{0%,100%{filter:drop-shadow(0 0 2px rgba(255,200,40,.7)) brightness(1)}50%{filter:drop-shadow(0 0 6px rgba(255,215,64,1)) brightness(1.3)}}
+@keyframes gbd{0%,100%{box-shadow:0 0 3px rgba(255,200,40,.5)}50%{box-shadow:0 0 9px rgba(255,215,64,.95)}}
+@keyframes bdr{to{background-position:0 0,300% 0}}
+@keyframes grad2{to{background-position:100% 0}}@keyframes lick{0%{transform:scale(1,.7) skewX(-4deg)}50%{transform:scale(1.05,1.05) skewX(5deg)}100%{transform:scale(.95,.85) skewX(-3deg)}}@keyframes hue{to{filter:blur(7px) hue-rotate(360deg)}}
+
+/* ===== Social feed (original design, FB-inspired) ===== */
+.gcov{position:relative;border-radius:22px;overflow:hidden;margin:8px 0 0;color:#fff;min-height:170px;display:flex;align-items:flex-end;background:linear-gradient(120deg,#4c1d95,#7c3aed,#c026d3,#7c3aed);background-size:300% 300%;animation:grad 10s ease infinite;box-shadow:0 12px 34px rgba(124,58,237,.35)}
+.gcov::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 85% 20%,rgba(255,255,255,.35),transparent 45%),radial-gradient(circle at 10% 90%,rgba(251,191,36,.3),transparent 40%)}
+.gcov .in{position:relative;display:flex;gap:14px;align-items:center;padding:18px;width:100%;background:linear-gradient(0deg,rgba(20,8,45,.55),transparent)}
+.gcov .gico{width:68px;height:68px;border-radius:20px;background:rgba(255,255,255,.2);backdrop-filter:blur(8px);border:2px solid rgba(255,255,255,.55);display:grid;place-items:center;font-size:31px;flex:none}
+.gcov h2{margin:0;font-size:20px;line-height:1.2}.gcov .sub{font-size:12px;opacity:.9;margin-top:3px}
+.gbar{display:flex;gap:8px;flex-wrap:wrap;align-items:center;background:#fff;border:1px solid var(--bd);border-radius:18px;padding:10px 12px;margin:10px 0;box-shadow:0 4px 16px rgba(124,58,237,.08)}
+.chip{display:inline-flex;align-items:center;gap:4px;background:var(--pl);color:var(--pu);border-radius:999px;padding:4px 11px;font-size:12px;font-weight:600}
+.stk{display:flex}.stk .ava{margin-left:-10px;border:2px solid #fff}.stk .ava:first-child{margin-left:0}
+.ava{border-radius:50%;display:grid;place-items:center;color:#fff;font-weight:700;flex:none;box-shadow:0 2px 8px rgba(0,0,0,.15)}
+.comp{background:#fff;border:1px solid var(--bd);border-radius:20px;padding:12px;margin:10px 0;box-shadow:0 4px 16px rgba(124,58,237,.08)}
+.comp .top{display:flex;gap:10px;align-items:flex-start}
+.comp textarea{border:0;background:#f5f2ff;border-radius:18px;padding:11px 14px;min-height:46px;resize:none;margin:0;font-size:13px}
+.comp textarea:focus{outline:2px solid #c4b5fd;background:#fff}
+.comp .bt{display:flex;justify-content:flex-end;margin-top:8px}
+.pc{background:#fff;border:1px solid var(--bd);border-radius:20px;margin:12px 0;box-shadow:0 4px 18px rgba(124,58,237,.08);overflow:hidden;transition:box-shadow .25s}
+.pc:hover{box-shadow:0 10px 28px rgba(124,58,237,.16)}
+.pc .ph2{display:flex;gap:10px;align-items:center;padding:12px 14px 4px}
+.pc .meta{flex:1;min-width:0}.pc .nmr{display:flex;flex-wrap:wrap;align-items:center;row-gap:4px;line-height:1.3}.pc .tm{font-size:11px;color:var(--mu);margin-top:2px}
+.pc .more{border:0;background:none;font-size:18px;color:var(--mu);cursor:pointer;border-radius:50%;width:34px;height:34px}.pc .more:hover{background:var(--pl)}
+.pc .bd2{padding:6px 16px 12px;font-size:13px;line-height:1.5;white-space:pre-wrap;word-break:break-word}
+.pc .cnt2{display:flex;justify-content:space-between;padding:0 16px 8px;font-size:12px;color:var(--mu)}
+.pc .act{display:flex;border-top:1px solid var(--bd);padding:4px 6px;gap:4px}
+.pc .act button{flex:1;border:0;background:none;border-radius:12px;padding:9px 4px;font:inherit;font-weight:600;color:var(--mu);cursor:pointer;transition:.2s}
+.pc .act button:hover{background:var(--pl);color:var(--pu)}.pc .act button.on{color:var(--pu)}
+.pc .act button.on .lk{display:inline-block;animation:popl .35s ease}
+@keyframes popl{0%{transform:scale(1)}50%{transform:scale(1.5) rotate(-12deg)}100%{transform:scale(1)}}
+.pc .cms{background:#faf8ff;border-top:1px solid var(--bd);padding:10px 14px}
+.cm1{display:flex;gap:8px;margin:8px 0;align-items:flex-start}
+.cmb{line-height:1.7!important;background:#fff;border:1px solid var(--bd);border-radius:16px;padding:7px 12px;font-size:13px;line-height:1.4;max-width:100%}.cmb b{display:block;font-size:12px}
+.cin{display:flex;gap:8px;align-items:center;margin-top:8px}.cin input{border-radius:999px;margin:0;background:#fff}
+.sendb{border:0;background:var(--pu);color:#fff;border-radius:50%;width:38px;height:38px;flex:none;cursor:pointer;font-size:14px}
+.pmn{display:flex;gap:8px;padding:6px 14px 10px;flex-wrap:wrap}
+.abt{background:#fff;border:1px solid var(--bd);border-radius:18px;padding:12px 14px}
+
+.comp .bt{display:flex;gap:10px;align-items:center;margin-top:8px}
+.thumbs{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}.th{position:relative;width:78px;height:78px;border-radius:14px;overflow:hidden;border:1px solid var(--bd)}
+.th img{width:100%;height:100%;object-fit:cover;margin:0}.th button{position:absolute;top:3px;right:3px;width:22px;height:22px;border-radius:50%;border:0;background:rgba(0,0,0,.6);color:#fff;font-size:11px;cursor:pointer;padding:0}
+.imgs{display:grid;gap:3px;margin:0 0 8px;background:#000}.imgs img{width:100%;height:100%;object-fit:cover;display:block;cursor:zoom-in;background:#eee}
+.imgs.n1 img{max-height:460px;object-fit:contain;background:#111}.imgs.n2{grid-template-columns:1fr 1fr}.imgs.n2 img{aspect-ratio:1}
+.imgs.n3{grid-template-columns:1fr 1fr}.imgs.n3 img{aspect-ratio:1}.imgs.n3 img:first-child{grid-column:1/3;aspect-ratio:2/1}
+.imgs.n4{grid-template-columns:1fr 1fr}.imgs.n4 img{aspect-ratio:1}
+.pc .act{position:relative}
+.tray{position:absolute;left:8px;bottom:calc(100% + 4px);display:flex;gap:2px;background:#fff;border:1px solid var(--bd);border-radius:999px;padding:5px 8px;box-shadow:0 10px 28px rgba(124,58,237,.3);z-index:5;animation:trin .18s ease}
+.pc .act .tray button{flex:none;font-size:24px;padding:2px 5px;border-radius:50%;transition:transform .15s}.pc .act .tray button:hover{transform:scale(1.35) translateY(-5px);background:none}
+@keyframes trin{from{opacity:0;transform:translateY(8px) scale(.9)}}
+.rsum{display:inline-flex;align-items:center}.rsum span{background:#fff;border:1.5px solid #fff;border-radius:50%;width:22px;height:22px;display:grid;place-items:center;font-size:13px;margin-right:-5px;box-shadow:0 1px 3px rgba(0,0,0,.2)}.rsum b{margin-left:9px;font-weight:600}
+#lb{position:fixed;inset:0;background:rgba(10,5,25,.92);z-index:60;display:grid;place-items:center;padding:14px}#lb img{max-width:100%;max-height:90vh;border-radius:12px}
+*{-webkit-tap-highlight-color:transparent}a:focus,a:focus-visible,div:focus,div:focus-visible,span:focus,span:focus-visible,[tabindex]:focus,[tabindex]:focus-visible,[onclick]:focus,[onclick]:focus-visible,select:focus,select:focus-visible,input:focus,input:focus-visible{outline:none}button,button:focus,button:active,button:focus-visible,.btn,.btn:focus,.btn:focus-visible,label,.av,.nav button:focus{outline:none}
+.ava.sk-royal,.av.sk-royal{box-shadow:0 0 0 2px #0a0510,inset 0 0 8px rgba(0,0,0,.65),0 0 14px rgba(124,58,237,.9),0 0 26px rgba(220,38,38,.45);animation:skglow 2.6s ease-in-out infinite}
+.ava.sk-royal::after,.av.sk-royal::after{inset:-7px;background:conic-gradient(from 0deg,#0a0510,#4c1d95,#0a0510,#b91c1c,#0a0510,#7c3aed,#0a0510,#7f1d1d,#0a0510);filter:drop-shadow(0 0 4px #7c3aed);animation:skspin 3.2s linear infinite;-webkit-mask:radial-gradient(farthest-side,transparent calc(100% - 7px),#000 calc(100% - 6px));mask:radial-gradient(farthest-side,transparent calc(100% - 7px),#000 calc(100% - 6px))}
+.ava.sk-royal::before,.av.sk-royal::before{content:'🦇';left:50%;top:-1em;transform:translateX(-50%);animation:skcrown 2s ease-in-out infinite;filter:drop-shadow(0 0 5px #a855f7)}
+@keyframes skglow{50%{box-shadow:0 0 0 2px #0a0510,inset 0 0 8px rgba(0,0,0,.65),0 0 22px rgba(168,85,247,1),0 0 38px rgba(220,38,38,.7)}}
+.ava.sk-storm,.av.sk-storm{box-shadow:0 0 0 2px #050309,inset 0 0 10px rgba(0,0,0,.75),0 0 12px rgba(124,58,237,.8),0 0 22px rgba(0,0,0,.45);animation:stflash 3s infinite}
+@keyframes stflash{0%,58%,67%,100%{box-shadow:0 0 0 2px #050309,inset 0 0 10px rgba(0,0,0,.75),0 0 12px rgba(124,58,237,.8),0 0 22px rgba(0,0,0,.45)}60%,64%{box-shadow:0 0 0 2px #050309,inset 0 0 10px rgba(0,0,0,.75),0 0 26px rgba(233,213,255,1),0 0 46px rgba(124,58,237,1)}62%{box-shadow:0 0 0 2px #050309,inset 0 0 10px rgba(0,0,0,.75),0 0 12px rgba(124,58,237,.8),0 0 22px rgba(0,0,0,.45)}}
+.ava.sk-storm::after,.av.sk-storm::after{inset:calc(var(--s,40px)*-.1);background:conic-gradient(from 0deg,#050309 0 10%,#3b0764 15%,#050309 20% 42%,#6d28d9 47%,#050309 52% 74%,#a78bfa 79%,#050309 84% 100%);filter:drop-shadow(0 0 3px #7c3aed);animation:skspin 6s linear infinite;-webkit-mask:radial-gradient(farthest-side,transparent calc(100% - var(--s,40px)*.09),#000 calc(100% - var(--s,40px)*.09 + 1px));mask:radial-gradient(farthest-side,transparent calc(100% - var(--s,40px)*.09),#000 calc(100% - var(--s,40px)*.09 + 1px))}
+.ava.sk-storm::before,.av.sk-storm::before{content:'';font-size:0;inset:calc(var(--s,40px)*-.35);background:url("data:image/svg+xml;utf8,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%22-85%20-85%20170%20170%22%3E%3Cdefs%3E%3Cfilter%20id=%22gl%22%20x=%22-50%25%22%20y=%22-50%25%22%20width=%22200%25%22%20height=%22200%25%22%3E%3CfeGaussianBlur%20stdDeviation=%221.6%22/%3E%3C/filter%3E%3Cfilter%20id=%22g2%22%20x=%22-60%25%22%20y=%22-60%25%22%20width=%22220%25%22%20height=%22220%25%22%3E%3CfeGaussianBlur%20stdDeviation=%223.2%22/%3E%3C/filter%3E%3C/defs%3E%3Ccircle%20r=%2260%22%20fill=%22%23c4b5fd%22%20opacity=%220%22%20filter=%22url(%23g2)%22%3E%3Canimate%20attributeName=%22opacity%22%20values=%220;0;.6;.12;.45;0;0%22%20keyTimes=%220;.59;.6;.64;.66;.76;1%22%20dur=%223s%22%20repeatCount=%22indefinite%22/%3E%3C/circle%3E%3Cg%3E%3Canimate%20attributeName=%22opacity%22%20values=%22.6;.6;1;.7;1;.6;.6%22%20keyTimes=%220;.55;.6;.66;.72;.8;1%22%20dur=%222.1s%22%20begin=%220.0s%22%20repeatCount=%22indefinite%22/%3E%3Cpath%20d=%22M55.4%2023%20L60%2024.4%20L64.1%2027.1%20L67.3%2032%20L73.3%2030%20L77.6%2032.1%20M64.1%2027.1%20L74.7%2024.2%22%20fill=%22none%22%20stroke=%22%23a855f7%22%20stroke-width=%225.6%22%20stroke-linejoin=%22miter%22%20opacity=%22.65%22%20filter=%22url(%23gl)%22/%3E%3Cpath%20d=%22M55.4%2023%20L60%2024.4%20L64.1%2027.1%20L67.3%2032%20L73.3%2030%20L77.6%2032.1%20M64.1%2027.1%20L74.7%2024.2%22%20fill=%22none%22%20stroke=%22%23c4b5fd%22%20stroke-width=%223.6%22%20stroke-linejoin=%22miter%22/%3E%3Cpath%20d=%22M55.4%2023%20L60%2024.4%20L64.1%2027.1%20L67.3%2032%20L73.3%2030%20L77.6%2032.1%20M64.1%2027.1%20L74.7%2024.2%22%20fill=%22none%22%20stroke=%22%23050309%22%20stroke-width=%222%22%20stroke-linejoin=%22miter%22/%3E%3C/g%3E%3Cg%3E%3Canimate%20attributeName=%22opacity%22%20values=%22.6;.6;1;.7;1;.6;.6%22%20keyTimes=%220;.55;.6;.66;.72;.8;1%22%20dur=%222.47s%22%20begin=%220.31s%22%20repeatCount=%22indefinite%22/%3E%3Cpath%20d=%22M23%2055.4%20L27.4%2058.8%20L26.5%2064.3%20L27.4%2069.2%20L27.9%2074.2%20L32.1%2077.6%20M26.5%2064.3%20L36.1%2069.8%22%20fill=%22none%22%20stroke=%22%23a855f7%22%20stroke-width=%225.6%22%20stroke-linejoin=%22miter%22%20opacity=%22.65%22%20filter=%22url(%23gl)%22/%3E%3Cpath%20d=%22M23%2055.4%20L27.4%2058.8%20L26.5%2064.3%20L27.4%2069.2%20L27.9%2074.2%20L32.1%2077.6%20M26.5%2064.3%20L36.1%2069.8%22%20fill=%22none%22%20stroke=%22%23c4b5fd%22%20stroke-width=%223.6%22%20stroke-linejoin=%22miter%22/%3E%3Cpath%20d=%22M23%2055.4%20L27.4%2058.8%20L26.5%2064.3%20L27.4%2069.2%20L27.9%2074.2%20L32.1%2077.6%20M26.5%2064.3%20L36.1%2069.8%22%20fill=%22none%22%20stroke=%22%23050309%22%20stroke-width=%222%22%20stroke-linejoin=%22miter%22/%3E%3C/g%3E%3Cg%3E%3Canimate%20attributeName=%22opacity%22%20values=%22.6;.6;1;.7;1;.6;.6%22%20keyTimes=%220;.55;.6;.66;.72;.8;1%22%20dur=%222.84s%22%20begin=%220.62s%22%20repeatCount=%22indefinite%22/%3E%3Cpath%20d=%22M-23%2055.4%20L-24.4%2060.1%20L-23.7%2065.5%20L-28.8%2068.6%20L-33.6%2071.8%20L-32.1%2077.6%20M-23.7%2065.5%20L-20.7%2076.1%22%20fill=%22none%22%20stroke=%22%23a855f7%22%20stroke-width=%225.6%22%20stroke-linejoin=%22miter%22%20opacity=%22.65%22%20filter=%22url(%23gl)%22/%3E%3Cpath%20d=%22M-23%2055.4%20L-24.4%2060.1%20L-23.7%2065.5%20L-28.8%2068.6%20L-33.6%2071.8%20L-32.1%2077.6%20M-23.7%2065.5%20L-20.7%2076.1%22%20fill=%22none%22%20stroke=%22%23c4b5fd%22%20stroke-width=%223.6%22%20stroke-linejoin=%22miter%22/%3E%3Cpath%20d=%22M-23%2055.4%20L-24.4%2060.1%20L-23.7%2065.5%20L-28.8%2068.6%20L-33.6%2071.8%20L-32.1%2077.6%20M-23.7%2065.5%20L-20.7%2076.1%22%20fill=%22none%22%20stroke=%22%23050309%22%20stroke-width=%222%22%20stroke-linejoin=%22miter%22/%3E%3C/g%3E%3Cg%3E%3Canimate%20attributeName=%22opacity%22%20values=%22.6;.6;1;.7;1;.6;.6%22%20keyTimes=%220;.55;.6;.66;.72;.8;1%22%20dur=%223.21s%22%20begin=%220.93s%22%20repeatCount=%22indefinite%22/%3E%3Cpath%20d=%22M-55.4%2023%20L-60.2%2024%20L-63.9%2027.5%20L-68.6%2028.9%20L-74%2028.3%20L-77.6%2032.1%20M-63.9%2027.5%20L-69.4%2037.1%22%20fill=%22none%22%20stroke=%22%23a855f7%22%20stroke-width=%225.6%22%20stroke-linejoin=%22miter%22%20opacity=%22.65%22%20filter=%22url(%23gl)%22/%3E%3Cpath%20d=%22M-55.4%2023%20L-60.2%2024%20L-63.9%2027.5%20L-68.6%2028.9%20L-74%2028.3%20L-77.6%2032.1%20M-63.9%2027.5%20L-69.4%2037.1%22%20fill=%22none%22%20stroke=%22%23c4b5fd%22%20stroke-width=%223.6%22%20stroke-linejoin=%22miter%22/%3E%3Cpath%20d=%22M-55.4%2023%20L-60.2%2024%20L-63.9%2027.5%20L-68.6%2028.9%20L-74%2028.3%20L-77.6%2032.1%20M-63.9%2027.5%20L-69.4%2037.1%22%20fill=%22none%22%20stroke=%22%23050309%22%20stroke-width=%222%22%20stroke-linejoin=%22miter%22/%3E%3C/g%3E%3Cg%3E%3Canimate%20attributeName=%22opacity%22%20values=%22.6;.6;1;.7;1;.6;.6%22%20keyTimes=%220;.55;.6;.66;.72;.8;1%22%20dur=%223.58s%22%20begin=%221.24s%22%20repeatCount=%22indefinite%22/%3E%3Cpath%20d=%22M-55.4%20-23%20L-59.4%20-25.8%20L-63.2%20-29.4%20L-70.2%20-24.8%20L-74.8%20-26.4%20L-77.6%20-32.1%20M-63.2%20-29.4%20L-73.8%20-26.5%22%20fill=%22none%22%20stroke=%22%23a855f7%22%20stroke-width=%225.6%22%20stroke-linejoin=%22miter%22%20opacity=%22.65%22%20filter=%22url(%23gl)%22/%3E%3Cpath%20d=%22M-55.4%20-23%20L-59.4%20-25.8%20L-63.2%20-29.4%20L-70.2%20-24.8%20L-74.8%20-26.4%20L-77.6%20-32.1%20M-63.2%20-29.4%20L-73.8%20-26.5%22%20fill=%22none%22%20stroke=%22%23c4b5fd%22%20stroke-width=%223.6%22%20stroke-linejoin=%22miter%22/%3E%3Cpath%20d=%22M-55.4%20-23%20L-59.4%20-25.8%20L-63.2%20-29.4%20L-70.2%20-24.8%20L-74.8%20-26.4%20L-77.6%20-32.1%20M-63.2%20-29.4%20L-73.8%20-26.5%22%20fill=%22none%22%20stroke=%22%23050309%22%20stroke-width=%222%22%20stroke-linejoin=%22miter%22/%3E%3C/g%3E%3Cg%3E%3Canimate%20attributeName=%22opacity%22%20values=%22.6;.6;1;.7;1;.6;.6%22%20keyTimes=%220;.55;.6;.66;.72;.8;1%22%20dur=%223.95s%22%20begin=%221.55s%22%20repeatCount=%22indefinite%22/%3E%3Cpath%20d=%22M-23%20-55.4%20L-24%20-60.2%20L-24.3%20-65.3%20L-29.9%20-68.1%20L-29.6%20-73.5%20L-32.1%20-77.6%20M-24.3%20-65.3%20L-33.9%20-70.7%22%20fill=%22none%22%20stroke=%22%23a855f7%22%20stroke-width=%225.6%22%20stroke-linejoin=%22miter%22%20opacity=%22.65%22%20filter=%22url(%23gl)%22/%3E%3Cpath%20d=%22M-23%20-55.4%20L-24%20-60.2%20L-24.3%20-65.3%20L-29.9%20-68.1%20L-29.6%20-73.5%20L-32.1%20-77.6%20M-24.3%20-65.3%20L-33.9%20-70.7%22%20fill=%22none%22%20stroke=%22%23c4b5fd%22%20stroke-width=%223.6%22%20stroke-linejoin=%22miter%22/%3E%3Cpath%20d=%22M-23%20-55.4%20L-24%20-60.2%20L-24.3%20-65.3%20L-29.9%20-68.1%20L-29.6%20-73.5%20L-32.1%20-77.6%20M-24.3%20-65.3%20L-33.9%20-70.7%22%20fill=%22none%22%20stroke=%22%23050309%22%20stroke-width=%222%22%20stroke-linejoin=%22miter%22/%3E%3C/g%3E%3Cg%3E%3Canimate%20attributeName=%22opacity%22%20values=%22.6;.6;1;.7;1;.6;.6%22%20keyTimes=%220;.55;.6;.66;.72;.8;1%22%20dur=%224.32s%22%20begin=%221.86s%22%20repeatCount=%22indefinite%22/%3E%3Cpath%20d=%22M23%20-55.4%20L25%20-59.8%20L27.8%20-63.8%20L28.5%20-68.7%20L31.7%20-72.6%20L32.1%20-77.6%20M27.8%20-63.8%20L37.4%20-69.2%22%20fill=%22none%22%20stroke=%22%23a855f7%22%20stroke-width=%225.6%22%20stroke-linejoin=%22miter%22%20opacity=%22.65%22%20filter=%22url(%23gl)%22/%3E%3Cpath%20d=%22M23%20-55.4%20L25%20-59.8%20L27.8%20-63.8%20L28.5%20-68.7%20L31.7%20-72.6%20L32.1%20-77.6%20M27.8%20-63.8%20L37.4%20-69.2%22%20fill=%22none%22%20stroke=%22%23c4b5fd%22%20stroke-width=%223.6%22%20stroke-linejoin=%22miter%22/%3E%3Cpath%20d=%22M23%20-55.4%20L25%20-59.8%20L27.8%20-63.8%20L28.5%20-68.7%20L31.7%20-72.6%20L32.1%20-77.6%20M27.8%20-63.8%20L37.4%20-69.2%22%20fill=%22none%22%20stroke=%22%23050309%22%20stroke-width=%222%22%20stroke-linejoin=%22miter%22/%3E%3C/g%3E%3Cg%3E%3Canimate%20attributeName=%22opacity%22%20values=%22.6;.6;1;.7;1;.6;.6%22%20keyTimes=%220;.55;.6;.66;.72;.8;1%22%20dur=%224.69s%22%20begin=%222.17s%22%20repeatCount=%22indefinite%22/%3E%3Cpath%20d=%22M55.4%20-23%20L60.4%20-23.5%20L64%20-27.4%20L68.9%20-28%20L74.7%20-26.7%20L77.6%20-32.1%20M64%20-27.4%20L69.4%20-37%22%20fill=%22none%22%20stroke=%22%23a855f7%22%20stroke-width=%225.6%22%20stroke-linejoin=%22miter%22%20opacity=%22.65%22%20filter=%22url(%23gl)%22/%3E%3Cpath%20d=%22M55.4%20-23%20L60.4%20-23.5%20L64%20-27.4%20L68.9%20-28%20L74.7%20-26.7%20L77.6%20-32.1%20M64%20-27.4%20L69.4%20-37%22%20fill=%22none%22%20stroke=%22%23c4b5fd%22%20stroke-width=%223.6%22%20stroke-linejoin=%22miter%22/%3E%3Cpath%20d=%22M55.4%20-23%20L60.4%20-23.5%20L64%20-27.4%20L68.9%20-28%20L74.7%20-26.7%20L77.6%20-32.1%20M64%20-27.4%20L69.4%20-37%22%20fill=%22none%22%20stroke=%22%23050309%22%20stroke-width=%222%22%20stroke-linejoin=%22miter%22/%3E%3C/g%3E%3Cg%20transform=%22translate(59%2049.5)%20rotate(130.2)%22%3E%3Cellipse%20rx=%225.4%22%20ry=%223.1%22%20fill=%22none%22%20stroke=%22%230b0712%22%20stroke-width=%222.6%22/%3E%3Cellipse%20rx=%225.4%22%20ry=%223.1%22%20fill=%22none%22%20stroke=%22%236b7280%22%20stroke-width=%22.9%22/%3E%3C/g%3E%3Cg%20transform=%22translate(55%2053.6)%20rotate(138.5)%22%3E%3Crect%20x=%22-3.4%22%20y=%22-1.5%22%20width=%226.8%22%20height=%223%22%20rx=%221.5%22%20fill=%22%23111827%22%20stroke=%22%237c3aed%22%20stroke-width=%22.55%22/%3E%3C/g%3E%3Cg%20transform=%22translate(50.1%2057.3)%20rotate(147.1)%22%3E%3Cellipse%20rx=%225.4%22%20ry=%223.1%22%20fill=%22none%22%20stroke=%22%230b0712%22%20stroke-width=%222.6%22/%3E%3Cellipse%20rx=%225.4%22%20ry=%223.1%22%20fill=%22none%22%20stroke=%22%236b7280%22%20stroke-width=%22.9%22/%3E%3C/g%3E%3Cg%20transform=%22translate(45%2060.2)%20rotate(154.9)%22%3E%3Crect%20x=%22-3.4%22%20y=%22-1.5%22%20width=%226.8%22%20height=%223%22%20rx=%221.5%22%20fill=%22%23111827%22%20stroke=%22%237c3aed%22%20stroke-width=%22.55%22/%3E%3C/g%3E%3Cg%20transform=%22translate(39.5%2062.4)%20rotate(162.1)%22%3E%3Cellipse%20rx=%225.4%22%20ry=%223.1%22%20fill=%22none%22%20stroke=%22%230b0712%22%20stroke-width=%222.6%22/%3E%3Cellipse%20rx=%225.4%22%20ry=%223.1%22%20fill=%22none%22%20stroke=%22%236b7280%22%20stroke-width=%22.9%22/%3E%3C/g%3E%3Cg%20transform=%22translate(33.7%2063.9)%20rotate(168.8)%22%3E%3Crect%20x=%22-3.4%22%20y=%22-1.5%22%20width=%226.8%22%20height=%223%22%20rx=%221.5%22%20fill=%22%23111827%22%20stroke=%22%237c3aed%22%20stroke-width=%22.55%22/%3E%3C/g%3E%3Cg%20transform=%22translate(27.7%2064.7)%20rotate(174.9)%22%3E%3Cellipse%20rx=%225.4%22%20ry=%223.1%22%20fill=%22none%22%20stroke=%22%230b0712%22%20stroke-width=%222.6%22/%3E%3Cellipse%20rx=%225.4%22%20ry=%223.1%22%20fill=%22none%22%20stroke=%22%236b7280%22%20stroke-width=%22.9%22/%3E%3C/g%3E%3Cg%20transform=%22translate(21.8%2065)%20rotate(-179.7)%22%3E%3Crect%20x=%22-3.4%22%20y=%22-1.5%22%20width=%226.8%22%20height=%223%22%20rx=%221.5%22%20fill=%22%23111827%22%20stroke=%22%237c3aed%22%20stroke-width=%22.55%22/%3E%3C/g%3E%3Cg%20transform=%22translate(15.7%2064.7)%20rotate(-174.6)%22%3E%3Cellipse%20rx=%225.4%22%20ry=%223.1%22%20fill=%22none%22%20stroke=%22%230b0712%22%20stroke-width=%222.6%22/%3E%3Cellipse%20rx=%225.4%22%20ry=%223.1%22%20fill=%22none%22%20stroke=%22%236b7280%22%20stroke-width=%22.9%22/%3E%3C/g%3E%3Cg%20transform=%22translate(10.1%2064)%20rotate(-170.3)%22%3E%3Crect%20x=%22-3.4%22%20y=%22-1.5%22%20width=%226.8%22%20height=%223%22%20rx=%221.5%22%20fill=%22%23111827%22%20stroke=%22%237c3aed%22%20stroke-width=%22.55%22/%3E%3C/g%3E%3Cg%20transform=%22translate(4.1%2062.7)%20rotate(-165.9)%22%3E%3Cellipse%20rx=%225.4%22%20ry=%223.1%22%20fill=%22none%22%20stroke=%22%230b0712%22%20stroke-width=%222.6%22/%3E%3Cellipse%20rx=%225.4%22%20ry=%223.1%22%20fill=%22none%22%20stroke=%22%236b7280%22%20stroke-width=%22.9%22/%3E%3C/g%3E%3Cg%20transform=%22translate(-1.7%2061.1)%20rotate(-161.9)%22%3E%3Crect%20x=%22-3.4%22%20y=%22-1.5%22%20width=%226.8%22%20height=%223%22%20rx=%221.5%22%20fill=%22%23111827%22%20stroke=%22%237c3aed%22%20stroke-width=%22.55%22/%3E%3C/g%3E%3Cg%20transform=%22translate(-7.2%2059.1)%20rotate(-158.3)%22%3E%3Cellipse%20rx=%225.4%22%20ry=%223.1%22%20fill=%22none%22%20stroke=%22%230b0712%22%20stroke-width=%222.6%22/%3E%3Cellipse%20rx=%225.4%22%20ry=%223.1%22%20fill=%22none%22%20stroke=%22%236b7280%22%20stroke-width=%22.9%22/%3E%3C/g%3E%3Cg%20transform=%22translate(-12.6%2056.7)%20rotate(-154.8)%22%3E%3Crect%20x=%22-3.4%22%20y=%22-1.5%22%20width=%226.8%22%20height=%223%22%20rx=%221.5%22%20fill=%22%23111827%22%20stroke=%22%237c3aed%22%20stroke-width=%22.55%22/%3E%3C/g%3E%3Cg%20transform=%22translate(-17.9%2054)%20rotate(-151.4)%22%3E%3Cellipse%20rx=%225.4%22%20ry=%223.1%22%20fill=%22none%22%20stroke=%22%230b0712%22%20stroke-width=%222.6%22/%3E%3Cellipse%20rx=%225.4%22%20ry=%223.1%22%20fill=%22none%22%20stroke=%22%236b7280%22%20stroke-width=%22.9%22/%3E%3C/g%3E%3Cg%20transform=%22translate(-23.1%2051)%20rotate(-148)%22%3E%3Crect%20x=%22-3.4%22%20y=%22-1.5%22%20width=%226.8%22%20height=%223%22%20rx=%221.5%22%20fill=%22%23111827%22%20stroke=%22%237c3aed%22%20stroke-width=%22.55%22/%3E%3C/g%3E%3Cg%20transform=%22translate(-28.2%2047.6)%20rotate(-144.7)%22%3E%3Cellipse%20rx=%225.4%22%20ry=%223.1%22%20fill=%22none%22%20stroke=%22%230b0712%22%20stroke-width=%222.6%22/%3E%3Cellipse%20rx=%225.4%22%20ry=%223.1%22%20fill=%22none%22%20stroke=%22%236b7280%22%20stroke-width=%22.9%22/%3E%3C/g%3E%3Cg%20transform=%22translate(-32.9%2044.2)%20rotate(-141.6)%22%3E%3Crect%20x=%22-3.4%22%20y=%22-1.5%22%20width=%226.8%22%20height=%223%22%20rx=%221.5%22%20fill=%22%23111827%22%20stroke=%22%237c3aed%22%20stroke-width=%22.55%22/%3E%3C/g%3E%3Cg%20transform=%22translate(-37.6%2040.2)%20rotate(-138.4)%22%3E%3Cellipse%20rx=%225.4%22%20ry=%223.1%22%20fill=%22none%22%20stroke=%22%230b0712%22%20stroke-width=%222.6%22/%3E%3Cellipse%20rx=%225.4%22%20ry=%223.1%22%20fill=%22none%22%20stroke=%22%236b7280%22%20stroke-width=%22.9%22/%3E%3C/g%3E%3Cg%20transform=%22translate(-41.8%2036.3)%20rotate(-135.3)%22%3E%3Crect%20x=%22-3.4%22%20y=%22-1.5%22%20width=%226.8%22%20height=%223%22%20rx=%221.5%22%20fill=%22%23111827%22%20stroke=%22%237c3aed%22%20stroke-width=%22.55%22/%3E%3C/g%3E%3Cg%20transform=%22translate(-46%2031.9)%20rotate(-132)%22%3E%3Cellipse%20rx=%225.4%22%20ry=%223.1%22%20fill=%22none%22%20stroke=%22%230b0712%22%20stroke-width=%222.6%22/%3E%3Cellipse%20rx=%225.4%22%20ry=%223.1%22%20fill=%22none%22%20stroke=%22%236b7280%22%20stroke-width=%22.9%22/%3E%3C/g%3E%3Cg%20transform=%22translate(-49.9%2027.3)%20rotate(-128.6)%22%3E%3Crect%20x=%22-3.4%22%20y=%22-1.5%22%20width=%226.8%22%20height=%223%22%20rx=%221.5%22%20fill=%22%23111827%22%20stroke=%22%237c3aed%22%20stroke-width=%22.55%22/%3E%3C/g%3E%3Cg%20transform=%22translate(-53.5%2022.5)%20rotate(-125.2)%22%3E%3Cellipse%20rx=%225.4%22%20ry=%223.1%22%20fill=%22none%22%20stroke=%22%230b0712%22%20stroke-width=%222.6%22/%3E%3Cellipse%20rx=%225.4%22%20ry=%223.1%22%20fill=%22none%22%20stroke=%22%236b7280%22%20stroke-width=%22.9%22/%3E%3C/g%3E%3Cg%20transform=%22translate(-56.8%2017.6)%20rotate(-121.7)%22%3E%3Crect%20x=%22-3.4%22%20y=%22-1.5%22%20width=%226.8%22%20height=%223%22%20rx=%221.5%22%20fill=%22%23111827%22%20stroke=%22%237c3aed%22%20stroke-width=%22.55%22/%3E%3C/g%3E%3Cg%20transform=%22translate(-59.7%2012.5)%20rotate(-118.1)%22%3E%3Cellipse%20rx=%225.4%22%20ry=%223.1%22%20fill=%22none%22%20stroke=%22%230b0712%22%20stroke-width=%222.6%22/%3E%3Cellipse%20rx=%225.4%22%20ry=%223.1%22%20fill=%22none%22%20stroke=%22%236b7280%22%20stroke-width=%22.9%22/%3E%3C/g%3E%3Cg%20transform=%22translate(-62.3%207.2)%20rotate(-114.1)%22%3E%3Crect%20x=%22-3.4%22%20y=%22-1.5%22%20width=%226.8%22%20height=%223%22%20rx=%221.5%22%20fill=%22%23111827%22%20stroke=%22%237c3aed%22%20stroke-width=%22.55%22/%3E%3C/g%3E%3Cg%20transform=%22translate(-64.6%201.5)%20rotate(-109.7)%22%3E%3Cellipse%20rx=%225.4%22%20ry=%223.1%22%20fill=%22none%22%20stroke=%22%230b0712%22%20stroke-width=%222.6%22/%3E%3Cellipse%20rx=%225.4%22%20ry=%223.1%22%20fill=%22none%22%20stroke=%22%236b7280%22%20stroke-width=%22.9%22/%3E%3C/g%3E%3Cg%20transform=%22translate(-66.4%20-4)%20rotate(-105.4)%22%3E%3Crect%20x=%22-3.4%22%20y=%22-1.5%22%20width=%226.8%22%20height=%223%22%20rx=%221.5%22%20fill=%22%23111827%22%20stroke=%22%237c3aed%22%20stroke-width=%22.55%22/%3E%3C/g%3E%3Cg%20transform=%22translate(-67.8%20-9.9)%20rotate(-100.3)%22%3E%3Cellipse%20rx=%225.4%22%20ry=%223.1%22%20fill=%22none%22%20stroke=%22%230b0712%22%20stroke-width=%222.6%22/%3E%3Cellipse%20rx=%225.4%22%20ry=%223.1%22%20fill=%22none%22%20stroke=%22%236b7280%22%20stroke-width=%22.9%22/%3E%3C/g%3E%3Cg%20transform=%22translate(-68.5%20-15.8)%20rotate(-94.9)%22%3E%3Crect%20x=%22-3.4%22%20y=%22-1.5%22%20width=%226.8%22%20height=%223%22%20rx=%221.5%22%20fill=%22%23111827%22%20stroke=%22%237c3aed%22%20stroke-width=%22.55%22/%3E%3C/g%3E%3Cg%20transform=%22translate(-68.8%20-21.8)%20rotate(-88.8)%22%3E%3Cellipse%20rx=%225.4%22%20ry=%223.1%22%20fill=%22none%22%20stroke=%22%230b0712%22%20stroke-width=%222.6%22/%3E%3Cellipse%20rx=%225.4%22%20ry=%223.1%22%20fill=%22none%22%20stroke=%22%236b7280%22%20stroke-width=%22.9%22/%3E%3C/g%3E%3Cg%20transform=%22translate(-68.3%20-27.8)%20rotate(-82.1)%22%3E%3Crect%20x=%22-3.4%22%20y=%22-1.5%22%20width=%226.8%22%20height=%223%22%20rx=%221.5%22%20fill=%22%23111827%22%20stroke=%22%237c3aed%22%20stroke-width=%22.55%22/%3E%3C/g%3E%3Cg%20transform=%22translate(-67.1%20-33.6)%20rotate(-74.9)%22%3E%3Cellipse%20rx=%225.4%22%20ry=%223.1%22%20fill=%22none%22%20stroke=%22%230b0712%22%20stroke-width=%222.6%22/%3E%3Cellipse%20rx=%225.4%22%20ry=%223.1%22%20fill=%22none%22%20stroke=%22%236b7280%22%20stroke-width=%22.9%22/%3E%3C/g%3E%3Cg%20transform=%22translate(-65.2%20-39.2)%20rotate(-67.1)%22%3E%3Crect%20x=%22-3.4%22%20y=%22-1.5%22%20width=%226.8%22%20height=%223%22%20rx=%221.5%22%20fill=%22%23111827%22%20stroke=%22%237c3aed%22%20stroke-width=%22.55%22/%3E%3C/g%3E%3Cg%20transform=%22translate(-62.5%20-44.6)%20rotate(-58.5)%22%3E%3Cellipse%20rx=%225.4%22%20ry=%223.1%22%20fill=%22none%22%20stroke=%22%230b0712%22%20stroke-width=%222.6%22/%3E%3Cellipse%20rx=%225.4%22%20ry=%223.1%22%20fill=%22none%22%20stroke=%22%236b7280%22%20stroke-width=%22.9%22/%3E%3C/g%3E%3Cg%20transform=%22translate(-59%20-49.5)%20rotate(-49.8)%22%3E%3Crect%20x=%22-3.4%22%20y=%22-1.5%22%20width=%226.8%22%20height=%223%22%20rx=%221.5%22%20fill=%22%23111827%22%20stroke=%22%237c3aed%22%20stroke-width=%22.55%22/%3E%3C/g%3E%3Cg%20transform=%22translate(-55%20-53.6)%20rotate(-41.5)%22%3E%3Cellipse%20rx=%225.4%22%20ry=%223.1%22%20fill=%22none%22%20stroke=%22%230b0712%22%20stroke-width=%222.6%22/%3E%3Cellipse%20rx=%225.4%22%20ry=%223.1%22%20fill=%22none%22%20stroke=%22%236b7280%22%20stroke-width=%22.9%22/%3E%3C/g%3E%3Cg%20transform=%22translate(-50.1%20-57.3)%20rotate(-32.9)%22%3E%3Crect%20x=%22-3.4%22%20y=%22-1.5%22%20width=%226.8%22%20height=%223%22%20rx=%221.5%22%20fill=%22%23111827%22%20stroke=%22%237c3aed%22%20stroke-width=%22.55%22/%3E%3C/g%3E%3Cg%20transform=%22translate(-45%20-60.2)%20rotate(-25.1)%22%3E%3Cellipse%20rx=%225.4%22%20ry=%223.1%22%20fill=%22none%22%20stroke=%22%230b0712%22%20stroke-width=%222.6%22/%3E%3Cellipse%20rx=%225.4%22%20ry=%223.1%22%20fill=%22none%22%20stroke=%22%236b7280%22%20stroke-width=%22.9%22/%3E%3C/g%3E%3Cg%20transform=%22translate(-39.5%20-62.4)%20rotate(-17.9)%22%3E%3Crect%20x=%22-3.4%22%20y=%22-1.5%22%20width=%226.8%22%20height=%223%22%20rx=%221.5%22%20fill=%22%23111827%22%20stroke=%22%237c3aed%22%20stroke-width=%22.55%22/%3E%3C/g%3E%3Cg%20transform=%22translate(-33.7%20-63.9)%20rotate(-11.2)%22%3E%3Cellipse%20rx=%225.4%22%20ry=%223.1%22%20fill=%22none%22%20stroke=%22%230b0712%22%20stroke-width=%222.6%22/%3E%3Cellipse%20rx=%225.4%22%20ry=%223.1%22%20fill=%22none%22%20stroke=%22%236b7280%22%20stroke-width=%22.9%22/%3E%3C/g%3E%3Cg%20transform=%22translate(-27.7%20-64.7)%20rotate(-5.1)%22%3E%3Crect%20x=%22-3.4%22%20y=%22-1.5%22%20width=%226.8%22%20height=%223%22%20rx=%221.5%22%20fill=%22%23111827%22%20stroke=%22%237c3aed%22%20stroke-width=%22.55%22/%3E%3C/g%3E%3Cg%20transform=%22translate(-21.8%20-65)%20rotate(0.3)%22%3E%3Cellipse%20rx=%225.4%22%20ry=%223.1%22%20fill=%22none%22%20stroke=%22%230b0712%22%20stroke-width=%222.6%22/%3E%3Cellipse%20rx=%225.4%22%20ry=%223.1%22%20fill=%22none%22%20stroke=%22%236b7280%22%20stroke-width=%22.9%22/%3E%3C/g%3E%3Cg%20transform=%22translate(-15.7%20-64.7)%20rotate(5.4)%22%3E%3Crect%20x=%22-3.4%22%20y=%22-1.5%22%20width=%226.8%22%20height=%223%22%20rx=%221.5%22%20fill=%22%23111827%22%20stroke=%22%237c3aed%22%20stroke-width=%22.55%22/%3E%3C/g%3E%3Cg%20transform=%22translate(-10.1%20-64)%20rotate(9.7)%22%3E%3Cellipse%20rx=%225.4%22%20ry=%223.1%22%20fill=%22none%22%20stroke=%22%230b0712%22%20stroke-width=%222.6%22/%3E%3Cellipse%20rx=%225.4%22%20ry=%223.1%22%20fill=%22none%22%20stroke=%22%236b7280%22%20stroke-width=%22.9%22/%3E%3C/g%3E%3Cg%20transform=%22translate(-4.1%20-62.7)%20rotate(14.1)%22%3E%3Crect%20x=%22-3.4%22%20y=%22-1.5%22%20width=%226.8%22%20height=%223%22%20rx=%221.5%22%20fill=%22%23111827%22%20stroke=%22%237c3aed%22%20stroke-width=%22.55%22/%3E%3C/g%3E%3Cg%20transform=%22translate(1.7%20-61.1)%20rotate(18.1)%22%3E%3Cellipse%20rx=%225.4%22%20ry=%223.1%22%20fill=%22none%22%20stroke=%22%230b0712%22%20stroke-width=%222.6%22/%3E%3Cellipse%20rx=%225.4%22%20ry=%223.1%22%20fill=%22none%22%20stroke=%22%236b7280%22%20stroke-width=%22.9%22/%3E%3C/g%3E%3Cg%20transform=%22translate(7.2%20-59.1)%20rotate(21.7)%22%3E%3Crect%20x=%22-3.4%22%20y=%22-1.5%22%20width=%226.8%22%20height=%223%22%20rx=%221.5%22%20fill=%22%23111827%22%20stroke=%22%237c3aed%22%20stroke-width=%22.55%22/%3E%3C/g%3E%3Cg%20transform=%22translate(12.6%20-56.7)%20rotate(25.2)%22%3E%3Cellipse%20rx=%225.4%22%20ry=%223.1%22%20fill=%22none%22%20stroke=%22%230b0712%22%20stroke-width=%222.6%22/%3E%3Cellipse%20rx=%225.4%22%20ry=%223.1%22%20fill=%22none%22%20stroke=%22%236b7280%22%20stroke-width=%22.9%22/%3E%3C/g%3E%3Cg%20transform=%22translate(17.9%20-54)%20rotate(28.6)%22%3E%3Crect%20x=%22-3.4%22%20y=%22-1.5%22%20width=%226.8%22%20height=%223%22%20rx=%221.5%22%20fill=%22%23111827%22%20stroke=%22%237c3aed%22%20stroke-width=%22.55%22/%3E%3C/g%3E%3Cg%20transform=%22translate(23.1%20-51)%20rotate(32)%22%3E%3Cellipse%20rx=%225.4%22%20ry=%223.1%22%20fill=%22none%22%20stroke=%22%230b0712%22%20stroke-width=%222.6%22/%3E%3Cellipse%20rx=%225.4%22%20ry=%223.1%22%20fill=%22none%22%20stroke=%22%236b7280%22%20stroke-width=%22.9%22/%3E%3C/g%3E%3Cg%20transform=%22translate(28.2%20-47.6)%20rotate(35.3)%22%3E%3Crect%20x=%22-3.4%22%20y=%22-1.5%22%20width=%226.8%22%20height=%223%22%20rx=%221.5%22%20fill=%22%23111827%22%20stroke=%22%237c3aed%22%20stroke-width=%22.55%22/%3E%3C/g%3E%3Cg%20transform=%22translate(32.9%20-44.2)%20rotate(38.4)%22%3E%3Cellipse%20rx=%225.4%22%20ry=%223.1%22%20fill=%22none%22%20stroke=%22%230b0712%22%20stroke-width=%222.6%22/%3E%3Cellipse%20rx=%225.4%22%20ry=%223.1%22%20fill=%22none%22%20stroke=%22%236b7280%22%20stroke-width=%22.9%22/%3E%3C/g%3E%3Cg%20transform=%22translate(37.6%20-40.2)%20rotate(41.6)%22%3E%3Crect%20x=%22-3.4%22%20y=%22-1.5%22%20width=%226.8%22%20height=%223%22%20rx=%221.5%22%20fill=%22%23111827%22%20stroke=%22%237c3aed%22%20stroke-width=%22.55%22/%3E%3C/g%3E%3Cg%20transform=%22translate(41.8%20-36.3)%20rotate(44.7)%22%3E%3Cellipse%20rx=%225.4%22%20ry=%223.1%22%20fill=%22none%22%20stroke=%22%230b0712%22%20stroke-width=%222.6%22/%3E%3Cellipse%20rx=%225.4%22%20ry=%223.1%22%20fill=%22none%22%20stroke=%22%236b7280%22%20stroke-width=%22.9%22/%3E%3C/g%3E%3Cg%20transform=%22translate(46%20-31.9)%20rotate(48)%22%3E%3Crect%20x=%22-3.4%22%20y=%22-1.5%22%20width=%226.8%22%20height=%223%22%20rx=%221.5%22%20fill=%22%23111827%22%20stroke=%22%237c3aed%22%20stroke-width=%22.55%22/%3E%3C/g%3E%3Cg%20transform=%22translate(49.9%20-27.3)%20rotate(51.4)%22%3E%3Cellipse%20rx=%225.4%22%20ry=%223.1%22%20fill=%22none%22%20stroke=%22%230b0712%22%20stroke-width=%222.6%22/%3E%3Cellipse%20rx=%225.4%22%20ry=%223.1%22%20fill=%22none%22%20stroke=%22%236b7280%22%20stroke-width=%22.9%22/%3E%3C/g%3E%3Cg%20transform=%22translate(53.5%20-22.5)%20rotate(54.8)%22%3E%3Crect%20x=%22-3.4%22%20y=%22-1.5%22%20width=%226.8%22%20height=%223%22%20rx=%221.5%22%20fill=%22%23111827%22%20stroke=%22%237c3aed%22%20stroke-width=%22.55%22/%3E%3C/g%3E%3Cg%20transform=%22translate(56.8%20-17.6)%20rotate(58.3)%22%3E%3Cellipse%20rx=%225.4%22%20ry=%223.1%22%20fill=%22none%22%20stroke=%22%230b0712%22%20stroke-width=%222.6%22/%3E%3Cellipse%20rx=%225.4%22%20ry=%223.1%22%20fill=%22none%22%20stroke=%22%236b7280%22%20stroke-width=%22.9%22/%3E%3C/g%3E%3Cg%20transform=%22translate(59.7%20-12.5)%20rotate(61.9)%22%3E%3Crect%20x=%22-3.4%22%20y=%22-1.5%22%20width=%226.8%22%20height=%223%22%20rx=%221.5%22%20fill=%22%23111827%22%20stroke=%22%237c3aed%22%20stroke-width=%22.55%22/%3E%3C/g%3E%3Cg%20transform=%22translate(62.3%20-7.2)%20rotate(65.9)%22%3E%3Cellipse%20rx=%225.4%22%20ry=%223.1%22%20fill=%22none%22%20stroke=%22%230b0712%22%20stroke-width=%222.6%22/%3E%3Cellipse%20rx=%225.4%22%20ry=%223.1%22%20fill=%22none%22%20stroke=%22%236b7280%22%20stroke-width=%22.9%22/%3E%3C/g%3E%3Cg%20transform=%22translate(64.6%20-1.5)%20rotate(70.3)%22%3E%3Crect%20x=%22-3.4%22%20y=%22-1.5%22%20width=%226.8%22%20height=%223%22%20rx=%221.5%22%20fill=%22%23111827%22%20stroke=%22%237c3aed%22%20stroke-width=%22.55%22/%3E%3C/g%3E%3Cg%20transform=%22translate(66.4%204)%20rotate(74.6)%22%3E%3Cellipse%20rx=%225.4%22%20ry=%223.1%22%20fill=%22none%22%20stroke=%22%230b0712%22%20stroke-width=%222.6%22/%3E%3Cellipse%20rx=%225.4%22%20ry=%223.1%22%20fill=%22none%22%20stroke=%22%236b7280%22%20stroke-width=%22.9%22/%3E%3C/g%3E%3Cg%20transform=%22translate(67.8%209.9)%20rotate(79.7)%22%3E%3Crect%20x=%22-3.4%22%20y=%22-1.5%22%20width=%226.8%22%20height=%223%22%20rx=%221.5%22%20fill=%22%23111827%22%20stroke=%22%237c3aed%22%20stroke-width=%22.55%22/%3E%3C/g%3E%3Cg%20transform=%22translate(68.5%2015.8)%20rotate(85.1)%22%3E%3Cellipse%20rx=%225.4%22%20ry=%223.1%22%20fill=%22none%22%20stroke=%22%230b0712%22%20stroke-width=%222.6%22/%3E%3Cellipse%20rx=%225.4%22%20ry=%223.1%22%20fill=%22none%22%20stroke=%22%236b7280%22%20stroke-width=%22.9%22/%3E%3C/g%3E%3Cg%20transform=%22translate(68.8%2021.8)%20rotate(91.2)%22%3E%3Crect%20x=%22-3.4%22%20y=%22-1.5%22%20width=%226.8%22%20height=%223%22%20rx=%221.5%22%20fill=%22%23111827%22%20stroke=%22%237c3aed%22%20stroke-width=%22.55%22/%3E%3C/g%3E%3Cg%20transform=%22translate(68.3%2027.8)%20rotate(97.9)%22%3E%3Cellipse%20rx=%225.4%22%20ry=%223.1%22%20fill=%22none%22%20stroke=%22%230b0712%22%20stroke-width=%222.6%22/%3E%3Cellipse%20rx=%225.4%22%20ry=%223.1%22%20fill=%22none%22%20stroke=%22%236b7280%22%20stroke-width=%22.9%22/%3E%3C/g%3E%3Cg%20transform=%22translate(67.1%2033.6)%20rotate(105.1)%22%3E%3Crect%20x=%22-3.4%22%20y=%22-1.5%22%20width=%226.8%22%20height=%223%22%20rx=%221.5%22%20fill=%22%23111827%22%20stroke=%22%237c3aed%22%20stroke-width=%22.55%22/%3E%3C/g%3E%3Cg%20transform=%22translate(65.2%2039.2)%20rotate(112.9)%22%3E%3Cellipse%20rx=%225.4%22%20ry=%223.1%22%20fill=%22none%22%20stroke=%22%230b0712%22%20stroke-width=%222.6%22/%3E%3Cellipse%20rx=%225.4%22%20ry=%223.1%22%20fill=%22none%22%20stroke=%22%236b7280%22%20stroke-width=%22.9%22/%3E%3C/g%3E%3Cg%20transform=%22translate(62.5%2044.6)%20rotate(121.5)%22%3E%3Crect%20x=%22-3.4%22%20y=%22-1.5%22%20width=%226.8%22%20height=%223%22%20rx=%221.5%22%20fill=%22%23111827%22%20stroke=%22%237c3aed%22%20stroke-width=%22.55%22/%3E%3C/g%3E%3Cg%20transform=%22translate(59%20-49.5)%20rotate(50.2)%22%3E%3Cellipse%20rx=%225.4%22%20ry=%223.1%22%20fill=%22none%22%20stroke=%22%230b0712%22%20stroke-width=%222.6%22/%3E%3Cellipse%20rx=%225.4%22%20ry=%223.1%22%20fill=%22none%22%20stroke=%22%236b7280%22%20stroke-width=%22.9%22/%3E%3C/g%3E%3Cg%20transform=%22translate(62.4%20-44.8)%20rotate(58.5)%22%3E%3Crect%20x=%22-3.4%22%20y=%22-1.5%22%20width=%226.8%22%20height=%223%22%20rx=%221.5%22%20fill=%22%23111827%22%20stroke=%22%237c3aed%22%20stroke-width=%22.55%22/%3E%3C/g%3E%3Cg%20transform=%22translate(65.1%20-39.4)%20rotate(67.1)%22%3E%3Cellipse%20rx=%225.4%22%20ry=%223.1%22%20fill=%22none%22%20stroke=%22%230b0712%22%20stroke-width=%222.6%22/%3E%3Cellipse%20rx=%225.4%22%20ry=%223.1%22%20fill=%22none%22%20stroke=%22%236b7280%22%20stroke-width=%22.9%22/%3E%3C/g%3E%3Cg%20transform=%22translate(67.1%20-33.8)%20rotate(74.9)%22%3E%3Crect%20x=%22-3.4%22%20y=%22-1.5%22%20width=%226.8%22%20height=%223%22%20rx=%221.5%22%20fill=%22%23111827%22%20stroke=%22%237c3aed%22%20stroke-width=%22.55%22/%3E%3C/g%3E%3Cg%20transform=%22translate(68.3%20-28.1)%20rotate(82.1)%22%3E%3Cellipse%20rx=%225.4%22%20ry=%223.1%22%20fill=%22none%22%20stroke=%22%230b0712%22%20stroke-width=%222.6%22/%3E%3Cellipse%20rx=%225.4%22%20ry=%223.1%22%20fill=%22none%22%20stroke=%22%236b7280%22%20stroke-width=%22.9%22/%3E%3C/g%3E%3Cg%20transform=%22translate(68.8%20-22.1)%20rotate(88.8)%22%3E%3Crect%20x=%22-3.4%22%20y=%22-1.5%22%20width=%226.8%22%20height=%223%22%20rx=%221.5%22%20fill=%22%23111827%22%20stroke=%22%237c3aed%22%20stroke-width=%22.55%22/%3E%3C/g%3E%3Cg%20transform=%22translate(68.6%20-16.1)%20rotate(94.9)%22%3E%3Cellipse%20rx=%225.4%22%20ry=%223.1%22%20fill=%22none%22%20stroke=%22%230b0712%22%20stroke-width=%222.6%22/%3E%3Cellipse%20rx=%225.4%22%20ry=%223.1%22%20fill=%22none%22%20stroke=%22%236b7280%22%20stroke-width=%22.9%22/%3E%3C/g%3E%3Cg%20transform=%22translate(67.8%20-10.2)%20rotate(100.3)%22%3E%3Crect%20x=%22-3.4%22%20y=%22-1.5%22%20width=%226.8%22%20height=%223%22%20rx=%221.5%22%20fill=%22%23111827%22%20stroke=%22%237c3aed%22%20stroke-width=%22.55%22/%3E%3C/g%3E%3Cg%20transform=%22translate(66.5%20-4.3)%20rotate(105.4)%22%3E%3Cellipse%20rx=%225.4%22%20ry=%223.1%22%20fill=%22none%22%20stroke=%22%230b0712%22%20stroke-width=%222.6%22/%3E%3Cellipse%20rx=%225.4%22%20ry=%223.1%22%20fill=%22none%22%20stroke=%22%236b7280%22%20stroke-width=%22.9%22/%3E%3C/g%3E%3Cg%20transform=%22translate(64.7%201.2)%20rotate(109.7)%22%3E%3Crect%20x=%22-3.4%22%20y=%22-1.5%22%20width=%226.8%22%20height=%223%22%20rx=%221.5%22%20fill=%22%23111827%22%20stroke=%22%237c3aed%22%20stroke-width=%22.55%22/%3E%3C/g%3E%3Cg%20transform=%22translate(62.5%206.9)%20rotate(114.1)%22%3E%3Cellipse%20rx=%225.4%22%20ry=%223.1%22%20fill=%22none%22%20stroke=%22%230b0712%22%20stroke-width=%222.6%22/%3E%3Cellipse%20rx=%225.4%22%20ry=%223.1%22%20fill=%22none%22%20stroke=%22%236b7280%22%20stroke-width=%22.9%22/%3E%3C/g%3E%3Cg%20transform=%22translate(59.8%2012.3)%20rotate(118.1)%22%3E%3Crect%20x=%22-3.4%22%20y=%22-1.5%22%20width=%226.8%22%20height=%223%22%20rx=%221.5%22%20fill=%22%23111827%22%20stroke=%22%237c3aed%22%20stroke-width=%22.55%22/%3E%3C/g%3E%3Cg%20transform=%22translate(56.9%2017.3)%20rotate(121.7)%22%3E%3Cellipse%20rx=%225.4%22%20ry=%223.1%22%20fill=%22none%22%20stroke=%22%230b0712%22%20stroke-width=%222.6%22/%3E%3Cellipse%20rx=%225.4%22%20ry=%223.1%22%20fill=%22none%22%20stroke=%22%236b7280%22%20stroke-width=%22.9%22/%3E%3C/g%3E%3Cg%20transform=%22translate(53.7%2022.2)%20rotate(125.2)%22%3E%3Crect%20x=%22-3.4%22%20y=%22-1.5%22%20width=%226.8%22%20height=%223%22%20rx=%221.5%22%20fill=%22%23111827%22%20stroke=%22%237c3aed%22%20stroke-width=%22.55%22/%3E%3C/g%3E%3Cg%20transform=%22translate(50.1%2027)%20rotate(128.6)%22%3E%3Cellipse%20rx=%225.4%22%20ry=%223.1%22%20fill=%22none%22%20stroke=%22%230b0712%22%20stroke-width=%222.6%22/%3E%3Cellipse%20rx=%225.4%22%20ry=%223.1%22%20fill=%22none%22%20stroke=%22%236b7280%22%20stroke-width=%22.9%22/%3E%3C/g%3E%3Cg%20transform=%22translate(46.2%2031.6)%20rotate(132)%22%3E%3Crect%20x=%22-3.4%22%20y=%22-1.5%22%20width=%226.8%22%20height=%223%22%20rx=%221.5%22%20fill=%22%23111827%22%20stroke=%22%237c3aed%22%20stroke-width=%22.55%22/%3E%3C/g%3E%3Cg%20transform=%22translate(42%2036.1)%20rotate(135.3)%22%3E%3Cellipse%20rx=%225.4%22%20ry=%223.1%22%20fill=%22none%22%20stroke=%22%230b0712%22%20stroke-width=%222.6%22/%3E%3Cellipse%20rx=%225.4%22%20ry=%223.1%22%20fill=%22none%22%20stroke=%22%236b7280%22%20stroke-width=%22.9%22/%3E%3C/g%3E%3Cg%20transform=%22translate(37.8%2040)%20rotate(138.4)%22%3E%3Crect%20x=%22-3.4%22%20y=%22-1.5%22%20width=%226.8%22%20height=%223%22%20rx=%221.5%22%20fill=%22%23111827%22%20stroke=%22%237c3aed%22%20stroke-width=%22.55%22/%3E%3C/g%3E%3Cg%20transform=%22translate(33.1%2044)%20rotate(141.6)%22%3E%3Cellipse%20rx=%225.4%22%20ry=%223.1%22%20fill=%22none%22%20stroke=%22%230b0712%22%20stroke-width=%222.6%22/%3E%3Cellipse%20rx=%225.4%22%20ry=%223.1%22%20fill=%22none%22%20stroke=%22%236b7280%22%20stroke-width=%22.9%22/%3E%3C/g%3E%3Cg%20transform=%22translate(28.5%2047.4)%20rotate(144.7)%22%3E%3Crect%20x=%22-3.4%22%20y=%22-1.5%22%20width=%226.8%22%20height=%223%22%20rx=%221.5%22%20fill=%22%23111827%22%20stroke=%22%237c3aed%22%20stroke-width=%22.55%22/%3E%3C/g%3E%3Cg%20transform=%22translate(23.4%2050.8)%20rotate(148)%22%3E%3Cellipse%20rx=%225.4%22%20ry=%223.1%22%20fill=%22none%22%20stroke=%22%230b0712%22%20stroke-width=%222.6%22/%3E%3Cellipse%20rx=%225.4%22%20ry=%223.1%22%20fill=%22none%22%20stroke=%22%236b7280%22%20stroke-width=%22.9%22/%3E%3C/g%3E%3Cg%20transform=%22translate(18.2%2053.9)%20rotate(151.4)%22%3E%3Crect%20x=%22-3.4%22%20y=%22-1.5%22%20width=%226.8%22%20height=%223%22%20rx=%221.5%22%20fill=%22%23111827%22%20stroke=%22%237c3aed%22%20stroke-width=%22.55%22/%3E%3C/g%3E%3Cg%20transform=%22translate(12.9%2056.6)%20rotate(154.8)%22%3E%3Cellipse%20rx=%225.4%22%20ry=%223.1%22%20fill=%22none%22%20stroke=%22%230b0712%22%20stroke-width=%222.6%22/%3E%3Cellipse%20rx=%225.4%22%20ry=%223.1%22%20fill=%22none%22%20stroke=%22%236b7280%22%20stroke-width=%22.9%22/%3E%3C/g%3E%3Cg%20transform=%22translate(7.4%2059)%20rotate(158.3)%22%3E%3Crect%20x=%22-3.4%22%20y=%22-1.5%22%20width=%226.8%22%20height=%223%22%20rx=%221.5%22%20fill=%22%23111827%22%20stroke=%22%237c3aed%22%20stroke-width=%22.55%22/%3E%3C/g%3E%3Cg%20transform=%22translate(2%2061)%20rotate(161.9)%22%3E%3Cellipse%20rx=%225.4%22%20ry=%223.1%22%20fill=%22none%22%20stroke=%22%230b0712%22%20stroke-width=%222.6%22/%3E%3Cellipse%20rx=%225.4%22%20ry=%223.1%22%20fill=%22none%22%20stroke=%22%236b7280%22%20stroke-width=%22.9%22/%3E%3C/g%3E%3Cg%20transform=%22translate(-3.8%2062.6)%20rotate(165.9)%22%3E%3Crect%20x=%22-3.4%22%20y=%22-1.5%22%20width=%226.8%22%20height=%223%22%20rx=%221.5%22%20fill=%22%23111827%22%20stroke=%22%237c3aed%22%20stroke-width=%22.55%22/%3E%3C/g%3E%3Cg%20transform=%22translate(-9.8%2063.9)%20rotate(170.3)%22%3E%3Cellipse%20rx=%225.4%22%20ry=%223.1%22%20fill=%22none%22%20stroke=%22%230b0712%22%20stroke-width=%222.6%22/%3E%3Cellipse%20rx=%225.4%22%20ry=%223.1%22%20fill=%22none%22%20stroke=%22%236b7280%22%20stroke-width=%22.9%22/%3E%3C/g%3E%3Cg%20transform=%22translate(-15.5%2064.7)%20rotate(174.6)%22%3E%3Crect%20x=%22-3.4%22%20y=%22-1.5%22%20width=%226.8%22%20height=%223%22%20rx=%221.5%22%20fill=%22%23111827%22%20stroke=%22%237c3aed%22%20stroke-width=%22.55%22/%3E%3C/g%3E%3Cg%20transform=%22translate(-21.6%2065)%20rotate(179.7)%22%3E%3Cellipse%20rx=%225.4%22%20ry=%223.1%22%20fill=%22none%22%20stroke=%22%230b0712%22%20stroke-width=%222.6%22/%3E%3Cellipse%20rx=%225.4%22%20ry=%223.1%22%20fill=%22none%22%20stroke=%22%236b7280%22%20stroke-width=%22.9%22/%3E%3C/g%3E%3Cg%20transform=%22translate(-27.5%2064.8)%20rotate(-174.9)%22%3E%3Crect%20x=%22-3.4%22%20y=%22-1.5%22%20width=%226.8%22%20height=%223%22%20rx=%221.5%22%20fill=%22%23111827%22%20stroke=%22%237c3aed%22%20stroke-width=%22.55%22/%3E%3C/g%3E%3Cg%20transform=%22translate(-33.4%2063.9)%20rotate(-168.8)%22%3E%3Cellipse%20rx=%225.4%22%20ry=%223.1%22%20fill=%22none%22%20stroke=%22%230b0712%22%20stroke-width=%222.6%22/%3E%3Cellipse%20rx=%225.4%22%20ry=%223.1%22%20fill=%22none%22%20stroke=%22%236b7280%22%20stroke-width=%22.9%22/%3E%3C/g%3E%3Cg%20transform=%22translate(-39.3%2062.4)%20rotate(-162.1)%22%3E%3Crect%20x=%22-3.4%22%20y=%22-1.5%22%20width=%226.8%22%20height=%223%22%20rx=%221.5%22%20fill=%22%23111827%22%20stroke=%22%237c3aed%22%20stroke-width=%22.55%22/%3E%3C/g%3E%3Cg%20transform=%22translate(-44.7%2060.3)%20rotate(-154.9)%22%3E%3Cellipse%20rx=%225.4%22%20ry=%223.1%22%20fill=%22none%22%20stroke=%22%230b0712%22%20stroke-width=%222.6%22/%3E%3Cellipse%20rx=%225.4%22%20ry=%223.1%22%20fill=%22none%22%20stroke=%22%236b7280%22%20stroke-width=%22.9%22/%3E%3C/g%3E%3Cg%20transform=%22translate(-50%2057.4)%20rotate(-147.1)%22%3E%3Crect%20x=%22-3.4%22%20y=%22-1.5%22%20width=%226.8%22%20height=%223%22%20rx=%221.5%22%20fill=%22%23111827%22%20stroke=%22%237c3aed%22%20stroke-width=%22.55%22/%3E%3C/g%3E%3Cg%20transform=%22translate(-54.8%2053.8)%20rotate(-138.5)%22%3E%3Cellipse%20rx=%225.4%22%20ry=%223.1%22%20fill=%22none%22%20stroke=%22%230b0712%22%20stroke-width=%222.6%22/%3E%3Cellipse%20rx=%225.4%22%20ry=%223.1%22%20fill=%22none%22%20stroke=%22%236b7280%22%20stroke-width=%22.9%22/%3E%3C/g%3E%3Cg%20transform=%22translate(-59%2049.5)%20rotate(-129.8)%22%3E%3Crect%20x=%22-3.4%22%20y=%22-1.5%22%20width=%226.8%22%20height=%223%22%20rx=%221.5%22%20fill=%22%23111827%22%20stroke=%22%237c3aed%22%20stroke-width=%22.55%22/%3E%3C/g%3E%3Cg%20transform=%22translate(-62.4%2044.8)%20rotate(-121.5)%22%3E%3Cellipse%20rx=%225.4%22%20ry=%223.1%22%20fill=%22none%22%20stroke=%22%230b0712%22%20stroke-width=%222.6%22/%3E%3Cellipse%20rx=%225.4%22%20ry=%223.1%22%20fill=%22none%22%20stroke=%22%236b7280%22%20stroke-width=%22.9%22/%3E%3C/g%3E%3Cg%20transform=%22translate(-65.1%2039.4)%20rotate(-112.9)%22%3E%3Crect%20x=%22-3.4%22%20y=%22-1.5%22%20width=%226.8%22%20height=%223%22%20rx=%221.5%22%20fill=%22%23111827%22%20stroke=%22%237c3aed%22%20stroke-width=%22.55%22/%3E%3C/g%3E%3Cg%20transform=%22translate(-67.1%2033.8)%20rotate(-105.1)%22%3E%3Cellipse%20rx=%225.4%22%20ry=%223.1%22%20fill=%22none%22%20stroke=%22%230b0712%22%20stroke-width=%222.6%22/%3E%3Cellipse%20rx=%225.4%22%20ry=%223.1%22%20fill=%22none%22%20stroke=%22%236b7280%22%20stroke-width=%22.9%22/%3E%3C/g%3E%3Cg%20transform=%22translate(-68.3%2028.1)%20rotate(-97.9)%22%3E%3Crect%20x=%22-3.4%22%20y=%22-1.5%22%20width=%226.8%22%20height=%223%22%20rx=%221.5%22%20fill=%22%23111827%22%20stroke=%22%237c3aed%22%20stroke-width=%22.55%22/%3E%3C/g%3E%3Cg%20transform=%22translate(-68.8%2022.1)%20rotate(-91.2)%22%3E%3Cellipse%20rx=%225.4%22%20ry=%223.1%22%20fill=%22none%22%20stroke=%22%230b0712%22%20stroke-width=%222.6%22/%3E%3Cellipse%20rx=%225.4%22%20ry=%223.1%22%20fill=%22none%22%20stroke=%22%236b7280%22%20stroke-width=%22.9%22/%3E%3C/g%3E%3Cg%20transform=%22translate(-68.6%2016.1)%20rotate(-85.1)%22%3E%3Crect%20x=%22-3.4%22%20y=%22-1.5%22%20width=%226.8%22%20height=%223%22%20rx=%221.5%22%20fill=%22%23111827%22%20stroke=%22%237c3aed%22%20stroke-width=%22.55%22/%3E%3C/g%3E%3Cg%20transform=%22translate(-67.8%2010.2)%20rotate(-79.7)%22%3E%3Cellipse%20rx=%225.4%22%20ry=%223.1%22%20fill=%22none%22%20stroke=%22%230b0712%22%20stroke-width=%222.6%22/%3E%3Cellipse%20rx=%225.4%22%20ry=%223.1%22%20fill=%22none%22%20stroke=%22%236b7280%22%20stroke-width=%22.9%22/%3E%3C/g%3E%3Cg%20transform=%22translate(-66.5%204.3)%20rotate(-74.6)%22%3E%3Crect%20x=%22-3.4%22%20y=%22-1.5%22%20width=%226.8%22%20height=%223%22%20rx=%221.5%22%20fill=%22%23111827%22%20stroke=%22%237c3aed%22%20stroke-width=%22.55%22/%3E%3C/g%3E%3Cg%20transform=%22translate(-64.7%20-1.2)%20rotate(-70.3)%22%3E%3Cellipse%20rx=%225.4%22%20ry=%223.1%22%20fill=%22none%22%20stroke=%22%230b0712%22%20stroke-width=%222.6%22/%3E%3Cellipse%20rx=%225.4%22%20ry=%223.1%22%20fill=%22none%22%20stroke=%22%236b7280%22%20stroke-width=%22.9%22/%3E%3C/g%3E%3Cg%20transform=%22translate(-62.5%20-6.9)%20rotate(-65.9)%22%3E%3Crect%20x=%22-3.4%22%20y=%22-1.5%22%20width=%226.8%22%20height=%223%22%20rx=%221.5%22%20fill=%22%23111827%22%20stroke=%22%237c3aed%22%20stroke-width=%22.55%22/%3E%3C/g%3E%3Cg%20transform=%22translate(-59.8%20-12.3)%20rotate(-61.9)%22%3E%3Cellipse%20rx=%225.4%22%20ry=%223.1%22%20fill=%22none%22%20stroke=%22%230b0712%22%20stroke-width=%222.6%22/%3E%3Cellipse%20rx=%225.4%22%20ry=%223.1%22%20fill=%22none%22%20stroke=%22%236b7280%22%20stroke-width=%22.9%22/%3E%3C/g%3E%3Cg%20transform=%22translate(-56.9%20-17.3)%20rotate(-58.3)%22%3E%3Crect%20x=%22-3.4%22%20y=%22-1.5%22%20width=%226.8%22%20height=%223%22%20rx=%221.5%22%20fill=%22%23111827%22%20stroke=%22%237c3aed%22%20stroke-width=%22.55%22/%3E%3C/g%3E%3Cg%20transform=%22translate(-53.7%20-22.2)%20rotate(-54.8)%22%3E%3Cellipse%20rx=%225.4%22%20ry=%223.1%22%20fill=%22none%22%20stroke=%22%230b0712%22%20stroke-width=%222.6%22/%3E%3Cellipse%20rx=%225.4%22%20ry=%223.1%22%20fill=%22none%22%20stroke=%22%236b7280%22%20stroke-width=%22.9%22/%3E%3C/g%3E%3Cg%20transform=%22translate(-50.1%20-27)%20rotate(-51.4)%22%3E%3Crect%20x=%22-3.4%22%20y=%22-1.5%22%20width=%226.8%22%20height=%223%22%20rx=%221.5%22%20fill=%22%23111827%22%20stroke=%22%237c3aed%22%20stroke-width=%22.55%22/%3E%3C/g%3E%3Cg%20transform=%22translate(-46.2%20-31.6)%20rotate(-48)%22%3E%3Cellipse%20rx=%225.4%22%20ry=%223.1%22%20fill=%22none%22%20stroke=%22%230b0712%22%20stroke-width=%222.6%22/%3E%3Cellipse%20rx=%225.4%22%20ry=%223.1%22%20fill=%22none%22%20stroke=%22%236b7280%22%20stroke-width=%22.9%22/%3E%3C/g%3E%3Cg%20transform=%22translate(-42%20-36.1)%20rotate(-44.7)%22%3E%3Crect%20x=%22-3.4%22%20y=%22-1.5%22%20width=%226.8%22%20height=%223%22%20rx=%221.5%22%20fill=%22%23111827%22%20stroke=%22%237c3aed%22%20stroke-width=%22.55%22/%3E%3C/g%3E%3Cg%20transform=%22translate(-37.8%20-40)%20rotate(-41.6)%22%3E%3Cellipse%20rx=%225.4%22%20ry=%223.1%22%20fill=%22none%22%20stroke=%22%230b0712%22%20stroke-width=%222.6%22/%3E%3Cellipse%20rx=%225.4%22%20ry=%223.1%22%20fill=%22none%22%20stroke=%22%236b7280%22%20stroke-width=%22.9%22/%3E%3C/g%3E%3Cg%20transform=%22translate(-33.1%20-44)%20rotate(-38.4)%22%3E%3Crect%20x=%22-3.4%22%20y=%22-1.5%22%20width=%226.8%22%20height=%223%22%20rx=%221.5%22%20fill=%22%23111827%22%20stroke=%22%237c3aed%22%20stroke-width=%22.55%22/%3E%3C/g%3E%3Cg%20transform=%22translate(-28.5%20-47.4)%20rotate(-35.3)%22%3E%3Cellipse%20rx=%225.4%22%20ry=%223.1%22%20fill=%22none%22%20stroke=%22%230b0712%22%20stroke-width=%222.6%22/%3E%3Cellipse%20rx=%225.4%22%20ry=%223.1%22%20fill=%22none%22%20stroke=%22%236b7280%22%20stroke-width=%22.9%22/%3E%3C/g%3E%3Cg%20transform=%22translate(-23.4%20-50.8)%20rotate(-32)%22%3E%3Crect%20x=%22-3.4%22%20y=%22-1.5%22%20width=%226.8%22%20height=%223%22%20rx=%221.5%22%20fill=%22%23111827%22%20stroke=%22%237c3aed%22%20stroke-width=%22.55%22/%3E%3C/g%3E%3Cg%20transform=%22translate(-18.2%20-53.9)%20rotate(-28.6)%22%3E%3Cellipse%20rx=%225.4%22%20ry=%223.1%22%20fill=%22none%22%20stroke=%22%230b0712%22%20stroke-width=%222.6%22/%3E%3Cellipse%20rx=%225.4%22%20ry=%223.1%22%20fill=%22none%22%20stroke=%22%236b7280%22%20stroke-width=%22.9%22/%3E%3C/g%3E%3Cg%20transform=%22translate(-12.9%20-56.6)%20rotate(-25.2)%22%3E%3Crect%20x=%22-3.4%22%20y=%22-1.5%22%20width=%226.8%22%20height=%223%22%20rx=%221.5%22%20fill=%22%23111827%22%20stroke=%22%237c3aed%22%20stroke-width=%22.55%22/%3E%3C/g%3E%3Cg%20transform=%22translate(-7.4%20-59)%20rotate(-21.7)%22%3E%3Cellipse%20rx=%225.4%22%20ry=%223.1%22%20fill=%22none%22%20stroke=%22%230b0712%22%20stroke-width=%222.6%22/%3E%3Cellipse%20rx=%225.4%22%20ry=%223.1%22%20fill=%22none%22%20stroke=%22%236b7280%22%20stroke-width=%22.9%22/%3E%3C/g%3E%3Cg%20transform=%22translate(-2%20-61)%20rotate(-18.1)%22%3E%3Crect%20x=%22-3.4%22%20y=%22-1.5%22%20width=%226.8%22%20height=%223%22%20rx=%221.5%22%20fill=%22%23111827%22%20stroke=%22%237c3aed%22%20stroke-width=%22.55%22/%3E%3C/g%3E%3Cg%20transform=%22translate(3.8%20-62.6)%20rotate(-14.1)%22%3E%3Cellipse%20rx=%225.4%22%20ry=%223.1%22%20fill=%22none%22%20stroke=%22%230b0712%22%20stroke-width=%222.6%22/%3E%3Cellipse%20rx=%225.4%22%20ry=%223.1%22%20fill=%22none%22%20stroke=%22%236b7280%22%20stroke-width=%22.9%22/%3E%3C/g%3E%3Cg%20transform=%22translate(9.8%20-63.9)%20rotate(-9.7)%22%3E%3Crect%20x=%22-3.4%22%20y=%22-1.5%22%20width=%226.8%22%20height=%223%22%20rx=%221.5%22%20fill=%22%23111827%22%20stroke=%22%237c3aed%22%20stroke-width=%22.55%22/%3E%3C/g%3E%3Cg%20transform=%22translate(15.5%20-64.7)%20rotate(-5.4)%22%3E%3Cellipse%20rx=%225.4%22%20ry=%223.1%22%20fill=%22none%22%20stroke=%22%230b0712%22%20stroke-width=%222.6%22/%3E%3Cellipse%20rx=%225.4%22%20ry=%223.1%22%20fill=%22none%22%20stroke=%22%236b7280%22%20stroke-width=%22.9%22/%3E%3C/g%3E%3Cg%20transform=%22translate(21.6%20-65)%20rotate(-0.3)%22%3E%3Crect%20x=%22-3.4%22%20y=%22-1.5%22%20width=%226.8%22%20height=%223%22%20rx=%221.5%22%20fill=%22%23111827%22%20stroke=%22%237c3aed%22%20stroke-width=%22.55%22/%3E%3C/g%3E%3Cg%20transform=%22translate(27.5%20-64.8)%20rotate(5.1)%22%3E%3Cellipse%20rx=%225.4%22%20ry=%223.1%22%20fill=%22none%22%20stroke=%22%230b0712%22%20stroke-width=%222.6%22/%3E%3Cellipse%20rx=%225.4%22%20ry=%223.1%22%20fill=%22none%22%20stroke=%22%236b7280%22%20stroke-width=%22.9%22/%3E%3C/g%3E%3Cg%20transform=%22translate(33.4%20-63.9)%20rotate(11.2)%22%3E%3Crect%20x=%22-3.4%22%20y=%22-1.5%22%20width=%226.8%22%20height=%223%22%20rx=%221.5%22%20fill=%22%23111827%22%20stroke=%22%237c3aed%22%20stroke-width=%22.55%22/%3E%3C/g%3E%3Cg%20transform=%22translate(39.3%20-62.4)%20rotate(17.9)%22%3E%3Cellipse%20rx=%225.4%22%20ry=%223.1%22%20fill=%22none%22%20stroke=%22%230b0712%22%20stroke-width=%222.6%22/%3E%3Cellipse%20rx=%225.4%22%20ry=%223.1%22%20fill=%22none%22%20stroke=%22%236b7280%22%20stroke-width=%22.9%22/%3E%3C/g%3E%3Cg%20transform=%22translate(44.7%20-60.3)%20rotate(25.1)%22%3E%3Crect%20x=%22-3.4%22%20y=%22-1.5%22%20width=%226.8%22%20height=%223%22%20rx=%221.5%22%20fill=%22%23111827%22%20stroke=%22%237c3aed%22%20stroke-width=%22.55%22/%3E%3C/g%3E%3Cg%20transform=%22translate(50%20-57.4)%20rotate(32.9)%22%3E%3Cellipse%20rx=%225.4%22%20ry=%223.1%22%20fill=%22none%22%20stroke=%22%230b0712%22%20stroke-width=%222.6%22/%3E%3Cellipse%20rx=%225.4%22%20ry=%223.1%22%20fill=%22none%22%20stroke=%22%236b7280%22%20stroke-width=%22.9%22/%3E%3C/g%3E%3Cg%20transform=%22translate(54.8%20-53.8)%20rotate(41.5)%22%3E%3Crect%20x=%22-3.4%22%20y=%22-1.5%22%20width=%226.8%22%20height=%223%22%20rx=%221.5%22%20fill=%22%23111827%22%20stroke=%22%237c3aed%22%20stroke-width=%22.55%22/%3E%3C/g%3E%3Cellipse%20rx=%2277%22%20ry=%2255%22%20transform=%22rotate(40)%22%20pathLength=%22400%22%20fill=%22none%22%20stroke=%22%23f5f3ff%22%20stroke-width=%221.7%22%20stroke-linecap=%22round%22%20stroke-dasharray=%227%20393%22%20opacity=%22.95%22%3E%3Canimate%20attributeName=%22stroke-dashoffset%22%20from=%220%22%20to=%22-400%22%20dur=%223.2s%22%20begin=%220s%22%20repeatCount=%22indefinite%22/%3E%3C/ellipse%3E%3Cellipse%20rx=%2277%22%20ry=%2255%22%20transform=%22rotate(-40)%22%20pathLength=%22400%22%20fill=%22none%22%20stroke=%22%23f5f3ff%22%20stroke-width=%221.7%22%20stroke-linecap=%22round%22%20stroke-dasharray=%227%20393%22%20opacity=%22.95%22%3E%3Canimate%20attributeName=%22stroke-dashoffset%22%20from=%220%22%20to=%22-400%22%20dur=%223.8s%22%20begin=%221.1s%22%20repeatCount=%22indefinite%22/%3E%3C/ellipse%3E%3Cg%20transform=%22translate(0%2057)%22%3E%3Cg%3E%3CanimateTransform%20attributeName=%22transform%22%20type=%22rotate%22%20values=%22-9%200%200;9%200%200;-9%200%200%22%20keyTimes=%220;.5;1%22%20calcMode=%22spline%22%20keySplines=%22.45%200%20.55%201;.45%200%20.55%201%22%20dur=%223s%22%20repeatCount=%22indefinite%22/%3E%3Cpath%20d=%22M-5%209%20V3%20a5%205%200%200%201%2010%200%20V9%22%20fill=%22none%22%20stroke=%22%239ca3af%22%20stroke-width=%222.6%22%20stroke-linecap=%22round%22/%3E%3Crect%20x=%22-8.5%22%20y=%229%22%20width=%2217%22%20height=%2214%22%20rx=%223.2%22%20fill=%22%230b0712%22%20stroke=%22%237c3aed%22%20stroke-width=%221%22/%3E%3Ccircle%20cx=%220%22%20cy=%2215%22%20r=%222%22%20fill=%22%23c084fc%22/%3E%3Crect%20x=%22-.9%22%20y=%2215%22%20width=%221.8%22%20height=%224.5%22%20rx=%22.9%22%20fill=%22%23c084fc%22/%3E%3C/g%3E%3C/g%3E%3Cg%20opacity=%220%22%3E%3Canimate%20attributeName=%22opacity%22%20values=%220;0;1;.2;1;0;0%22%20keyTimes=%220;.59;.6;.64;.66;.76;1%22%20dur=%223s%22%20repeatCount=%22indefinite%22/%3E%3Cpath%20d=%22M51.9%20-79.3%20L31.1%20-67.1%20L39.5%20-41.1%20L10.9%20-38.3%20L20.7%20-9.9%20L-8.5%20-7.8%20L0.7%2020.7%20L-24.6%2024.9%20L-21.1%2049.1%20L-48.9%2052.1%20L-49%2075%20L-47%2075%20L-47.1%2054.1%20L-18.6%2051.5%20L-21.4%2027.5%20L5.1%2023%20L-3.8%20-4.6%20L26.1%20-6.3%20L17%20-34.5%20L46%20-36.4%20L39.4%20-64.5%20L56.1%20-70.7Z%22%20fill=%22none%22%20stroke=%22%23a855f7%22%20stroke-width=%229%22%20stroke-linejoin=%22round%22%20opacity=%22.8%22%20filter=%22url(%23g2)%22/%3E%3Cpath%20d=%22M42.8%20-38.8%20L33.6%20-34.8%20L23.6%20-35.9%20L14%20-34.8%20M23.4%20-8.1%20L23.7%200.4%20L28.5%208.5%20L25.9%2017.2%20M2.9%2021.8%20L-5.2%2021.2%20L-12.2%2024.4%20L-19%2028.3%20M-23%2026.2%20L-19.8%2035.3%20L-22.5%2044.8%20L-21.1%2054.1%22%20fill=%22none%22%20stroke=%22%23a855f7%22%20stroke-width=%225%22%20opacity=%22.7%22%20filter=%22url(%23g2)%22/%3E%3Cpath%20d=%22M42.8%20-38.8%20L33.6%20-34.8%20L23.6%20-35.9%20L14%20-34.8%20M23.4%20-8.1%20L23.7%200.4%20L28.5%208.5%20L25.9%2017.2%20M2.9%2021.8%20L-5.2%2021.2%20L-12.2%2024.4%20L-19%2028.3%20M-23%2026.2%20L-19.8%2035.3%20L-22.5%2044.8%20L-21.1%2054.1%22%20fill=%22none%22%20stroke=%22%23e9d5ff%22%20stroke-width=%223.4%22%20stroke-linejoin=%22miter%22/%3E%3Cpath%20d=%22M42.8%20-38.8%20L33.6%20-34.8%20L23.6%20-35.9%20L14%20-34.8%20M23.4%20-8.1%20L23.7%200.4%20L28.5%208.5%20L25.9%2017.2%20M2.9%2021.8%20L-5.2%2021.2%20L-12.2%2024.4%20L-19%2028.3%20M-23%2026.2%20L-19.8%2035.3%20L-22.5%2044.8%20L-21.1%2054.1%22%20fill=%22none%22%20stroke=%22%23050309%22%20stroke-width=%221.7%22%20stroke-linejoin=%22miter%22/%3E%3Cpath%20d=%22M51.9%20-79.3%20L31.1%20-67.1%20L39.5%20-41.1%20L10.9%20-38.3%20L20.7%20-9.9%20L-8.5%20-7.8%20L0.7%2020.7%20L-24.6%2024.9%20L-21.1%2049.1%20L-48.9%2052.1%20L-49%2075%20L-47%2075%20L-47.1%2054.1%20L-18.6%2051.5%20L-21.4%2027.5%20L5.1%2023%20L-3.8%20-4.6%20L26.1%20-6.3%20L17%20-34.5%20L46%20-36.4%20L39.4%20-64.5%20L56.1%20-70.7Z%22%20fill=%22%23050309%22%20stroke=%22%23f5f3ff%22%20stroke-width=%22.9%22%20stroke-linejoin=%22miter%22/%3E%3Cpath%20d=%22M54%20-75%20L35.2%20-65.8%20L42.8%20-38.8%20L14%20-36.4%20L23.4%20-8.1%20L-6.2%20-6.2%20L2.9%2021.8%20L-23%2026.2%20L-19.8%2050.3%20L-48%2053.1%20L-48%2075%22%20fill=%22none%22%20stroke=%22%237c3aed%22%20stroke-width=%22.7%22%20opacity=%22.9%22/%3E%3C/g%3E%3C/svg%3E") center/100% 100% no-repeat;animation:stsway 2.8s ease-in-out infinite alternate}
+@keyframes stsway{0%{transform:rotate(-2.5deg) scale(1)}100%{transform:rotate(2.5deg) scale(1.025)}}
+.ava.sk-storm,.av.sk-storm{margin:calc(var(--s,40px)*.3)}
+.av{border:0}
+.rws{display:flex;gap:8px;overflow-x:auto;padding:10px 2px 4px;position:relative;-webkit-overflow-scrolling:touch;scrollbar-width:none}.rws::-webkit-scrollbar{display:none}
+.rwd{flex:none;width:84px;text-align:center;background:#fff;border:1.5px solid var(--bd);border-radius:14px;padding:8px 4px;font-size:12px}
+.rwd.dn{opacity:.55}.rwd.cu{border-color:var(--pu);box-shadow:0 0 0 2px var(--pl)}.rwd.sp{background:linear-gradient(135deg,#fff7d6,#ffe9a8);border-color:var(--go)}
+</style>
+<style>
+/* ===== เอกลักษณ์แบรนด์ GENERIA (เพิ่มใหม่) ===== */
+::selection{background:#fbbf24;color:#1f1633}*{-webkit-tap-highlight-color:transparent}input,textarea,select{caret-color:#c026d3}
+::-webkit-scrollbar{height:6px;width:6px}::-webkit-scrollbar-thumb{background:linear-gradient(#8b5cf6,#d946ef);border-radius:9px}
+.card{background-image:linear-gradient(90deg,#8b5cf6,#d946ef,#fbbf24);background-size:100% 3px;background-repeat:no-repeat;background-position:top}
+.sec{border-left:4px solid;border-image:linear-gradient(#8b5cf6,#fbbf24) 1;padding-left:10px}
+.btn.p{background:linear-gradient(135deg,#6d28d9,#c026d3);border-color:transparent;box-shadow:0 4px 12px rgba(168,85,247,.35)}
+.btn.g{background:linear-gradient(135deg,#fbbf24,#f59e0b);box-shadow:0 4px 12px rgba(245,158,11,.35);font-weight:700}
+.btn:active{transform:scale(.95)}.btn{transition:transform .15s}
+.logo svg path:last-child{transform-box:fill-box;transform-origin:center;animation:gwtw 2.4s ease-in-out infinite}
+@keyframes gwtw{0%,100%{transform:scale(1) rotate(0)}50%{transform:scale(1.5) rotate(45deg)}}
+.gwsp{position:fixed;z-index:-1;pointer-events:none;color:#fbbf24;font-size:13px;animation:gwtl 3.5s ease-in-out infinite}
+@keyframes gwtl{0%,100%{opacity:0;transform:scale(.4) rotate(0)}50%{opacity:.85;transform:scale(1.2) rotate(90deg)}}
+#gwsplash{position:fixed;inset:0;z-index:200;background:radial-gradient(circle at 50% 40%,#4c1d95,#1f1633 70%);display:grid;place-items:center;align-content:center;gap:14px;animation:gwout 2.2s ease forwards}
+#gwsplash .sl{width:92px;height:92px;border-radius:28px;background:linear-gradient(135deg,#6d28d9,#c026d3 70%,#f59e0b);display:grid;place-items:center;box-shadow:0 0 50px rgba(192,38,211,.7);animation:gwpop 1s ease both}
+#gwsplash b{font-size:34px;font-weight:900;letter-spacing:-1px;color:#fff;animation:gwpop 1s .25s ease both}#gwsplash b i{color:#fbbf24;font-style:normal}
+@keyframes gwpop{0%{opacity:0;transform:scale(.5) translateY(12px)}100%{opacity:1;transform:none}}
+@keyframes gwout{0%,70%{opacity:1;visibility:visible}100%{opacity:0;visibility:hidden}}
+/* ===== ม่วงเข้มขึ้น (เพิ่มใหม่) ===== */
+:root{--pu:#4c1d95;--pl:#ddd6fe;--bd:#d0c3ee;--tx:#150d2a}
+.nav button.on,.btn.p{background:linear-gradient(135deg,#3b0f80,#86198f);border-color:transparent;box-shadow:0 4px 12px rgba(76,29,149,.45)}
+#nav button{color:#6d28d9}#nav button.on{color:#4c1d95;text-shadow:0 0 8px rgba(76,29,149,.45);box-shadow:0 6px 10px -6px #5b21b6}
+#nav button.on .ic svg{stroke:#5b21b6;filter:drop-shadow(0 0 3px #5b21b6) drop-shadow(0 0 8px #6d28d9)}
+.hd .brand h1{background:linear-gradient(90deg,#3b0f80,#a21caf,#3b0f80);background-size:200% 100%;-webkit-background-clip:text;background-clip:text}
+.hd .logo{background:linear-gradient(135deg,#3b0f80,#86198f 70%,#d97706);box-shadow:0 4px 14px rgba(76,29,149,.55)}
+.ci{background:linear-gradient(120deg,#ddd6fe,#c4b5fd,#a78bfa,#e9d5ff);background-size:300% 300%;box-shadow:0 8px 30px rgba(76,29,149,.35)}
+.ph{background:linear-gradient(135deg,#a78bfa,#d946ef,#8b5cf6);background-size:300% 300%}
+body::before{background:#7c3aed}body::after{background:#c026d3}
+.card{background-image:linear-gradient(90deg,#5b21b6,#a21caf,#fbbf24)}
+.sec{border-image:linear-gradient(#4c1d95,#fbbf24) 1}
+::-webkit-scrollbar-thumb{background:linear-gradient(#5b21b6,#a21caf)}
+.av{border-color:#4c1d95;color:#4c1d95}
+.hd .logo{width:46px;height:46px;border-radius:15px;background:linear-gradient(135deg,#6d28d9,#c026d3 70%,#f59e0b);border:2px solid rgba(255,255,255,.7);box-shadow:0 4px 14px rgba(124,58,237,.45);position:relative;flex:none;transform:rotate(-6deg)}
+.hd .logo::after{content:"";position:absolute;inset:-5px;border-radius:19px;border:1.5px dashed rgba(168,85,247,.45)}
+.hd .brand{flex:1;min-width:0;line-height:1.1}
+.hd .brand h1{margin:0;flex:none;font-size:24px;font-weight:900;letter-spacing:-1px;display:inline-block}
+.hd .brand h1::after{content:".";-webkit-text-fill-color:#f59e0b;color:#f59e0b}
+.hd .brand .tagline{font-size:11px;color:var(--mu);margin-top:3px;letter-spacing:.3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+</style>
+<div id="gwsplash"><div class="sl"><svg viewBox="0 0 40 40" width="62" height="62" fill="none"><path d="M31 13.5A12.5 12.5 0 1 0 32.5 22H21" stroke="#fff" stroke-width="4.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M30.5 6.5l1.6 3.4 3.4 1.6-3.4 1.6-1.6 3.4-1.6-3.4-3.4-1.6 3.4-1.6z" fill="#fbbf24"/></svg></div><b>GENERIA<i>.</i></b></div>
+<span class="gwsp" style="top:14%;left:8%">✦</span><span class="gwsp" style="top:30%;right:10%;animation-delay:.8s">✦</span><span class="gwsp" style="top:55%;left:5%;animation-delay:1.6s">✧</span><span class="gwsp" style="top:70%;right:7%;animation-delay:2.2s">✦</span><span class="gwsp" style="top:84%;left:42%;animation-delay:1.1s">✧</span>
+<script>try{if(sessionStorage.getItem('gwsp')){document.getElementById('gwsplash').remove()}else{sessionStorage.setItem('gwsp','1');setTimeout(function(){var e=document.getElementById('gwsplash');e&&e.remove()},2300)}}catch(e){}</script>
+<div class="hd"><div class="logo" aria-label="GENERIA"><svg viewBox="0 0 40 40" width="30" height="30" fill="none"><defs><linearGradient id="gwg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff"/><stop offset="1" stop-color="#f5d0fe"/></linearGradient></defs><path d="M31 13.5A12.5 12.5 0 1 0 32.5 22H21" stroke="url(#gwg)" stroke-width="4.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M30.5 6.5l1.6 3.4 3.4 1.6-3.4 1.6-1.6 3.4-1.6-3.4-3.4-1.6 3.4-1.6z" fill="#fbbf24"/></svg></div><div class="brand"><h1>GENERIA</h1></div><span class="bell">🔔</span><span class="gear" onclick="gwSet()" role="button" aria-label="ตั้งค่า">⚙️</span><div class="av" id="av" onclick="tab='profile';render()">👤</div></div>
+<div class="nav" id="nav"></div><div id="app">กำลังโหลด…</div>
+<script>
+const R1=[5,5,8,5,10,8,15,5,8,10,8,12,10,20],R2=[8,8,10,8,12,10,15,8,10,12,10,15,12,25];
+const fee=(a,prem)=>prem?0:(a<=30?0:(a>=2000?150:Math.round(a*0.05)));
+const today=()=>new Date().toLocaleDateString('en-CA',{timeZone:'Asia/Bangkok'});
+const yest=()=>new Date(Date.now()-864e5).toLocaleDateString('en-CA',{timeZone:'Asia/Bangkok'});
+const reward=d=>d==15?{t:'กรอบโปรไฟล์พิเศษ'}:d==29?{t:'ใบเปลี่ยนชื่อ 1 ใบ',tk:1}:d==30?{t:'Premium ฟรี 1 ชม.',prem:1}:{p:d<15?R1[d-1]:R2[d-15],t:(d<15?R1[d-1]:R2[d-15])+' แต้ม'};
+const esc=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+let db,user,uid,isAdmin=false,me={},groups=[],txns=[],posts=[],chats=[],acts=[],viewId=null,gt='feed',openG=null,peer=null,pmenu=null,tab='home',q='',flt='all',local={};
+const SHOW_DEMO=true; // กลุ่มตัวอย่าง: เปลี่ยนเป็น false เพื่อซ่อน
+let DP=null,DG=null;
+function saveDemo(){try{localStorage.setItem('gw_demo',JSON.stringify({m:DG.members,n:DG.names,p:DP}))}catch(e){}}
+function demoG(){return {id:'demo',demo:true,status:'approved',name:'กลุ่มรหัสเกมสุดคุ้ม',game:'ROV',kind:'game',codeType:'รหัสไอดีเกม',desc:'กลุ่มตัวอย่าง: แชร์ไอดีเกมราคาประหยัด หารกันคนละนิด เล่นได้ทุกคน\nเงื่อนไข: ต้องเล่นผ่านตัวกลางของ GENERIA เท่านั้น',price:199,need:10,owner:'demoowner',ownerName:'สายฟ้า',ownerPrem:false,members:['demoowner','dm1','dm2','dm3','dm4','dm5'],names:{demoowner:'สายฟ้า',dm1:'มายด์',dm2:'บอส',dm3:'กอไก่',dm4:'ฟ้าใส',dm5:'เจ'},admins:['dm1','dm2'],at:Date.now()-5*864e5}}
+function demoP(){const svg='<svg xmlns="http://www.w3.org/2000/svg" width="800" height="500"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#6d28d9"/><stop offset="1" stop-color="#f0abfc"/></linearGradient></defs><rect width="800" height="500" fill="url(#g)"/><text x="400" y="290" font-size="140" text-anchor="middle">🎮</text></svg>',img='data:image/svg+xml;utf8,'+encodeURIComponent(svg),n=Date.now(),m=x=>n-x*6e4;
+ return [
+ {id:'dp1',gid:'demo',uid:'demoowner',name:'สายฟ้า',text:'ยินดีต้อนรับทุกคนครับ 🎉 วันนี้มีไอดีใหม่เข้ากลุ่ม ใครสนใจกดเข้าร่วมได้เลย!',imgs:[img],at:m(12),r:{dm1:'❤️',dm2:'👍',dm3:'😮',dm4:'❤️',dm5:'😂'},cm:[{n:'มายด์',u:'dm1',t:'สวยมากค่ะ 😍',at:m(10)},{n:'กอไก่',u:'dm3',t:'เข้าร่วมแล้วครับ',at:m(8)}]},
+ {id:'dp2',gid:'demo',uid:'dm1',name:'มายด์',text:'แอดมินมาแล้วค่ะ มีอะไรสอบถามได้เลยนะคะ 💜',at:m(45),r:{demoowner:'❤️',dm2:'👍',dm3:'❤️'},cm:[]},
+ {id:'dp3',gid:'demo',uid:'dm3',name:'กอไก่',text:'ได้รหัสแล้ว เล่นได้ลื่นมาก ขอบคุณหัวหน้ากลุ่ม 🙏',at:m(130),r:{demoowner:'😂',dm1:'👍'},cm:[{n:'สายฟ้า',u:'demoowner',t:'ยินดีครับ 😄',at:m(120)}]},
+ {id:'dp4',gid:'demo',uid:'dm2',name:'บอส',text:'ชื่อแอดมินเป็นสีม่วงเสมอ ไม่ว่าจะตั้งชื่ออะไร',at:m(300),r:{dm4:'😮'},cm:[]}]}
+const $=s=>document.getElementById(s);let chatFrom='group',chAtt=null,chMenu=false,chSt=false;
+const IC={chats:'<path d="M4 5h16v11H9l-5 4z"/>',midtab:'<path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M9 12l2 2 4-4"/>',home:'<path d="M3 11l9-8 9 8v10h-6v-6H9v6H3z"/>',market:'<circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2.5"/><path d="M3 20c0-3.5 3-6 6-6s6 2.5 6 6M15 14c3 0 6 2 6 6"/>',mine:'<path d="M3 6h7l2 2h9v11H3z"/>',prem:'<path d="M3 8l5 4 4-7 4 7 5-4-2 11H5z"/>',shop:'<rect x="3" y="9" width="18" height="12"/><path d="M12 9v12M3 13h18M12 9c-4 0-5-5-2-5s2 3 2 5c0-2-1-5 2-5s2 5-2 5"/>',profile:'<circle cx="12" cy="8" r="4"/><path d="M4 21c0-5 4-7 8-7s8 2 8 7"/>',admin:'<circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M19 5l-2 2M7 17l-2 2"/>'};
+let gname='';
+async function init(){
+ try{user=await claude.use('user');db=await claude.use('db');}catch(e){}
+ try{if(user)gname=((await user.me()).name||'').trim()}catch(e){}
+ try{assets=await claude.use('assets')}catch(e){}
+ if(!db||!user){local=JSON.parse(localStorage.getItem('gw')||'{"g":[],"u":{}}');uid='local';local.u=local.u||{};if(!local.u.name&&gname){local.u.name=gname;saveLocal()}}
+ else{uid=await user.id();isAdmin=await user.isOwner();
+  db.collection('groups').onSnapshot(s=>{groups=s.docs.map(d=>({id:d.id,...d.data()}));render()});
+  db.collection('txns').onSnapshot(s=>{txns=s.docs.map(d=>({id:d.id,...d.data()}));render()});
+  db.collection('posts').onSnapshot(s=>{posts=s.docs.map(d=>({id:d.id,...d.data()}));render()});
+  db.collection('chats').onSnapshot(s=>{chats=s.docs.map(d=>({id:d.id,...d.data()}));render();chatNotify()});
+  db.collection('acts').onSnapshot(s=>{acts=s.docs.map(d=>({id:d.id,...d.data()}));render()});
+  db.collection('mids').onSnapshot(s=>{mids=s.docs.map(d=>({id:d.id,...d.data()}));render();midNotify()});
+  db.collection('midstaff').onSnapshot(s=>{midstaff=s.docs.map(d=>({id:d.id,...d.data()}));render();midNotify()});
+  db.collection('profiles').doc(uid).onSnapshot(s=>{me=s.exists?s.data():{};if(!me.name&&gname){me={...me,name:gname};db.collection('profiles').doc(uid).set(me)}render()});}
+ render();}
+/* ===== เมนูเรียกกลาง (เพิ่มใหม่) ===== */
+let mids=[],midstaff=[],midSeen={};
+const isMid=()=>isAdmin&&window.gwAdm===true;
+function midBadge(){if(!isMid())return '';const n=mids.filter(m=>m.status=='waiting'&&m.by!=uid).length;return n?' ('+n+')':''}
+async function mPut(col,id,p,isNew){
+ if(db){const r=db.collection(col).doc(id);if(isNew)await r.set(p);else await r.update(p)}
+ else{const k=col=='mids'?'m':'s';const A=(local[k]=local[k]||[]);if(isNew)A.push({id,...p});else Object.assign(A.find(x=>x.id==id)||{},p);saveLocal();mids=local.m||[];midstaff=local.s||[]}
+ render()}
+function beep(){try{const c=new(window.AudioContext||window.webkitAudioContext)(),o=c.createOscillator(),g=c.createGain();o.connect(g);g.connect(c.destination);o.frequency.value=880;g.gain.value=.15;o.start();setTimeout(()=>{o.frequency.value=660},180);setTimeout(()=>{o.stop();c.close()},420)}catch(e){}}
+function midNotify(){
+ const p=$('midpop');
+ if(p){const c=mids.find(x=>x.id==p.dataset.mid);if(!c||c.status!='waiting')p.remove();else return}
+ if(!isMid())return;
+ const w=mids.filter(m=>m.status=='waiting'&&m.by!=uid&&!midSeen[m.id]).sort((a,b)=>b.at-a.at);
+ if(!w.length)return;
+ const m=w[0];midSeen[m.id]=1;beep();try{navigator.vibrate&&navigator.vibrate([300,150,300])}catch(e){}
+ const d=document.createElement('div');d.id='midpop';d.dataset.mid=m.id;
+ d.style.cssText='position:fixed;inset:0;background:rgba(10,5,25,.6);z-index:70;display:grid;place-items:center;padding:16px';
+ d.innerHTML=`<div style="background:#fff;color:#1f1633;border-radius:18px;padding:20px;max-width:340px;width:100%"><h3 style="margin:0 0 8px">🛎️ มีคำขอเรียกกลาง</h3><p>${esc(m.byName)} (${m.role=='seller'?'ผู้ขาย':'ผู้ซื้อ'})${m.gname?' · '+esc(m.gname):''}</p>${m.note?`<p class="mu">${esc(m.note)}</p>`:''}<div class="row" style="justify-content:flex-end"><button class="btn" onclick="$('midpop').remove();midNotify()">ปิด</button><button class="btn p" onclick="$('midpop').remove();midAccept('${m.id}')">รับงาน</button></div></div>`;
+ document.body.appendChild(d)}
+async function midSend(){
+ const gid=$('mgrp').value,g=groups.find(x=>x.id==gid);
+ if(mids.some(m=>m.by==uid&&m.status=='waiting')){alert('คุณมีคำขอที่กำลังรอกลางรับอยู่แล้ว');return}
+ await mPut('mids','m'+Date.now(),{by:uid,byName:me.name||'สมาชิก',role:$('mrole').value,gid:gid||'',gname:g?g.name:'',note:($('mnote').value||'').trim(),status:'waiting',at:Date.now()},true);
+ $('mnote')&&($('mnote').value='')}
+async function midAccept(id){const m=mids.find(x=>x.id==id);if(!m||m.status!='waiting'){alert('คำขอนี้มีกลางคนอื่นรับไปแล้ว หรือถูกยกเลิกแล้ว');return}
+ await mPut('mids',id,{status:'accepted',midUid:uid,midName:me.name||'กลาง',accAt:Date.now()})}
+const midDone=id=>mPut('mids',id,{status:'done',doneAt:Date.now()});
+const midCancel=id=>mPut('mids',id,{status:'cancelled'});
+function midApply(){mPut('midstaff',uid,{uid,name:me.name||'สมาชิก',status:'pending',at:Date.now()},!midstaff.some(s=>s.id==uid))}
+const midStaffSet=(id,st)=>mPut('midstaff',id,{status:st});
+function midtab(){
+ if(!db){mids=local.m||[];midstaff=local.s||[]}
+ const T=t=>new Date(t).toLocaleString('th-TH'),SL={waiting:'รอกลางรับ',accepted:'กลางรับแล้ว',done:'เสร็จสิ้น',cancelled:'ยกเลิก'};
+ const my=mids.filter(m=>m.by==uid).sort((a,b)=>b.at-a.at),
+  sg=groups.filter(g=>g.status=='approved'&&(g.owner==uid||(g.members||[]).includes(uid))),
+  st=midstaff.find(s=>s.uid==uid),staff=isMid();
+ let h=`<div class="card"><h3>🛡️ เรียกกลาง</h3><div class="mu">ผู้ซื้อหรือผู้ขายส่งคำขอ แล้วกลางของ GENERIA จะได้รับแจ้งเตือนเพื่อเข้ามารับงาน</div>
+ <select id="mrole"><option value="buyer">ฉันเป็นผู้ซื้อ</option><option value="seller">ฉันเป็นผู้ขาย</option></select>
+ <select id="mgrp"><option value="">ไม่ระบุกลุ่ม</option>${sg.map(g=>`<option value="${esc(g.id)}">${esc(g.name)}</option>`).join('')}</select>
+ <textarea id="mnote" placeholder="รายละเอียดเพิ่มเติม (ไม่บังคับ)"></textarea>
+ <button class="btn p" onclick="midSend()">ส่งคำขอเรียกกลาง</button></div>
+ <h3>คำขอของฉัน</h3>${my.map(m=>`<div class="card"><b>${esc(m.gname||'ไม่ระบุกลุ่ม')}</b> <span class="tag">${SL[m.status]||m.status}</span><div class="mu">${m.role=='seller'?'ผู้ขาย':'ผู้ซื้อ'} · ${T(m.at)}</div>${m.midName&&m.status!='waiting'&&m.status!='cancelled'?`<div class="mu">กลาง: ${esc(m.midName)}</div>`:''}${m.status=='waiting'?`<div class="row"><button class="btn" onclick="midCancel('${m.id}')">ยกเลิกคำขอ</button></div>`:''}</div>`).join('')||'<div class="mu">ยังไม่มีคำขอ</div>'}`;
+ if(staff){
+  const wl=mids.filter(m=>m.status=='waiting'&&m.by!=uid).sort((a,b)=>b.at-a.at),jl=mids.filter(m=>m.status=='accepted'&&m.midUid==uid);
+  h+=`<h3>งานเรียกกลาง (สำหรับกลาง)</h3>${wl.map(m=>`<div class="card"><b>${esc(m.byName)}</b> <span class="tag">${m.role=='seller'?'ผู้ขาย':'ผู้ซื้อ'}</span><div class="mu">${esc(m.gname||'ไม่ระบุกลุ่ม')} · ${T(m.at)}</div>${m.note?`<p>${esc(m.note)}</p>`:''}<div class="row"><button class="btn p" onclick="midAccept('${m.id}')">รับงาน</button></div></div>`).join('')||'<div class="mu">ยังไม่มีคำขอใหม่</div>'}
+  <h3>งานที่ฉันรับ</h3>${jl.map(m=>`<div class="card"><b>${esc(m.byName)}</b> <span class="tag">${m.role=='seller'?'ผู้ขาย':'ผู้ซื้อ'}</span><div class="mu">${esc(m.gname||'ไม่ระบุกลุ่ม')} · รับเมื่อ ${T(m.accAt||m.at)}</div>${m.note?`<p>${esc(m.note)}</p>`:''}<div class="row"><button class="btn p" onclick="midDone('${m.id}')">เสร็จสิ้นงาน</button></div></div>`).join('')||'<div class="mu">ยังไม่มีงานที่รับ</div>'}`}
+ else if(0)h+=`<div class="card"><b>อยากเป็นกลาง?</b><div class="mu">ส่งคำขอสมัคร แล้วเจ้าของระบบจะอนุมัติให้</div><div class="row"><button class="btn" onclick="midApply()">สมัครเป็นกลาง</button></div></div>`;
+ else if(0)h+=`<div class="card"><span class="tag">คำขอสมัครกลางของคุณ: รออนุมัติ</span></div>`;
+ if(false){
+  const pd=midstaff.filter(s=>s.status=='pending'),ap=midstaff.filter(s=>s.status=='approved');
+  h+=`<h3>จัดการกลาง (เจ้าของ)</h3>${pd.map(s=>`<div class="card"><b>${esc(s.name)}</b> <span class="tag">สมัครเป็นกลาง</span><div class="row"><button class="btn p" onclick="midStaffSet('${s.id}','approved')">อนุมัติ</button><button class="btn" onclick="midStaffSet('${s.id}','rejected')">ปฏิเสธ</button></div></div>`).join('')||'<div class="mu">ไม่มีคำขอสมัครใหม่</div>'}
+  ${ap.map(s=>`<div class="card"><b>${esc(s.name)}</b> <span class="tag">กลาง</span><div class="row"><button class="btn" onclick="midStaffSet('${s.id}','removed')">ถอดถอน</button></div></div>`).join('')}`}
+ return h}
+/* ===== จบเมนูเรียกกลาง ===== */
+/* ===== เข้ากลุ่มแบบต้องขออนุญาต (เพิ่มใหม่) ===== */
+const jReq=(g,joined)=>!joined&&!!g.reqJoin&&!g.prem&&!(g.jok||{})[uid];
+const jWait=g=>!!(g.jreq||{})[uid];
+const jTxt=(g,joined,full,d)=>joined?'เข้าร่วมแล้ว':jReq(g,joined)?(jWait(g)?'รออนุมัติ':'ขออนุญาตเข้าร่วม'):full?'เต็ม':d;
+function jApprove(id,u){const g=groups.find(x=>x.id==id);if(!g)return;const r={...(g.jreq||{})};delete r[u];return setG(id,{jreq:r,jok:{...(g.jok||{}),[u]:true}})}
+function jReject(id,u){const g=groups.find(x=>x.id==id);if(!g)return;const r={...(g.jreq||{})};delete r[u];return setG(id,{jreq:r})}
+/* ===== จบ ===== */
+/* ===== รูปปกกลุ่ม (เพิ่มใหม่) ===== */
+let coverImg='';
+const coverPrev=()=>coverImg?`<img src="${coverImg}" style="width:100%;max-height:160px;object-fit:cover;border-radius:14px;margin:6px 0;display:block"><button class="btn" onclick="coverImg='';$('cvp').innerHTML=''">ลบรูปปก</button>`:'';
+async function pickCover(inp){window._pick=0;window._pend=0;const f=inp.files&&inp.files[0];if(f){const d=await shrink(f);if(d)coverImg=d}inp.value='';const e=$('cvp');if(e)e.innerHTML=coverPrev();if(window._pend){window._pend=0}}
+/* ===== จบ ===== */
+/* ===== จบไฟรุ้ง ===== */
+function saveLocal(){try{localStorage.setItem('gw',JSON.stringify(local,(k,v)=>k=='g'&&Array.isArray(v)?v.filter(x=>!x.demo):v))}catch(e){}}
+async function setMe(p){me={...me,...p};if(db)await db.collection('profiles').doc(uid).set(me);else{local.u=me;saveLocal()}render()}
+const nameSt=()=>me.nameLocked?((me.nameTickets||0)>0?'ticket':'locked'):'free';
+const nameHint=()=>nameSt()=='free'?((gname&&(me.name||gname)==gname?'ชื่อนี้ตรงกับบัญชีของคุณ · ':'')+'เปลี่ยนได้ 1 ครั้ง กดบันทึกแล้วจะเปลี่ยนไม่ได้อีก'):nameSt()=='ticket'?`ชื่อถูกล็อกแล้ว · มีใบเปลี่ยนชื่อ ${me.nameTickets} ใบ (เปลี่ยนชื่อแล้วจะใช้ 1 ใบ)`:'ชื่อถูกล็อกแล้ว · จะเปลี่ยนได้เมื่อได้ใบเปลี่ยนชื่อ (เช็คอินวันที่ 29)';
+async function saveProfile(){const nn=$('pn').value.trim(),bio=$('pb').value.trim(),cur=me.name||gname||'',st=nameSt();
+ if(nn&&nn!==cur&&st!='locked'){await setMe(st=='free'?{name:nn,bio,nameLocked:true}:{name:nn,bio,nameTickets:(me.nameTickets||1)-1});return}
+ await setMe({bio})}
+async function setG(id,p){if(id=='demo')return;if(db)await db.collection('groups').doc(id).update(p);else{const g=groups.find(x=>x.id==id);Object.assign(g,p);local.g=groups;saveLocal()}render()}
+const isPrem=()=>(me.premiumUntil||0)>Date.now();
+function render(){
+ if(window._pick){window._pend=1;return}
+ try{localStorage.setItem('gw_ui',JSON.stringify({tab,openG,gt}))}catch(e){}
+ if(!db){groups=local.g||[];me=local.u||me;posts=[...(local.p||[])];chats=local.c||[]}
+ if(SHOW_DEMO){if(!DG){DG=demoG();DP=demoP();try{const sv=JSON.parse(localStorage.getItem('gw_demo')||'null');if(sv){DG.members=sv.m;DG.names=sv.n;DP=sv.p}}catch(e){}}if(!groups.some(g=>g.id=='demo'))groups=[...groups,DG];posts=[...posts.filter(p=>p.gid!='demo'),...DP]}
+ groups.forEach(g=>{g.need=0});
+ if(isAdmin&&groups.length)evalRank();
+ chSeenMark();
+ const tabs=[['home','หน้าหลัก','🏠'],['market','ตลาดซื้อขาย','👥'],['prem','Premium Club','👑'],['chats','แชท'+(unreadN()?' ('+unreadN()+')':''),'💬']];
+ if(isAdmin&&window.gwAdm===true)tabs.push(['admin','Admin','⚙']);
+ {const bl=document.querySelector('.bell');if(bl){const n=unreadN();bl.innerHTML='🔔'+(n?`<span style="position:absolute;top:-4px;right:-8px;background:#ef4444;color:#fff;border-radius:999px;font-size:11px;font-weight:700;padding:1px 6px">${n}</span>`:'');bl.style.cursor='pointer';bl.onclick=()=>{tab='chats';render()}}}
+ $('nav').innerHTML=tabs.map(t=>`<button class="${tab==t[0]||(t[0]=='chats'&&tab=='chat'&&!viewId)?'on':''}" onclick="tab='${t[0]}';render()"><span class="ic"><svg viewBox="0 0 24 24">${IC[t[0]]}</svg></span>${t[1]}</button>`).join('');
+ const sv={};document.querySelectorAll('#app input[id],#app textarea[id]').forEach(e=>{if(e.value)sv[e.id]=e.value});const fa=document.activeElement,fid=fa&&fa.id&&$('app').contains(fa)?fa.id:null,fs=fa&&fa.selectionStart;
+ {const a=$('av');if(a){a.className='av'+skc(skSelf(),42);a.style.setProperty('--s','42px')}if(a)a.innerHTML=me.avatar?`<img src="${me.avatar}" style="width:100%;height:100%;border-radius:50%;object-fit:cover;display:block">`:`<span style="width:100%;height:100%;border-radius:50%;display:grid;place-items:center;color:#fff;font-weight:700;font-size:15px;background:linear-gradient(135deg,${AVC[hsh(uid||me.name)%AVC.length][0]},${AVC[hsh(uid||me.name)%AVC.length][1]})">${esc(String(me.name||'คุณ').trim()[0]||'?')}</span>`}
+ $('app').innerHTML=({home,market,mine,prem,shop,profile,admin,group,chat,midtab,viewprof,chats:chatlist})[tab]();
+ for(const k in sv){const e=$(k);if(e&&!e.value)e.value=sv[k]}if(fid&&$(fid)){$(fid).focus();try{$(fid).setSelectionRange(fs,fs)}catch(e){}}if(window.hydrateVids)hydrateVids();rwFix();tlUpd()}
+function homeOld(){
+ const st=me.streak||0,last=me.last,done=last==today();
+ const next=done?st:((last==yest()&&st<30)?st+1:1);
+ const rw=reward(done?st:next);
+ const ok=groups.filter(g=>g.status=='approved');
+ return `<div class="card"><h3>Daily Check-in <span class="gold">วันที่ ${done?st:next}/30</span></h3>
+ <div class="mu">รางวัล: ${rw.t} · รีเซ็ต 00:00 น. เวลาไทย · ขาดวันเริ่มรอบใหม่</div>
+ <div class="row" style="margin-top:8px"><button class="btn g" ${done?'disabled':''} onclick="checkin()">${done?'เช็คอินแล้ววันนี้':'เช็คอินรับรางวัล'}</button><span>แต้มสะสม: <b>${me.points||0}</b></span></div></div>
+ <div class="card"><h3>กลุ่มแนะนำ</h3><div class="grid">${ok.slice(0,4).map(gcard).join('')||'<span class="mu">ยังไม่มีกลุ่มที่ได้รับอนุมัติ</span>'}</div></div>`;}
+async function checkin(){
+ if(me.last==today())return;
+ let d=(me.last==yest()&&(me.streak||0)<30)?(me.streak||0)+1:1;const r=reward(d);
+ const p={last:today(),streak:d,points:(me.points||0)+(r.p||0),history:[...(me.history||[]),{d:today(),day:d}].slice(-60)};
+ if(r.prem)p.premiumUntil=Math.max(Date.now(),me.premiumUntil||0)+36e5;
+ if(r.tk)p.nameTickets=(me.nameTickets||0)+1;if(d==15){p.frame=true;p.frames=[...new Set([...(me.frames||[]),'royal'])]}await setMe(p);if(d==15)frameGot();}
+function gcard(g){const n=(g.members||[]).length,full=g.need>0&&n>=g.need,joined=(g.members||[]).includes(uid);
+ return `<div class="card" style="margin:0"><div class="row"><b>${g.prem?'👑 ':''}${esc(g.name)}</b><span class="tag">${full?'เต็ม':(g.need>0&&n/g.need>.7?'ใกล้เต็ม':'เปิดรับ')}</span></div>
+ <div class="mu">${({map:'แมพ',chat:'พูดคุย',other:'อื่นๆ'})[g.kind]||'เกม'}: ${esc(g.game)} · ${esc(g.codeType)} · โดย ${esc(g.ownerName)}</div><p>${esc(g.desc)}</p>
+ <div>${n}${g.need>0?'/'+g.need:''} คน · <span class="fire">🔥</span> ${fire(g)}</div>
+ <div class="row"><button class="btn" onclick="${g.prem&&!isPrem()&&!joined?`alert('กลุ่มนี้สำหรับสมาชิก Premium เท่านั้น')`:`openG='${g.id}';tab='group';render()`}">ดูรายละเอียด</button><button class="btn p" ${(full&&!joined)||(g.prem&&!isPrem()&&!joined)||(joined&&g.owner==uid)||(jReq(g,joined)&&jWait(g))?'disabled':''} onclick="${joined?`askLeave('${g.id}')`:`join('${g.id}')`}">${g.prem&&!isPrem()&&!joined?'🔒 เฉพาะ Premium':jTxt(g,joined,full,'เข้าร่วมกลุ่ม')}</button></div></div>`;}
+async function join(id){if(id=='demo'){const d=DG;if(!d.members.includes(uid)){d.members.push(uid);d.names[uid]=me.name||'สมาชิก'}saveDemo();render();return}const g=groups.find(x=>x.id==id);const m=g.members||[];
+ if(g.prem&&!isPrem()&&!m.includes(uid)){alert('กลุ่มนี้สำหรับสมาชิก Premium เท่านั้น');return}
+ if(g.reqJoin&&!g.prem&&!(g.jok||{})[uid]&&!m.includes(uid)){if(!(g.jreq||{})[uid])await setG(id,{jreq:{...(g.jreq||{}),[uid]:{name:me.name||'สมาชิก',at:Date.now()}}});return}
+ if((g.need>0&&m.length>=g.need)||m.includes(uid))return;
+ await setG(id,{members:[...m,uid],names:{...(g.names||{}),[uid]:me.name||'สมาชิก'}});
+ const price=g.price*1,prem=isPrem(),f=fee(price,prem);
+ const t={gid:id,buyer:uid,amount:price,fee:f,reason:prem?'ผู้ซื้อเป็น Premium':(g.ownerPrem?'ผู้ขายเป็น Premium':'ค่ากลางปกติ'),status:'รอส่งมอบรหัส',at:Date.now()};
+ if(g.ownerPrem&&!prem)t.fee=0;
+ if(db)await db.collection('txns').doc('t'+Date.now()).set(t);else{(local.t=local.t||[]).push(t);saveLocal()}}
+function market(){
+ let ok=groups.filter(g=>g.status=='approved');
+ if(flt=='game')ok=ok.filter(g=>g.kind=='game');if(flt=='map')ok=ok.filter(g=>g.kind=='map');if(flt=='chat')ok=ok.filter(g=>g.kind=='chat');if(flt=='other')ok=ok.filter(g=>!['game','map','chat'].includes(g.kind));if(flt=='prem')ok=ok.filter(g=>g.prem);
+ if(flt=='open')ok=ok.filter(g=>(g.members||[]).length<g.need);if(flt=='near')ok=ok.filter(g=>(g.members||[]).length/g.need>.7&&(g.members||[]).length<g.need);
+ if(q)ok=ok.filter(g=>[g.name,g.game,g.codeType,g.ownerName,({game:'เกม',map:'แมพ',chat:'พูดคุย'})[g.kind]||'อื่นๆ'].join(' ').toLowerCase().includes(q.toLowerCase()));
+ return `<button class="btn p" style="margin-bottom:6px" onclick="tab='mine';render()">📁 กลุ่มของฉัน / สร้างกลุ่ม</button><input id="qsearch" placeholder="ค้นหาเกม แมพ กลุ่ม ประเภทรหัส ผู้สร้าง" value="${esc(q)}" oninput="q=this.value;searchGrid()">
+ <div class="nav">${[['all','ทั้งหมด'],['game','เกม'],['map','แมพ'],['chat','พูดคุย'],['other','อื่นๆ'],['prem','👑 Premium']].map(f=>`<button class="${flt==f[0]?'on':''}" onclick="flt='${f[0]}';render()">${f[1]}</button>`).join('')}</div>
+ <div class="grid" id="mgrid">${ok.map(gcard).join('')||'<span class="mu">ไม่พบกลุ่ม</span>'}</div>`;}
+function searchGrid(){const g=$('mgrid');if(!g){render();return}const t=document.createElement('div');t.innerHTML=market();const n=t.querySelector('#mgrid');if(n)g.innerHTML=n.innerHTML}
+function mine(){
+ const mg=groups.filter(g=>g.owner==uid),jg=groups.filter(g=>(g.members||[]).includes(uid)&&g.owner!=uid);
+ return `<button class="btn" onclick="tab='market';render()">‹ กลับ</button><div class="card"><h3>เสนอสร้างกลุ่มใหม่</h3>
+ <input id="gn" placeholder="ชื่อกลุ่ม">
+ <select id="gj"><option value="">เลือก: คนอื่นจะเข้ากลุ่มต้องขออนุญาตไหม?</option><option value="0">ไม่ต้องขออนุญาต (ใครก็เข้ากลุ่มได้เลย)</option><option value="1">ต้องขออนุญาตก่อนเข้ากลุ่ม</option></select>
+ <select id="gk"><option value="">เลือก: กลุ่มนี้เป็นประเภทไหน?</option><option value="game">🎮 กลุ่มเกม</option><option value="map">🗺️ กลุ่มแมพ</option><option value="chat">💬 กลุ่มพูดคุย</option><option value="other">✨ อื่นๆ</option></select>
+ <div class="mu" style="margin:8px 0 2px">รูปปกกลุ่ม (ไม่บังคับ)</div>
+ <label class="btn" style="position:relative;overflow:hidden;display:block;width:100%;margin:4px 0;padding:12px;text-align:left;cursor:pointer">🖼️ เลือกรูปปกจากแกลเลอรี่<input type="file" accept="image/jpeg,image/png,image/webp" onclick="window._pick=1" onchange="pickCover(this)" style="position:absolute;inset:0;width:100%;height:100%;opacity:0;margin:0;padding:0;font-size:0;cursor:pointer"></label>
+ <div id="cvp">${coverPrev()}</div>
+ <button class="btn p" onclick="createG()">ส่งขออนุมัติ</button></div>
+ <h3>กลุ่มที่ฉันสร้าง</h3>${mg.map(g=>`<div class="card"><b>${esc(g.name)}</b> <span class="tag">${{pending:'รออนุมัติ',approved:'อนุมัติแล้ว',rejected:'ถูกปฏิเสธ'}[g.status]}</span><div class="mu">สมาชิก ${(g.members||[]).length}${g.need>0?'/'+g.need:''}</div>${Object.entries(g.jreq||{}).map(([u,r])=>`<div class="row" style="margin-top:6px"><span style="flex:1">${esc(r.name)} ขอเข้าร่วม</span><button class="btn p" onclick="jApprove('${g.id}','${u}')">อนุญาต</button><button class="btn" onclick="jReject('${g.id}','${u}')">ไม่อนุญาต</button></div>`).join('')}</div>`).join('')||'<div class="mu">ยังไม่มี</div>'}
+ <h3>กลุ่มที่เข้าร่วม</h3><div class="grid">${jg.map(gcard).join('')||'<div class="mu">ยังไม่มี</div>'}</div>`;}
+async function createG(pr){const v=i=>$(i).value.trim();
+ if(pr&&!isPrem()){alert('เฉพาะสมาชิก Premium ที่สร้างกลุ่ม Premium ได้');return}
+ if(!v('gn')){alert('กรอกชื่อกลุ่ม');return}
+ if(!pr&&!$('gj').value){alert('เลือกก่อนว่าคนอื่นจะเข้ากลุ่มต้องขออนุญาตไหม');return}
+ if(!$('gk').value){alert('เลือกก่อนว่ากลุ่มนี้เป็นประเภทไหน (เกม / แมพ / พูดคุย / อื่นๆ)');return}
+ const g={name:v('gn'),game:'',kind:$('gk').value,codeType:'',desc:'',price:0,need:0,reqJoin:!pr&&$('gj').value=='1',cover:coverImg||'',owner:uid,ownerName:me.name||'สมาชิก',ownerPrem:isPrem(),prem:!!pr,members:[uid],status:(pr&&isPrem())?'approved':'pending',at:Date.now()};
+ if(db)await db.collection('groups').doc('g'+Date.now()).set(g);else{g.id='g'+Date.now();groups.push(g);local.g=groups;saveLocal()}
+ coverImg='';tab=pr?'prem':'mine';render();}
+function prem(){
+ const pts=me.points||0,on=isPrem(),left=on?Math.max(0,me.premiumUntil-Date.now()):0,d=Math.floor(left/864e5),h=Math.floor(left%864e5/36e5),mn=Math.floor(left%36e5/6e4),pc=Math.min(100,Math.round(pts/5));
+ const mp=groups.filter(g=>g.prem&&g.owner==uid),st={pending:'รออนุมัติ',approved:'อนุมัติแล้ว',rejected:'ถูกปฏิเสธ'};
+ const pg=on?`<div class="card"><h3 style="margin-top:0">👑 สร้างกลุ่ม Premium</h3><div class="mu" style="margin-bottom:6px">เฉพาะสมาชิก Premium เท่านั้นที่เข้ากลุ่มนี้ได้ · สร้างได้เลย ไม่ต้องรอแอดมินอนุมัติ</div>
+ <input id="gn" placeholder="ชื่อกลุ่ม">
+ <div class="mu" style="margin:6px 0">👑 สมาชิก Premium เข้ากลุ่มนี้ได้เลย ไม่ต้องขออนุญาต</div>
+ <select id="gk"><option value="">เลือก: กลุ่มนี้เป็นประเภทไหน?</option><option value="game">🎮 กลุ่มเกม</option><option value="map">🗺️ กลุ่มแมพ</option><option value="chat">💬 กลุ่มพูดคุย</option><option value="other">✨ อื่นๆ</option></select>
+ <div class="mu" style="margin:8px 0 2px">รูปปกกลุ่ม (ไม่บังคับ)</div>
+ <label class="btn" style="position:relative;overflow:hidden;display:block;width:100%;margin:4px 0;padding:12px;text-align:left;cursor:pointer">🖼️ เลือกรูปปกจากแกลเลอรี่<input type="file" accept="image/jpeg,image/png,image/webp" onclick="window._pick=1" onchange="pickCover(this)" style="position:absolute;inset:0;width:100%;height:100%;opacity:0;margin:0;padding:0;font-size:0;cursor:pointer"></label>
+ <div id="cvp">${coverPrev()}</div>
+ <button class="btn p" onclick="createG(true)">สร้างกลุ่ม Premium</button>
+ ${mp.length?`<div style="margin-top:12px"><b>กลุ่ม Premium ของฉัน</b>${mp.map(g=>`<div class="row" style="padding:8px 0;border-top:1px solid #302A40"><span style="flex:1">👑 ${esc(g.name)}</span><span class="tag">${st[g.status]||''}</span><span class="mu">${(g.members||[]).length} คน</span></div>`).join('')}</div>`:''}
+ <button class="btn" style="margin-top:10px" onclick="flt='prem';tab='market';render()">ดูกลุ่ม Premium ทั้งหมด ›</button></div>`
+ :`<div class="card"><h3 style="margin-top:0">👑 สร้างกลุ่ม Premium</h3><div class="mu" style="margin-bottom:10px">กลุ่มที่เฉพาะสมาชิก Premium เข้าได้ สร้างได้เมื่อเป็นสมาชิก Premium</div><button class="btn" disabled>🔒 สำหรับสมาชิก Premium</button></div>`;
+ const perks=[['🛡️','ยกเว้นค่ากลาง','ซื้อขายผ่านตัวกลางโดยไม่เสียค่าธรรมเนียม'],['🎨','แบนเนอร์และเอฟเฟกต์โปรไฟล์','ทำให้โปรไฟล์ของคุณโดดเด่น'],['👑','พื้นที่ Premium Club','พื้นที่เฉพาะสมาชิก Premium'],['🪙','แลกด้วยแต้มได้','สะสมแต้มจากเช็คอิน แลก Premium ฟรีเป็นชั่วโมง']];
+ return `<div class="card" style="text-align:center;padding:22px 16px"><div style="font-size:41px;line-height:1">👑</div><h3 class="gold" style="margin:8px 0 2px;font-size:20px;letter-spacing:.04em">GENERIA Premium</h3>
+ ${on?`<div style="display:inline-block;background:#2b2312;color:#F5C76B;border:1px solid #F5C76B;border-radius:999px;padding:3px 12px;font-size:12px;font-weight:700;margin:6px 0">● กำลังใช้งาน</div><p style="margin:6px 0">เหลืออีก <b>${d}</b> วัน <b>${h}</b> ชม. <b>${mn}</b> นาที</p><div class="mu">หมดอายุ ${new Date(me.premiumUntil).toLocaleString('th-TH')}</div>`
+ :`<p style="margin:6px 0 10px"><b style="font-size:23px">149</b> บาท / เดือน</p><button class="btn p" style="width:100%;padding:12px" disabled>สมัคร Premium</button><div class="mu" style="margin-top:8px">ระบบชำระเงินยังไม่เชื่อมในเวอร์ชันนี้ · ตอนนี้แลกด้วยแต้มได้</div><button class="btn g" style="width:100%;margin-top:10px" onclick="testTopup()">🧪 ทดสอบ: สมมุติว่าเติมแล้ว (30 วัน)</button>`}${on?`<button class="btn" style="margin-top:10px" onclick="testTopupOff()">🧪 ทดสอบ: ยกเลิก Premium</button>`:''}</div>
+ ${pg}
+ <div class="card"><h3 style="margin-top:0">สิทธิพิเศษของสมาชิก</h3>${perks.map(p=>`<div class="row" style="gap:12px;padding:9px 0;border-top:1px solid #302A40;align-items:center"><span style="font-size:23px;width:36px;text-align:center">${p[0]}</span><div style="flex:1"><b>${p[1]}</b><div class="mu">${p[2]}</div></div><span style="color:#F5C76B">${on?'✓':''}</span></div>`).join('')}</div>
+ <div class="card"><h3 style="margin-top:0">🪙 แลก Premium ด้วยแต้ม</h3><div class="row" style="justify-content:space-between"><span class="mu">แต้มของคุณ</span><b style="font-size:18px">${pts}</b></div><div style="height:8px;background:#12101C;border-radius:99px;overflow:hidden;margin:8px 0"><div style="width:${pc}%;height:100%;background:linear-gradient(90deg,#8B5CF6,#F5C76B)"></div></div><div class="mu" style="margin-bottom:10px">${pts>=500?'แต้มพอแลกได้แล้ว':'อีก '+(500-pts)+' แต้ม จะแลก Premium ฟรี 1 ชั่วโมงได้'}</div><div class="row"><button class="btn g" style="flex:1" ${pts<500?'disabled':''} onclick="redeem()">แลก Premium 1 ชม. · 500 แต้ม</button><button class="btn" onclick="tab='shop';render()">ร้านค้าแต้ม ›</button></div></div>`;}
+ function shop(){return `<button class="btn" onclick="tab='home';render()">‹ กลับ</button><div class="card"><h3>ร้านค้าแต้ม</h3><p>แต้มของคุณ: <b>${me.points||0}</b></p>
+ <div class="row"><span>Premium ฟรี 1 ชั่วโมง · 500 แต้ม</span><button class="btn g" ${(me.points||0)<500?'disabled':''} onclick="redeem()">แลก</button></div></div>`;}
+function testTopup(){return setMe({premiumUntil:Math.max(Date.now(),me.premiumUntil||0)+30*864e5})}
+function testTopupOff(){return setMe({premiumUntil:0})}
+async function redeem(){if((me.points||0)<500)return;await setMe({points:me.points-500,premiumUntil:Math.max(Date.now(),me.premiumUntil||0)+36e5})}
+let pvid=null,cAtt={},assets=null;
+const vdb=()=>new Promise((res,rej)=>{const r=indexedDB.open('gwv',1);r.onupgradeneeded=()=>r.result.createObjectStore('v');r.onsuccess=()=>res(r.result);r.onerror=()=>rej(r.error)});
+const vPut=async(id,b)=>{const d=await vdb();return new Promise((res,rej)=>{const t=d.transaction('v','readwrite');t.objectStore('v').put(b,id);t.oncomplete=()=>res();t.onerror=()=>rej(t.error)})};
+const vGet=async id=>{const d=await vdb();return new Promise((res,rej)=>{const q=d.transaction('v').objectStore('v').get(id);q.onsuccess=()=>res(q.result);q.onerror=()=>rej(q.error)})};
+const vurl={};
+const vidTag=v=>v?(v.src||v.url?`<video class="vid" controls playsinline preload="metadata" src="${v.src||v.url}"></video>`:`<video class="vid" data-vid="${esc(v.id)}" controls playsinline preload="metadata"></video>`):'';
+async function hydrateVids(){for(const el of document.querySelectorAll('video[data-vid]')){const id=el.dataset.vid;if(el.getAttribute('src'))continue;try{if(!vurl[id]){const b=await vGet(id);if(!b){el.outerHTML='<div class="mu">คลิปนี้ไม่มีอยู่ในเครื่องนี้</div>';continue}vurl[id]=URL.createObjectURL(b)}el.src=vurl[id]}catch(e){}}}
+async function vidStore(f,gid){
+ if(db&&gid!='demo'){
+  if(assets){if(f.size>20*1024*1024){alert('คลิปใหญ่เกินไป (สูงสุด 20 MB)');return null}
+   try{const a=await assets.upload(f);return {id:a.id,url:a.url,name:f.name}}catch(e){alert('อัปโหลดคลิปไม่สำเร็จ');return null}}
+  if(f.size>600*1024){alert('คลิปใหญ่เกินไปสำหรับโหมดออนไลน์ (สูงสุดประมาณ 0.6 MB) ลองคลิปที่สั้นกว่านี้');return null}
+  const src=await new Promise(res=>{const r=new FileReader();r.onload=()=>res(r.result);r.onerror=()=>res(null);r.readAsDataURL(f)});return src?{id:'v'+Date.now(),src,name:f.name}:null}
+ if(f.size>60*1024*1024){alert('คลิปใหญ่เกินไป (สูงสุด 60 MB)');return null}
+ try{const id='v'+Date.now()+Math.random().toString(36).slice(2,6);await vPut(id,f);return {id,name:f.name}}catch(e){alert('บันทึกคลิปไม่สำเร็จ');return null}}
+async function pickVid(inp){window._pick=0;window._pend=0;const f=inp.files&&inp.files[0];inp.value='';if(!f){render();return}pvid={name:'กำลังอัปโหลด… '+f.name,wait:1};render();const r=await vidStore(f,openG);pvid=r||null;render()}
+async function pickCmt(inp,id){window._pick=0;window._pend=0;const f=inp.files&&inp.files[0];inp.value='';if(!f){render();return}const pp=posts.find(x=>x.id==id);
+ if((f.type||'').startsWith('video/')){cAtt[id]={vid:{name:f.name},wait:1};render();const r=await vidStore(f,pp?pp.gid:'');if(r)cAtt[id]={vid:r};else delete cAtt[id]}else{const d=await shrink(f);if(d)cAtt[id]={img:d}}render()}
+function zoomSrc(u){const m=document.createElement('div');m.id='lb';m.onclick=()=>m.remove();m.innerHTML='<img src="'+u+'">';document.body.appendChild(m)}
+let vp=null;
+const DBIO={demoowner:'หัวหน้ากลุ่มตัวอย่าง ยินดีต้อนรับทุกคน 🎉',dm1:'แอดมินใจดี ถามได้ทุกเรื่อง 💜',dm2:'เล่นเกมทุกวัน ชอบหารไอดี',dm3:'มือใหม่หัดเล่น ขอบคุณทุกคนที่ช่วย',dm4:'ชอบเล่นเกมกับเพื่อนๆ',dm5:'สายชิล เล่นเอาสนุก'};
+async function openProf(u){pmenu=null;const pp=posts.find(x=>x.uid==u),name=pp?pp.name:'สมาชิก';vp={u,name,d:null};tab='viewprof';render();
+ let d={};
+ if(u=='demoowner'||/^dm\d$/.test(u))d={name,bio:DBIO[u]||''};
+ else if(db){try{const sn=await db.collection('profiles').doc(u).get();d=sn.exists?sn.data():{}}catch(e){}}
+ if(vp&&vp.u==u){vp.d=d;render()}}
+function viewprof(){
+ if(!vp)return '';const d=vp.d||{},nmv=d.name||vp.name,pr=(d.premiumUntil||0)>Date.now();
+ const a=d.avatar?`<span class="ava${skc((d.skin+'|'+(d.premiumUntil||0)),72)}" style="width:72px;height:72px;--s:72px;background:url('${d.avatar}') center/cover"></span>`:ava(nmv,vp.u,72,(d.skin+'|'+(d.premiumUntil||0)));
+ return `<button class="btn" onclick="tab='group';render()">‹ กลับ</button><div class="card"><h3>โปรไฟล์ ${pr?'<span class="gold">★ Premium</span>':''}</h3>
+ <div class="row" style="margin:6px 0 10px">${a}<button class="btn p" onclick="openChat(vp.u,vp.name)">💬 ส่งข้อความ</button></div>
+ <input readonly value="${esc(nmv)}" placeholder="ชื่อผู้ใช้"><textarea readonly rows="3" placeholder="ยังไม่ได้แนะนำตัว">${esc(d.bio)}</textarea>
+ ${vp.d?'':'<div class="mu">กำลังโหลด…</div>'}<p class="mu">เช็คอินแล้ว ${(d.history||[]).length} ครั้ง${d.frame?' · มีกรอบโปรไฟล์พิเศษ':''}</p></div>`}
+function delPost(id){pmenu=null;const pp=posts.find(x=>x.id==id),g=pp&&groups.find(x=>x.id==pp.gid);if(!g||(g.owner!=uid&&pp.uid!=uid))return;const m=document.createElement('div');m.id='dpm';m.style.cssText='position:fixed;inset:0;background:rgba(0,0,0,.5);display:grid;place-items:center;z-index:50;padding:20px';
+ m.innerHTML=`<div style="background:#fff;color:#1f1633;border-radius:18px;padding:20px;max-width:340px;width:100%"><h3 style="margin:0 0 8px">🗑 ลบโพสต์</h3><p>โพสต์นี้จะถูกลบถาวร กู้คืนไม่ได้</p><div class="row" style="justify-content:flex-end"><button class="btn" onclick="$('dpm').remove()">ยกเลิก</button><button class="btn p" onclick="$('dpm').remove();doDelPost('${id}')">ลบ</button></div></div>`;document.body.appendChild(m);render()}
+async function doDelPost(id){const pp=posts.find(x=>x.id==id);if(!pp)return;
+ if(pp.gid=='demo'){DP=DP.filter(x=>x.id!=id);saveDemo();render();return}
+ if(!db){local.p=(local.p||[]).filter(x=>x.id!=id);saveLocal();render();return}
+ await db.collection('posts').doc(id).delete()}
+const cropAv=f=>new Promise(res=>{const r=new FileReader();r.onload=()=>{const im=new Image();im.onload=()=>{const S=256,c=document.createElement('canvas');c.width=c.height=S;const s=Math.min(im.width,im.height),x=c.getContext('2d');x.fillStyle='#fff';x.fillRect(0,0,S,S);x.drawImage(im,(im.width-s)/2,(im.height-s)/2,s,s,0,0,S,S);res(c.toDataURL('image/jpeg',.82))};im.onerror=()=>res(null);im.src=r.result};r.onerror=()=>res(null);r.readAsDataURL(f)});
+async function pickAvatar(inp){window._pick=0;window._pend=0;const f=inp.files&&inp.files[0];inp.value='';if(!f){render();return}const d=await cropAv(f);if(d)await setMe({avatar:d});else render()}
+function profile(){return `<div class="card"><h3>โปรไฟล์ ${isPrem()?'<span class="gold">★ Premium</span>':''}</h3>
+ <div class="row" style="margin:6px 0 10px">${ava(me.name||'คุณ',uid,72)}<div class="row"><label class="btn" style="position:relative;overflow:hidden;display:inline-block;cursor:pointer">🖼️ เลือกรูปโปรไฟล์จากแกลเลอรี่<input type="file" accept="image/jpeg,image/png,image/webp" onclick="window._pick=1" onchange="pickAvatar(this)" style="position:absolute;inset:0;width:100%;height:100%;opacity:0;margin:0;padding:0;font-size:0;cursor:pointer"></label>${me.avatar?`<button class="btn" onclick="setMe({avatar:''})">ลบรูป</button>`:''}</div></div>
+ <button class="btn" style="width:100%;margin:12px 0 6px;display:flex;justify-content:space-between;align-items:center" onclick="skOpen=!skOpen;render()"><span>🖼️ คลังกรอบโปรไฟล์</span><span>${skOpen?'▴ ปิด':'▾ เปิด'}</span></button>${skOpen?`<div class="skg">${SKINS.map(skTile).join('')}</div><p class="mu" style="margin:4px 0 12px">เพื่อนจะเห็นกรอบนี้ตอนคุณโพสต์และคอมเมนต์</p>`:''}
+ <input id="pn" placeholder="ชื่อผู้ใช้" value="${esc(me.name||gname)}"${nameSt()=='locked'?' readonly style="opacity:.65"':''}><textarea id="pb" placeholder="แนะนำตัว">${esc(me.bio)}</textarea>
+ <p class="mu" style="margin:2px 0 8px">${nameSt()=='free'?'เปลี่ยนฟรี 1 ครั้ง':nameHint()}</p><button class="btn p" onclick="saveProfile()">บันทึก</button>${me.frame?'<p class="mu">มีกรอบโปรไฟล์พิเศษ</p>':''}</div>`;}
+function admin(){const pend=groups.filter(g=>g.status=='pending'),vol=txns.reduce((a,t)=>a+t.amount,0),fe=txns.reduce((a,t)=>a+t.fee,0);
+ return `<div class="grid"><div class="card">กลุ่มทั้งหมด<h3>${groups.filter(g=>!g.demo).length}</h3></div><div class="card">รายการซื้อขาย<h3>${txns.length}</h3></div><div class="card">ยอดซื้อขายรวม<h3>${vol} ฿</h3></div><div class="card">รายได้ค่ากลาง<h3 class="gold">${fe} ฿</h3></div></div>
+ <h3>คำขออนุมัติกลุ่ม (${pend.length})</h3>${pend.map(g=>`<div class="card"><b>${esc(g.name)}</b> · ${esc(g.game)} · ${g.price} ฿${g.need>0?' × '+g.need:''}<p>${esc(g.desc)}</p><div class="row"><button class="btn p" onclick="setG('${g.id}',{status:'approved'})">อนุมัติ</button><button class="btn" onclick="setG('${g.id}',{status:'rejected'})">ปฏิเสธ</button></div></div>`).join('')||'<div class="mu">ไม่มีคำขอ</div>'}
+ <h3>คำขอดึงกลาง (${chats.filter(c=>c.mediator||c.needMid).length})</h3>${chats.filter(c=>c.mediator||c.needMid).map(c=>`<div class="card row"><span style="flex:1">${esc((c.nm||[c.id]).join(' ↔ '))} · ${SX[c.step||0]}</span><button class="btn p" onclick="viewId='${c.id}';peer={u:'',name:'ผู้ซื้อ-ผู้ขาย'};tab='chat';render()">เข้าแชท</button></div>`).join('')||'<div class="mu">ไม่มี</div>'}
+ <h3>รายการยกเว้นค่ากลาง</h3>${txns.filter(t=>t.fee==0).map(t=>`<div class="mu">${t.amount} ฿ · ${esc(t.reason)}</div>`).join('')||'<div class="mu">ไม่มี</div>'}`;}
+function home(){
+ const st=me.streak||0,done=me.last==today(),d=done?st:((me.last==yest()&&st<30)?st+1:1),rw=reward(d);
+ const ok=groups.filter(g=>g.status=='approved'),n=g=>(g.members||[]).length;
+ const jb=g=>{const j=(g.members||[]).includes(uid),f=g.need>0&&n(g)>=g.need;return `<button class="btn ${j||f?'':'p'}" ${(f&&!j)||(g.prem&&!isPrem()&&!j)||(j&&g.owner==uid)||(jReq(g,j)&&jWait(g))?'disabled':''} onclick="${j?`askLeave('${g.id}')`:`join('${g.id}')`}">${g.prem&&!isPrem()&&!j?'🔒 เฉพาะ Premium':jTxt(g,j,f,'เข้าร่วม')}</button>`};
+ const ic=['🎮','💬','💻','🚗'];
+ const eye=g=>(g.members||[]).includes(uid)?`<button title="เข้าไปในกลุ่ม" style="position:absolute;top:6px;right:6px;width:34px;height:34px;border-radius:50%;border:0;background:rgba(255,255,255,.92);font-size:16px;line-height:1;cursor:pointer;z-index:2;display:grid;place-items:center;padding:0" onclick="event.stopPropagation();openG='${g.id}';tab='group';render()">👁️</button>`:'';
+ const feat=[...ok].sort((a,b)=>(b.at||0)-(a.at||0)).slice(0,8).map((g,i)=>`<div class="fc"><div class="ph"${g.cover?` style="background:url('${g.cover}') center/cover;animation:none"`:''}>${eye(g)}${g.cover?'':(g.kind=='map'?'🗺️':ic[i%4])}<span class="cnt">👥 ${n(g)}</span></div><b>${g.prem?'👑 ':''}${esc(g.name)}</b>${jb(g)}</div>`).join('');
+ const pop=ranked().slice(0,10).map((g,i)=>`<div class="pop" style="position:relative">${eye(g)}<span style="font-size:25px;min-width:34px;text-align:center">${['🥇','🥈','🥉'][i]||'<b>'+(i+1)+'</b>'}</span>${g.cover?`<span style="width:46px;height:46px;flex:none;border-radius:12px;background:url('${g.cover}') center/cover"></span>`:''}<div class="t"><b>${g.prem?'👑 ':''}${esc(g.name)}</b><span class="tp">Top ${i+1}</span><div class="mu">สมาชิก ${n(g)} คน</div></div><span><span class="fire">🔥</span> ${fire(g)}</span>${jb(g)}</div>`).join('');
+ return `<div class="ci"><div class="row" style="justify-content:space-between"><b style="font-size:18px">🎁 Daily Check-in</b><span class="pill">วันที่ ${d} / 30</span></div><div class="mu">เช็คอินต่อเนื่อง รับแต้มทุกวัน!</div>
+ <div class="row" style="background:#fff;border-radius:14px;padding:8px 12px;margin-top:8px;justify-content:space-between"><span><span class="coin">🪙</span> <b>${done?'เช็คอินแล้ววันนี้':'รับ '+rw.t}</b></span><button class="btn ${done?'':'p'}" ${done?'disabled style="background:#fff;color:#6d28d9;opacity:1"':''} onclick="checkin()">${done?'รับรางวัลแล้ว':'รับรางวัล'}</button></div><div class="bar"><i style="width:${(done?st:d-1)/30*100}%"></i></div><div class="mu" style="margin-top:4px">แต้มสะสม ${me.points||0}</div><div class="rws" id="rwst" onscroll="rwSc=this.scrollLeft">${rwTiles(d,done,st)}</div></div>
+ <div class="card row" style="justify-content:space-between;cursor:pointer;margin:0 0 4px" onclick="tab='shop';render()"><span>🎁 <b>ร้านค้าแต้ม</b> · แลกรางวัลด้วยแต้มสะสม</span><span>›</span></div>
+ <div class="sec"><span><span class="fire">🔥</span> กลุ่มแนะนำ</span><a onclick="tab='market';render()">ดูทั้งหมด ›</a></div><div class="hs">${feat||'<span class="mu">ยังไม่มีกลุ่มที่ได้รับอนุมัติ</span>'}</div>
+ <div class="sec"><span>🏆 กลุ่มกำลังได้รับความนิยม</span><a onclick="tab='market';render()">ดูทั้งหมด ›</a></div><div class="card" style="padding:0">${pop||'<div class="mu" style="padding:12px">ยังไม่มีข้อมูล</div>'}</div>
+ <div class="sec"><span>📣 ประกาศ</span></div><div class="card"><span class="tag">กิจกรรมพิเศษ</span><h3>เช็คอินต่อเนื่อง รับของรางวัล!</h3><div class="mu">เช็คอินครบ 15 วัน รับกรอบโปรไฟล์พิเศษ ครบ 29 วัน รับใบเปลี่ยนชื่อ 1 ใบ และครบ 30 วัน รับ Premium ฟรี 1 ชั่วโมง</div></div>
+ ${isPrem()?'':`<div class="pb"><span style="font-size:34px">👑</span><div class="t"><b class="gold" style="font-size:16px">อัปเกรดเป็น Premium</b><div style="font-size:11px">ยกเว้นค่ากลาง และสิทธิ์พิเศษอื่น ๆ</div></div><button class="btn" onclick="tab='prem';render()">สมัครเลย ›</button></div>`}`;}
+const cid=(a,b)=>[a,b].sort().join('_');
+const AVC=[['#8b5cf6','#d946ef'],['#06b6d4','#3b82f6'],['#f59e0b','#ef4444'],['#10b981','#06b6d4'],['#ec4899','#f97316'],['#6366f1','#22d3ee']];
+const hsh=x=>[...String(x||'?')].reduce((a,c)=>(a*31+c.charCodeAt(0))>>>0,7);
+let skOpen=false;
+const SKINS=[{id:'none',n:'ไม่ใส่'},{id:'gold',n:'ทองคำ'},{id:'rainbow',n:'รุ้ง'},{id:'neon',n:'นีออน'},{id:'fire',n:'ไฟลุก'},{id:'ice',n:'น้ำแข็ง'},{id:'sakura',n:'ซากุระ'},{id:'galaxy',n:'กาแลกซี่'},{id:'heart',n:'หัวใจ'},{id:'royal',n:'ราชันราตรี',lock:'d15'},{id:'storm',n:'สายฟ้าทมิฬ',lock:'buy',price:49}];
+const skp=s=>{const a=String(s||'').split('|');return {id:a[0],u:+a[1]||0}};const skSelf=()=>(me.skin||'')+(me.premiumUntil?'|'+me.premiumUntil:'');const skc=(raw,sz)=>{const p=skp(raw),x=SKINS.find(k=>k.id==p.id);if(!p.id||p.id=='none'||sz<32||!x)return '';return ' sk-'+p.id};const isPm=(key,sk)=>(key==uid?(me.premiumUntil||0):skp(sk).u)>Date.now();const pmTag=(key,sk)=>isPm(key,sk)?'<span class="pmbox"><span class="yy">Premium</span></span>':'';const pmName=(key,sk,name)=>isPm(key,sk)?'<span class="yy">'+esc(name)+'</span>':esc(name);
+const ownsF=x=>!x.lock||(x.lock=='d15'&&!!(me.frame||(me.frames||[]).includes('royal')))||(x.lock=='buy'&&(me.frames||[]).includes(x.id));
+const skTile=x=>{const own=ownsF(x),buy=!own&&x.lock=='buy';return `<button class="skt${(me.skin||'none')==x.id?' on':''}"${own?` onclick="setMe({skin:'${x.id}'})"`:buy?` onclick="buyFrame('${x.id}')"`:' disabled style="opacity:.6;cursor:default"'}><span class="ava${x.id=='none'?'':' sk-'+x.id}" style="width:44px;height:44px;--s:44px;font-size:16px;margin:0;background:${me.avatar?`url('${me.avatar}') center/cover`:'linear-gradient(135deg,#f59e0b,#ef4444)'}">${me.avatar?'':esc(String(me.name||'ค').trim()[0]||'ค')}</span><i>${own?x.n:buy?`${x.n}<br><b class="gold">🔒 ${x.price} ฿</b>`:'🔒 เช็คอินวันที่ 15'}</i></button>`};
+const ava=(name,key,sz=40,sk)=>{const K=skc(key==uid?skSelf():sk,sz);if(me.avatar&&key==uid)return `<span class="ava${K}" style="width:${sz}px;height:${sz}px;--s:${sz}px;background:url('${me.avatar}') center/cover"></span>`;const c=AVC[hsh(key||name)%AVC.length];return `<span class="ava${K}" style="width:${sz}px;height:${sz}px;--s:${sz}px;font-size:${Math.round(sz*.42)}px;background:linear-gradient(135deg,${c[0]},${c[1]})">${esc(String(name||'?').trim()[0]||'?')}</span>`};
+const ago=t=>{const d=(Date.now()-t)/1000;return d<60?'เมื่อสักครู่':d<3600?Math.floor(d/60)+' นาทีที่แล้ว':d<86400?Math.floor(d/3600)+' ชั่วโมงที่แล้ว':Math.floor(d/86400)+' วันที่แล้ว'};
+let cmAll={};
+const RX=[['👍','ถูกใจ'],['❤️','รักเลย'],['😂','ตลก'],['😮','ว้าว'],['😢','เศร้า'],['😡','โกรธ']];
+let pimgs=[],rtray=null,busy=false;
+function reactsOf(p){const m={};(p.likes||[]).forEach(u=>m[u]='👍');return {...m,...(p.r||{})}}
+const shrinkSrc=(src,lim)=>new Promise(res=>{const im=new Image();im.onload=()=>{let w=1280,q=.85,out;do{const sc=Math.min(1,w/Math.max(im.width,im.height)),c=document.createElement('canvas');c.width=Math.round(im.width*sc);c.height=Math.round(im.height*sc);const x=c.getContext('2d');x.fillStyle='#fff';x.fillRect(0,0,c.width,c.height);x.drawImage(im,0,0,c.width,c.height);out=c.toDataURL('image/jpeg',q);w*=.85;q=Math.max(.45,q-.06)}while(out.length>lim&&w>200);res(out)};im.onerror=()=>res(null);im.src=src});
+const shrink=f=>new Promise(res=>{const r=new FileReader();r.onload=()=>shrinkSrc(r.result,350000).then(res);r.onerror=()=>res(null);r.readAsDataURL(f)});
+async function fitImgs(){const tot=()=>pimgs.reduce((a,x)=>a+x.length,0);if(tot()>850000){const lim=Math.floor(800000/pimgs.length);pimgs=(await Promise.all(pimgs.map(x=>shrinkSrc(x,lim)))).filter(Boolean)}return tot()<=950000}
+window.addEventListener('focus',()=>setTimeout(()=>{if(window._pick){window._pick=0;if(window._pend){window._pend=0;render()}}},1500));
+document.addEventListener('pointerdown',e=>{if(window._pick&&!(e.target.closest&&e.target.closest('input[type=file]'))){window._pick=0;window._pend=0}},true);
+function openImgMenu(){if($('im'))return;const m=document.createElement('div');m.id='im';m.style.cssText='position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:50;display:flex;align-items:flex-end;justify-content:center';m.onclick=e=>{if(e.target==m)m.remove()};
+ m.innerHTML=`<div style="background:#fff;width:100%;max-width:520px;border-radius:24px 24px 0 0;padding:18px 16px calc(18px + env(safe-area-inset-bottom,0px))"><div style="width:42px;height:4px;background:#ddd;border-radius:9px;margin:0 auto 12px"></div><h3 style="margin:0 0 10px;text-align:center">เพิ่มรูปภาพ</h3>
+ <label class="btn" style="position:relative;overflow:hidden;display:block;width:100%;margin:6px 0;padding:14px;font-size:14px;text-align:left;cursor:pointer">🖼️ เลือกจากแกลเลอรี่<input type="file" accept="image/*" multiple onclick="window._pick=1" onchange="pickImgs(this);var x=document.getElementById('im');x&&x.remove()" style="position:absolute;inset:0;width:100%;height:100%;opacity:0;margin:0;padding:0;font-size:0;cursor:pointer"></label>
+ <button class="btn" style="width:100%;margin:6px 0;padding:12px" onclick="$('im').remove()">ยกเลิก</button></div>`;document.body.appendChild(m)}
+async function pickImgs(inp){window._pick=0;window._pend=0;const fs=[...inp.files];for(const f of fs){const d=await shrink(f);if(d)pimgs.push(d)}inp.value='';render()}
+function viewImg(id,i){const p=posts.find(x=>x.id==id);if(!p||!(p.imgs||[])[i])return;const m=document.createElement('div');m.id='lb';m.onclick=()=>m.remove();m.innerHTML='<img src="'+p.imgs[i]+'">';document.body.appendChild(m)}
+async function react(id,e){const p=posts.find(x=>x.id==id);if(!p)return;if(p.gid=='demo'||!db){const m=reactsOf(p);if(m[uid]==e)delete m[uid];else m[uid]=e;p.r=m;p.likes=[];rtray=null;p.gid=='demo'?saveDemo():saveLocal();render();return}const m=reactsOf(p);if(m[uid]==e)delete m[uid];else m[uid]=e;rtray=null;await db.collection('posts').doc(id).update({r:m,likes:[]})}
+function feedOld(){const g=groups.find(x=>x.id==openG);if(!g)return '';const bl=me.blocked||[];
+ const ps=posts.filter(p=>p.gid==g.id&&!bl.includes(p.uid)).sort((a,b)=>b.at-a.at);
+ const mem=g.members||[],t=topOf(g),joined=mem.includes(uid),full=g.need>0&&mem.length>=g.need;
+ const stack=mem.slice(0,5).map(m=>ava(mname(g,m),m,30)).join('');
+ const head=`<div class="gcov"${g.cover?` style="background:linear-gradient(0deg,rgba(20,8,45,.4),rgba(20,8,45,.05)),url('${g.cover}') center/cover;animation:none"`:''}><div class="in"><div class="gico">${g.cover?'':(g.kind=='map'?'🗺️':'🎮')}</div><div style="min-width:0"><h2>${esc(g.name)}</h2><div class="sub">${esc(g.game)} · ${esc(g.codeType)} · โดย ${esc(g.ownerName)}</div></div></div></div>
+ <div class="gbar"><div class="stk">${stack}</div><span class="chip">👥 ${mem.length}${g.need>0?'/'+g.need:''}</span><span class="chip"><span class="fire">🔥</span> ${fire(g)}</span>${t?`<span class="chip" style="background:#fef3c7;color:#92400e">🏆 Top ${t}</span>`:''}
+ <span style="flex:1"></span><button class="btn ${joined||full?'':'p'}" ${(full&&!joined)||(g.prem&&!isPrem()&&!joined)||(joined&&g.owner==uid)||(jReq(g,joined)&&jWait(g))?'disabled':''} onclick="${joined?`askLeave('${g.id}')`:`join('${g.id}')`}">${g.prem&&!isPrem()&&!joined?'🔒 เฉพาะ Premium':jTxt(g,joined,full,'เข้าร่วมกลุ่ม')}</button></div>
+ ${g.desc?`<div class="abt"><b>เกี่ยวกับกลุ่ม</b><div class="mu" style="margin-top:4px;white-space:pre-wrap">${esc(g.desc)}</div></div>`:''}${admCard(g)}`;
+ const comp=`<div class="comp"><div class="top">${ava(me.name||'คุณ',uid,42)}<textarea id="pt" rows="2" placeholder="${esc(me.name||'คุณ')} คิดอะไรอยู่ แชร์ให้เพื่อนในกลุ่มหน่อย…"></textarea></div>
+ ${pimgs.length?`<div class="thumbs">${pimgs.map((x,i)=>`<div class="th"><img src="${x}"><button onclick="pimgs.splice(${i},1);render()">✕</button></div>`).join('')}</div>`:''}
+ ${pvid?`<div class="mu" style="margin-top:8px">🎬 ${esc(pvid.name||'คลิป')} <button class="btn" style="padding:2px 10px" onclick="pvid=null;render()">✕</button></div>`:''}
+ <div class="bt"><button class="btn" onclick="openImgMenu()">🖼️ รูปภาพ</button><label class="btn" style="position:relative;overflow:hidden;cursor:pointer">🎬 คลิป<input type="file" accept="video/mp4,video/webm,video/quicktime" onclick="window._pick=1" onchange="pickVid(this)" style="position:absolute;inset:0;width:100%;height:100%;opacity:0;margin:0;padding:0;font-size:0;cursor:pointer"></label><span style="flex:1"></span><button class="btn p" onclick="post()">✨ โพสต์</button></div></div>`;
+ const card=p=>{const own=p.uid==uid,go=own?` onclick="tab='profile';render()" style="cursor:pointer"`:'',R=reactsOf(p),my=R[uid],rn=Object.keys(R).length,cm=p.cm||[],all=cmAll[p.id],shown=all?cm:cm.slice(-1),im=p.imgs||[];
+  const cntE={};Object.values(R).forEach(e=>cntE[e]=(cntE[e]||0)+1);const top3=Object.entries(cntE).sort((a,b)=>b[1]-a[1]).slice(0,3).map(x=>x[0]);
+  const myL=my?(RX.find(x=>x[0]==my)||[my,'ถูกใจ']):null;
+  return `<div class="pc"><div class="ph2"><span${go}>${ava(p.name,p.uid,44,p.sk)}</span><div class="meta"${go}><div class="nmr">${nm(g,p.uid,p.name,p.sk)}${pmTag(p.uid,p.sk)}</div><div class="tm">${ago(p.at)}</div></div>${true?`<button class="more" onclick="pmenu=pmenu=='${p.id}'?null:'${p.id}';render()">⋯</button>`:''}</div>
+  ${pmenu==p.id?`<div class="pmn">${own?'':`<button class="btn" onclick="openProf('${p.uid}')">👤 ดูประวัติ</button><button class="btn p" onclick="openChat('${p.uid}','${esc(p.name)}')">💬 ส่งข้อความ</button><button class="btn" onclick="blockU('${p.uid}')">🚫 บล็อก</button>`}${(own||g.owner==uid)?`<button class="btn" onclick="delPost('${p.id}')">🗑 ลบโพสต์</button>`:''}</div>`:''}
+  ${p.text?`<div class="bd2">${esc(p.text)}</div>`:''}
+  ${(p.vids||[]).map(vidTag).join('')}
+  ${im.length?`<div class="imgs n${Math.min(im.length,4)}">${im.map((x,i)=>`<img src="${x}" onclick="viewImg('${p.id}',${i})">`).join('')}</div>`:''}
+  <div class="cnt2"><span>${rn?`<span class="rsum">${top3.map(e=>`<span>${e}</span>`).join('')}<b>${rn}</b></span>`:''}</span><span${cm.length?` style="cursor:pointer;color:var(--pu);font-weight:600" onclick="cmAll['${p.id}']=${all?0:1};render()"`:''}>${cm.length?cm.length+' ความคิดเห็น'+(cm.length>1?(all?' ▲':' ▼'):''):''}</span></div>
+  <div class="act">${rtray==p.id?`<div class="tray">${RX.map(e=>`<button title="${e[1]}" onclick="react('${p.id}','${e[0]}')">${e[0]}</button>`).join('')}</div>`:''}
+  <button class="${my?'on':''}" onclick="react('${p.id}','${my||'👍'}')"><span class="lk">${myL?myL[0]:'👍'}</span> ${myL?myL[1]:'ถูกใจ'}</button><button style="flex:.6" onclick="rtray=rtray=='${p.id}'?null:'${p.id}';render()">☺ รีแอค</button><button onclick="var e=$('ci${p.id}');e&&e.focus()">💬 คอมเมนต์</button></div>
+  <div class="cms">${cm.length>1?`<a style="cursor:pointer;color:var(--pu);font-weight:600;font-size:13px" onclick="cmAll['${p.id}']=${all?0:1};render()">${all?'▲ ซ่อนความคิดเห็น':'▼ ดูความคิดเห็นทั้งหมด '+cm.length+' รายการ'}</a>`:''}
+  ${shown.map(c=>`<div class="cm1">${ava(c.n,c.u||c.n,32,c.sk)}<div class="cmb"><b>${pmName(c.u||c.n,c.sk,c.n)}</b>${pmTag(c.u||c.n,c.sk)} ${esc(c.t)}${c.img?`<img src="${c.img}" onclick="zoomSrc(this.src)">`:''}${c.vid?vidTag(c.vid):''}</div></div>`).join('')}
+  ${cAtt[p.id]?`<div class="mu" style="margin:6px 0">${cAtt[p.id].img?`<img src="${cAtt[p.id].img}" style="height:56px;border-radius:8px;vertical-align:middle">`:(cAtt[p.id].wait?'⏳ กำลังอัปโหลดคลิป…':'🎬 แนบคลิปแล้ว')} <a style="cursor:pointer;color:var(--pu)" onclick="delete cAtt['${p.id}'];render()">ลบ</a></div>`:''}
+  <div class="cin">${ava(me.name||'คุณ',uid,32)}<label style="width:38px;height:38px;flex:none;border-radius:50%;background:var(--pl);display:grid;place-items:center;position:relative;overflow:hidden;cursor:pointer">🖼️<input type="file" accept="image/jpeg,image/png,image/webp,video/mp4,video/webm,video/quicktime" onclick="window._pick=1" onchange="pickCmt(this,'${p.id}')" style="position:absolute;inset:0;width:100%;height:100%;opacity:0;margin:0;padding:0;font-size:0;cursor:pointer"></label><input id="ci${p.id}" placeholder="เขียนความคิดเห็น… 😊" onkeydown="if(event.key==='Enter')addCmt('${p.id}')"><button class="sendb" onclick="addCmt('${p.id}')">➤</button></div></div></div>`};
+ return head+comp+(ps.map(card).join('')||'<div class="card mu" style="text-align:center;padding:26px">ยังไม่มีโพสต์ เป็นคนแรกที่เริ่มคุยเลย 🎉</div>');}
+async function post(){if(busy)return;if(pvid&&pvid.wait){alert('รอคลิปอัปโหลดให้เสร็จก่อน');return}const t=$('pt').value.trim();if(!t&&!pimgs.length&&!pvid)return;if(openG=='demo'){DP.unshift({id:'dp'+Date.now(),gid:'demo',uid,name:me.name||'สมาชิก',text:t,imgs:pimgs,vids:pvid?[pvid]:[],sk:skSelf(),at:Date.now()});pimgs=[];pvid=null;$('pt').value='';saveDemo();render();return}if(!db){if(!(await fitImgs())){alert('รูปมากหรือใหญ่เกินไป ลองลดจำนวนรูป');return}(local.p=local.p||[]).push({id:'p'+Date.now(),gid:openG,uid,name:me.name||'สมาชิก',text:t,imgs:pimgs,vids:pvid?[pvid]:[],sk:skSelf(),at:Date.now()});pimgs=[];pvid=null;$('pt').value='';saveLocal();render();return}busy=true;try{if(!(await fitImgs())){alert('รูปมากหรือใหญ่เกินไป ลองลดจำนวนรูป');busy=false;return}await db.collection('posts').doc('p'+Date.now()).set({gid:openG,uid,name:me.name||'สมาชิก',text:t,imgs:pimgs,vids:pvid?[pvid]:[],sk:skSelf(),at:Date.now()});pimgs=[];pvid=null;$('pt').value=''}catch(e){alert('โพสต์ไม่สำเร็จ รูปอาจใหญ่เกินไป ลองลดจำนวนรูป')}busy=false;render()}
+async function blockU(u){pmenu=null;await setMe({blocked:[...(me.blocked||[]),u]})}
+let peerD=null;
+function ensurePeer(){if(!db||!peer||!peer.u||window._pk===peer.u)return;const k=peer.u;window._pk=k;peerD=null;db.collection('profiles').doc(k).get().then(sn=>{if(peer&&peer.u==k){peerD=sn.exists?sn.data():{};render()}}).catch(()=>{})}
+const peerAva=sz=>{const d=peerD||{};return d.avatar?`<span class="ava${skc((d.skin+'|'+(d.premiumUntil||0)),sz)}" style="width:${sz}px;height:${sz}px;--s:${sz}px;margin:0;background:url('${d.avatar}') center/cover"></span>`:ava(peer.name,peer.u,sz,(d.skin+'|'+(d.premiumUntil||0)))};
+function openChat(u,name){chatFrom='group';chAtt=null;chMenu=false;chSt=false;viewId=null;peer={u,name};window._pk=null;pmenu=null;tab='chat';render()}
+function openChatFrom(u,name){chatFrom='chats';chAtt=null;chMenu=false;chSt=false;viewId=null;peer={u,name};window._pk=null;pmenu=null;tab='chat';render()}
+function chatlist(){
+ const last=c=>{const m=c.msgs||[];return m.length?m[m.length-1].at||0:0},bl=me.blocked||[];
+ const L=myChats().sort((a,b)=>last(b)-last(a));
+ return `<h3>💬 แชท</h3>`+(L.map(c=>{const i=c.ps[0]==uid?1:0,ou=c.ps[i],on=(c.nm||[])[i]||'สมาชิก',ms=c.msgs||[],l=ms[ms.length-1],pv=l?(l.st?'🙂 สติกเกอร์':l.t||(l.img||l.imgs?'🖼️ รูปภาพ':l.vid?'🎬 วิดีโอ':'')):'';return `<div class="card row" style="cursor:pointer;flex-wrap:nowrap" onclick="openChatFrom('${esc(ou)}','${esc(on)}')">${ava(on,ou,44)}<div style="flex:1;min-width:0"><b>${esc(on)}</b>${(()=>{const li=lastIn(c);return li&&li.at>(chSeen[c.id]||0)?'<span style="width:10px;height:10px;border-radius:50%;background:#ef4444;display:inline-block;margin-left:6px"></span>':''})()}${c.mediator?' <span class="tag">มีกลาง</span>':''}<div class="mu" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${esc(pv)}</div></div><span class="mu">${l&&l.at?ago(l.at):''}</span></div>`}).join('')||'<div class="card mu">ยังไม่มีแชท กดปุ่ม ⋯ ที่โพสต์ในกลุ่ม แล้วเลือก "ส่งข้อความ" และพิมพ์ข้อความแรก แชทจะมาอยู่ที่นี่</div>')}
+const STK=['😀','😍','🥳','😎','🤩','😂','🥺','😭','😡','👍','👏','🙏','❤️','🔥','💯','🎉','🎮','💜','✅','❌','🤝','💸','🛡️','😴'];
+async function sendSticker(e){chSt=false;await saveChat({from:uid,t:'',st:e,at:Date.now()},{})}
+function tlUpd(){let b=$('tolast');if(!b){b=document.createElement('button');b.id='tolast';b.className='btn p';b.textContent='⬇ ข้อความล่าสุด';b.style.cssText='position:fixed;right:12px;bottom:calc(76px + env(safe-area-inset-bottom,0px));z-index:15;box-shadow:0 6px 18px rgba(124,58,237,.4);display:none';b.onclick=()=>window.scrollTo({top:document.documentElement.scrollHeight,behavior:'smooth'});document.body.appendChild(b)}
+ const far=document.documentElement.scrollHeight-(window.scrollY+window.innerHeight)>150;b.style.display=tab=='chat'&&far?'block':'none'}
+window.addEventListener('scroll',tlUpd,{passive:true});
+const chQuota=c=>{const mine=(c.msgs||[]).filter(m=>!m.sys&&m.from==uid);return{txt:mine.filter(m=>m.t).length,img:mine.some(m=>m.img||(m.imgs&&m.imgs.length)),vid:mine.some(m=>m.vid)}};
+function wc(t){try{if(window.Intl&&Intl.Segmenter){let n=0;for(const x of new Intl.Segmenter('th',{granularity:'word'}).segment(t))if(x.isWordLike)n++;return n}}catch(e){}return t.split(/\s+/).filter(Boolean).length}
+function chat(){ensurePeer();const c=chats.find(x=>x.id==(viewId||cid(uid,peer.u)))||{},ms=c.msgs||[];
+ const bub=m=>{const own=m.from==uid,tx=m.st?`<div style="font-size:58px;line-height:1.15">${esc(m.st)}</div>`:m.t?`<span class="tag" style="${own?'background:var(--pu);color:#fff;':''}${m.sys?'background:#fef3c7;color:#92400e;':''}font-size:13px;padding:6px 12px;max-width:100%;word-break:break-word">${esc(m.t)}</span>`:'',
+  ims=m.imgs||(m.img?[m.img]:[]),
+  md=(ims.length?`<div style="display:flex;flex-wrap:wrap;gap:4px;margin-top:4px;justify-content:${own?'flex-end':'flex-start'}">${ims.map(u=>`<img src="${u}" onclick="zoomSrc(this.src)" style="max-width:${ims.length==1?230:110}px;max-height:${ims.length==1?300:110}px;border-radius:12px;object-fit:cover;cursor:zoom-in">`).join('')}</div>`:'')+(m.vid?`<div style="max-width:270px;margin:4px ${own?'0 0 auto':'auto 0 0'}">${vidTag(m.vid)}</div>`:''),
+  side=!viewId&&!m.sys&&!own;
+  return `<div style="${side?'display:flex;align-items:flex-end;gap:8px;':'text-align:'+(m.sys?'center':own?'right':'left')+';'}margin:6px 0">${side?peerAva(32):''}<div style="min-width:0;max-width:100%">${tx}${md}</div></div>`};
+ const free=!!c.mediator||!!viewId,q=chQuota(c),left=free?99:Math.max(0,2-q.txt),imgOk=free||!q.img,vidOk=free||!q.vid,locked=!free&&left<=0&&!imgOk&&!vidOk;
+ const att=chAtt?`<div class="mu" style="margin:6px 0">${(chAtt.imgs||[]).map(u=>`<img src="${u}" style="height:56px;border-radius:8px;vertical-align:middle;margin-right:4px">`).join('')}${chAtt.vid?'🎬 แนบวิดีโอแล้ว ':''}${chAtt.wait?'⏳ กำลังอัปโหลด… ':''}<a style="cursor:pointer;color:var(--pu)" onclick="chAtt=null;render()">ลบ</a></div>`:'';
+ const hint=free?'':`<div class="mu" style="margin:6px 0">เหลือ: ข้อความ ${left}/2 บรรทัด (ไม่เกิน 15 คำ) · รูป ${imgOk?'ส่งได้ 1 ครั้ง (ไม่จำกัดจำนวนภาพ)':'ส่งแล้ว'} · วิดีโอ ${vidOk?'ส่งได้ 1 คลิป':'ส่งแล้ว'} · สติกเกอร์ส่งได้ไม่จำกัด</div>`;
+ const stBtn=`<button class="btn" style="width:42px;height:42px;flex:none;padding:0;border-radius:50%;font-size:18px;background:var(--pl)" onclick="chSt=!chSt;render()">😊</button>`;
+ const lab=(ic,acc,mul)=>`<label style="width:42px;height:42px;flex:none;border-radius:50%;background:var(--pl);display:grid;place-items:center;position:relative;overflow:hidden;cursor:pointer">${ic}<input type="file" accept="${acc}"${mul?' multiple':''} onclick="window._pick=1" onchange="pickChat(this)" style="position:absolute;inset:0;width:100%;height:100%;opacity:0;margin:0;padding:0;font-size:0;cursor:pointer"></label>`;
+ return `<div class="row" style="justify-content:space-between;margin-top:16px"><button class="btn" onclick="viewId?(tab='admin'):(tab=chatFrom=='chats'?'chats':'group');render()">‹</button><span class="row" style="flex-wrap:nowrap">${viewId?'':peerAva(40)}<b>${esc(peer.name)}</b></span>${viewId?'<span></span>':`<button class="btn" style="width:42px;height:42px;padding:0;font-size:20px;line-height:1" onclick="chMenu=!chMenu;render()">⋯</button>`}</div>${chMenu&&!viewId?`<div class="pmn"><button class="btn" onclick="chMenu=false;askBlockChat()">🚫 บล็อก</button></div>`:''}
+ ${viewId&&isAdmin&&!c.mediator?`<div class="row" style="margin:8px 0"><button class="btn g" onclick="pullMid()">🛡 เข้าร่วมเป็นตัวกลาง</button><span class="mu">ผู้ใช้จะคุยต่อได้หลังตัวกลางเข้าร่วม</span></div>`:''}
+ ${c.mediator?stepV(c):''}<div class="card" style="min-height:260px">${ms.map(bub).join('')||'<div class="mu">เริ่มทักได้เลย พิมพ์ข้อความแรกแล้วแชทจะไปอยู่ในเมนูแชท</div>'}</div>
+ ${chSt?`<div class="card" style="display:grid;grid-template-columns:repeat(6,1fr);gap:6px;padding:8px">${STK.map(e=>`<button class="btn" style="font-size:25px;padding:4px" onclick="sendSticker('${e}')">${e}</button>`).join('')}</div>`:''}
+ ${locked?`<div class="card" style="text-align:center">🔒 ครบจำนวนที่ส่งได้แล้ว ต้องรอตัวกลางเข้าร่วมแชทนี้ ถึงจะคุยต่อได้</div><div class="row">${stBtn}<span class="mu">ส่งสติกเกอร์ได้ไม่จำกัด</span></div>`:`${att}${hint}<div class="row" style="flex-wrap:nowrap">${stBtn}${imgOk?lab('🖼️','image/jpeg,image/png,image/webp',1):''}${vidOk?lab('🎬','video/mp4,video/webm,video/quicktime',0):''}<input id="mt" style="flex:1" placeholder="${left>0?'พิมพ์ข้อความ (ไม่เกิน 15 คำ)':'ส่งข้อความครบแล้ว'}"${left>0?'':' disabled'} onkeydown="if(event.key==='Enter')send()"><button class="btn p" onclick="send()">ส่ง</button></div>`}`;}
+const shrinkLim=(f,l)=>new Promise(res=>{const r=new FileReader();r.onload=()=>shrinkSrc(r.result,l).then(res);r.onerror=()=>res(null);r.readAsDataURL(f)});
+async function chatImg(f){if(db&&assets){try{const a=await assets.upload(f);if(a&&a.url)return a.url}catch(e){}}return await shrinkLim(f,db?200000:350000)}
+async function pickChat(inp){window._pick=0;window._pend=0;const fs=[...(inp.files||[])];inp.value='';if(!fs.length){render();return}
+ const cur=chAtt&&!chAtt.wait?{...chAtt}:{};
+ if((fs[0].type||'').startsWith('video/')){chAtt={...cur,wait:1};render();const r=await vidStore(fs[0],'chat');chAtt={...cur};if(r)chAtt.vid=r}
+ else{chAtt={...cur,wait:1};render();const us=[];for(const f of fs){const u=await chatImg(f);if(u)us.push(u)}chAtt={...cur,imgs:[...(cur.imgs||[]),...us]}}
+ if(!(chAtt.imgs&&chAtt.imgs.length)&&!chAtt.vid)chAtt=null;render()}
+let chSeen={},chNot=null;try{chSeen=JSON.parse(localStorage.getItem('gw_cs')||'{}')}catch(e){}
+const lastIn=c=>{const m=(c.msgs||[]).filter(x=>!x.sys),l=m[m.length-1];return l&&l.from!=uid?l:null};
+const myChats=()=>chats.filter(c=>(c.ps||[]).includes(uid)&&!(me.blocked||[]).includes(c.ps[c.ps[0]==uid?1:0]));
+const unreadN=()=>myChats().filter(c=>{const l=lastIn(c);return l&&l.at>(chSeen[c.id]||0)}).length;
+function chSeenMark(){if(tab=='chat'&&!viewId&&peer&&peer.u){const id=cid(uid,peer.u),c=chats.find(x=>x.id==id),l=c&&lastIn(c);if(l&&l.at>(chSeen[id]||0)){chSeen[id]=l.at;try{localStorage.setItem('gw_cs',JSON.stringify(chSeen))}catch(e){}}}}
+function chatToast(on,txt,ou){const o=$('ctoast');o&&o.remove();const d=document.createElement('div');d.id='ctoast';d.style.cssText='position:fixed;top:calc(10px + env(safe-area-inset-top,0px));left:50%;transform:translateX(-50%);width:calc(100% - 24px);max-width:420px;background:#1f1633;color:#fff;border-radius:16px;padding:12px 14px;z-index:80;box-shadow:0 10px 30px rgba(0,0,0,.4);cursor:pointer;display:flex;gap:10px;align-items:center';d.innerHTML=`<span style="font-size:20px">💬</span><div style="min-width:0"><b>${esc(on)}</b><div style="font-size:12px;opacity:.85;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${esc(txt)}</div></div>`;d.onclick=()=>{d.remove();openChatFrom(ou,on)};document.body.appendChild(d);setTimeout(()=>d.remove(),6000)}
+function chatNotify(){const mc=myChats();
+ if(chNot===null){chNot={};mc.forEach(c=>{const l=lastIn(c);chNot[c.id]=l?l.at:0});return}
+ for(const c of mc){const l=lastIn(c);if(!l||l.at<=(chNot[c.id]||0))continue;chNot[c.id]=l.at;
+  if(tab=='chat'&&!viewId&&peer&&cid(uid,peer.u)==c.id&&!document.hidden)continue;
+  const i=c.ps[0]==uid?1:0,on=(c.nm||[])[i]||'สมาชิก',ou=c.ps[i],txt=l.st?'🙂 ส่งสติกเกอร์':l.t||(l.img||l.imgs?'🖼️ ส่งรูปภาพ':l.vid?'🎬 ส่งวิดีโอ':'ข้อความใหม่');
+  beep();try{navigator.vibrate&&navigator.vibrate([200,100,200])}catch(e){}
+  chatToast(on,txt,ou);
+  try{if(document.hidden&&window.Notification&&Notification.permission==='granted')new Notification(on,{body:txt})}catch(e){}}}
+async function send(){try{window.Notification&&Notification.permission==='default'&&Notification.requestPermission()}catch(e){}
+ const el=$('mt'),t=el?el.value.trim():'',att=chAtt,c=chats.find(x=>x.id==(viewId||cid(uid,peer.u)))||{},free=!!c.mediator||!!viewId,q=chQuota(c),hasM=!!(att&&((att.imgs||[]).length||att.vid));
+ if(!t&&!hasM)return;if(att&&att.wait){alert('รอไฟล์อัปโหลดให้เสร็จก่อน');return}
+ if(!free){
+  if(t){if(q.txt>=2){alert('คุณส่งข้อความครบ 2 บรรทัดแล้ว ต้องรอตัวกลางเข้าร่วมแชทนี้ถึงจะคุยต่อได้');return}
+   if(wc(t)>15||t.length>200){alert('แต่ละบรรทัดต้องไม่เกิน 15 คำ');return}}
+  if(att&&(att.imgs||[]).length&&q.img){alert('ส่งรูปได้ครั้งเดียว ต้องรอตัวกลางเข้าร่วมแชทนี้');return}
+  if(att&&att.vid&&q.vid){alert('ส่งวิดีโอได้ครั้งเดียว ต้องรอตัวกลางเข้าร่วมแชทนี้');return}}
+ const m={from:uid,t,at:Date.now()};if(hasM){if((att.imgs||[]).length)m.imgs=att.imgs;if(att.vid)m.vid=att.vid}
+ if(el)el.value='';chAtt=null;
+ await saveChat(m,!free&&t&&q.txt+1>=2?{needMid:true}:{})}
+function askBlockChat(){if($('bk'))return;const m=document.createElement('div');m.id='bk';m.style.cssText='position:fixed;inset:0;background:rgba(0,0,0,.5);display:grid;place-items:center;z-index:50;padding:20px';
+ m.innerHTML=`<div style="background:#fff;color:#1f1633;border-radius:18px;padding:20px;max-width:340px;width:100%"><h3 style="margin:0 0 8px">🚫 บล็อก ${esc(peer.name)}</h3><p>แชทกับคนนี้จะหายไปจากเมนูแชท และคุณจะไม่เห็นโพสต์ของเขา</p><div class="row" style="justify-content:flex-end"><button class="btn" onclick="$('bk').remove()">ยกเลิก</button><button class="btn p" onclick="$('bk').remove();doBlockChat()">บล็อก</button></div></div>`;document.body.appendChild(m)}
+async function doBlockChat(){await blockU(peer.u);tab='chats';render()}
+async function saveChat(m,x){const id=viewId||cid(uid,peer.u),c=chats.find(y=>y.id==id)||{};const d={ps:c.ps||[uid,peer.u],nm:c.nm||[me.name||'สมาชิก',peer.name],mediator:!!c.mediator,needMid:!!c.needMid,step:c.step||0,msgs:[...(c.msgs||[]),m],...x};
+ if(!db){const A=(local.c=local.c||[]),i=A.findIndex(y=>y.id==id),o={id,...d};if(i>=0)A[i]=o;else A.push(o);chats=A;saveLocal();render();return}
+ if(JSON.stringify(d).length>900000){alert('แชทนี้มีรูป/คลิปมากเกินไป ลองส่งไฟล์ที่เล็กลง');return}
+ try{await db.collection('chats').doc(id).set(d)}catch(e){alert('ส่งไม่สำเร็จ ไฟล์อาจใหญ่เกินไป')}}
+const SX=['รอผู้ซื้อโอนเงิน','เงินเข้าแล้ว','ผู้ขายส่งรหัสแล้ว','ผู้ซื้อยืนยันรับรหัส','โอนเงินให้ผู้ขายแล้ว'];
+const stepV=c=>`<div class="card"><b>สถานะรายการ</b>${SX.map((s,i)=>`<div class="${i>(c.step||0)?'mu':''}">${i<=(c.step||0)?'✅':'⬜'} ${s}</div>`).join('')}${isAdmin&&(c.step||0)<4?`<button class="btn g" onclick="nextStep()">ยืนยันขั้นต่อไป: ${SX[(c.step||0)+1]}</button>`:''}</div>`;
+async function nextStep(){const c=chats.find(y=>y.id==(viewId||cid(uid,peer.u)))||{},s=(c.step||0)+1;await saveChat({sys:1,t:'📌 สถานะ: '+SX[s],at:Date.now()},{step:s})}
+async function pullMid(){await saveChat({sys:1,t:'🛡 ตัวกลาง GENERIA เข้าร่วมแชทนี้แล้ว · ผู้ซื้อโปรดรอแจ้งโอนเงิน',at:Date.now()},{mediator:true,step:0})}
+function group(){const g=groups.find(x=>x.id==openG);if(!g)return '';const T=[['feed','ฟีด'],['act','โพล/ประกวด'],['rank','อันดับ'],['mis','ภารกิจ']];
+ return `<button class="btn" onclick="tab='market';render()">‹ กลับ</button><div class="nav">${T.map(t=>`<button class="${gt==t[0]?'on':''}" onclick="gt='${t[0]}';render()">${t[1]}</button>`).join('')}</div>`+({feed:feedOld,act:actsV,rank:rankV,mis:misV})[gt](g);}
+async function like(id){const p=posts.find(x=>x.id==id),l=p.likes||[];await db.collection('posts').doc(id).update({likes:l.includes(uid)?l.filter(x=>x!=uid):[...l,uid]})}
+async function addCmt(id){const el=$('ci'+id),t=el&&el.value.trim(),at=cAtt[id];if(!t&&!at)return;if(at&&at.wait){alert('รอคลิปอัปโหลดให้เสร็จก่อน');return}const p=posts.find(x=>x.id==id);if(!p)return;
+ const c={n:me.name||'สมาชิก',u:uid,t,sk:skSelf(),at:Date.now()};if(at){if(at.img)c.img=at.img;if(at.vid)c.vid=at.vid}
+ if(p.gid=='demo'||!db){(p.cm=p.cm||[]).push(c);el.value='';delete cAtt[id];p.gid=='demo'?saveDemo():saveLocal();render();return}
+ try{await db.collection('posts').doc(id).update({cm:[...(p.cm||[]),c]});el.value='';delete cAtt[id]}catch(e){alert('ส่งความคิดเห็นไม่สำเร็จ ไฟล์อาจใหญ่เกินไป')}}
+const bump=()=>setMe({act:{...(me.act||{}),[today()]:((me.act||{})[today()]||0)+1}});
+const A_=id=>acts.find(a=>a.id==id),vals=o=>Object.values(o||{});
+function actsV(g){const A=acts.filter(a=>a.gid==g.id).sort((a,b)=>b.at-a.at),adm=isAdmin||g.owner==uid;
+ return `<div class="card"><h3>สร้างโพล</h3><input id="pq" placeholder="คำถาม"><input id="po" placeholder="ตัวเลือก คั่นด้วย , เช่น ใช่,ไม่ใช่"><button class="btn p" onclick="mkPoll()">สร้างโพล</button></div>
+ ${adm?`<div class="card"><h3>เปิดประกวด/แข่งชิงแต้ม</h3><input id="cq" placeholder="หัวข้อประกวด"><input id="cp" type="number" placeholder="แต้มรางวัล"><button class="btn g" onclick="mkCon()">เปิดประกวด</button></div>`:''}
+ ${A.map(a=>a.type=='poll'?pollC(a):conC(a,adm)).join('')||'<div class="mu">ยังไม่มีกิจกรรม</div>'}`;}
+function pollC(a){const v=a.votes||{},t=vals(v).length,my=v[uid];return `<div class="card"><b>📊 ${esc(a.title)}</b>${a.opts.map((o,i)=>{const c=vals(v).filter(x=>x==i).length;return `<div style="margin:6px 0"><button class="btn ${my==i?'p':''}" style="width:100%;text-align:left" ${my!=null?'disabled':''} onclick="vote('${a.id}',${i})">${esc(o)} · ${c}</button><div class="bar"><i style="width:${t?c/t*100:0}%"></i></div></div>`}).join('')}<div class="mu">${t} โหวต</div></div>`}
+function conC(a,adm){const E=a.entries||[],vb=a.vb||{},my=vb[uid];return `<div class="card"><b>🏆 ${esc(a.title)}</b> <span class="gold">${a.prize} แต้ม</span>${a.closed?` <span class="tag">ปิดแล้ว · ผู้ชนะ ${esc(a.winner)}</span>`:''}
+ ${E.map((e,i)=>`<div class="row" style="margin:6px 0"><span style="flex:1">${esc(e.name)}: ${esc(e.text)}</span><button class="btn ${my==i?'p':''}" ${a.closed||my!=null?'disabled':''} onclick="voteE('${a.id}',${i})">👍 ${vals(vb).filter(x=>x==i).length}</button></div>`).join('')||'<div class="mu">ยังไม่มีผลงาน</div>'}
+ ${a.closed?'':`<input id="ce${a.id}" placeholder="ส่งผลงานของคุณ"><div class="row"><button class="btn p" onclick="addE('${a.id}')">ส่งผลงาน</button>${adm?`<button class="btn g" onclick="closeC('${a.id}')">ปิดและมอบรางวัล</button>`:''}</div>`}</div>`}
+async function mkPoll(){const q=$('pq').value.trim(),o=$('po').value.split(',').map(s=>s.trim()).filter(Boolean);if(!q||o.length<2||!db)return;await db.collection('acts').doc('a'+Date.now()).set({type:'poll',gid:openG,title:q,opts:o,votes:{},at:Date.now()})}
+async function mkCon(){const q=$('cq').value.trim();if(!q||!db)return;await db.collection('acts').doc('a'+Date.now()).set({type:'con',gid:openG,title:q,prize:+$('cp').value||0,entries:[],vb:{},closed:false,at:Date.now()})}
+async function vote(id,i){const a=A_(id);if((a.votes||{})[uid]!=null)return;await db.collection('acts').doc(id).update({votes:{...a.votes,[uid]:i}});bump()}
+async function voteE(id,i){const a=A_(id);if((a.vb||{})[uid]!=null)return;await db.collection('acts').doc(id).update({vb:{...a.vb,[uid]:i}});bump()}
+async function addE(id){const t=$('ce'+id).value.trim(),a=A_(id);if(!t)return;await db.collection('acts').doc(id).update({entries:[...(a.entries||[]),{uid,name:me.name||'สมาชิก',text:t}]});bump()}
+async function closeC(id){const a=A_(id),E=a.entries||[];if(!E.length)return;const c=E.map((_,i)=>vals(a.vb).filter(x=>x==i).length),w=E[c.indexOf(Math.max(...c))],r=db.collection('profiles').doc(w.uid),s=await r.get(),d=s.exists?s.data():{};await r.set({...d,points:(d.points||0)+a.prize});await db.collection('acts').doc(id).update({closed:true,winner:w.name})}
+function rankV(g){const s={},nm={};posts.filter(p=>p.gid==g.id).forEach(p=>{nm[p.uid]=p.name;s[p.uid]=(s[p.uid]||0)+2+Object.keys(reactsOf(p)).length+(p.cm||[]).length});const r=Object.entries(s).sort((a,b)=>b[1]-a[1]).slice(0,10);
+ return `<div class="card"><h3>🏅 อันดับสมาชิกในกลุ่ม</h3><div class="mu">โพสต์ +2 · ได้ไลก์ +1 · ได้คอมเมนต์ +1</div>${r.map((x,i)=>`<div class="pop"><span style="font-size:22px">${['🥇','🥈','🥉'][i]||i+1}</span><div class="t"><b>${esc(nm[x[0]])}${x[0]==uid?' (คุณ)':''}</b></div><b class="gold">${x[1]}</b></div>`).join('')||'<div class="mu">ยังไม่มีข้อมูล</div>'}</div>`}
+const wk=()=>Math.floor((Date.now()+252e5)/6048e5),dk=t=>new Date(t+252e5).toISOString().slice(0,10);
+function misV(g){const mine=posts.filter(p=>p.uid==uid),M=[{k:'d1'+today(),t:'โพสต์ 1 ครั้ง (รายวัน)',pt:5,c:mine.filter(p=>dk(p.at)==today()).length,n:1},{k:'d2'+today(),t:'ร่วมโหวตหรือประกวด 1 ครั้ง (รายวัน)',pt:3,c:(me.act||{})[today()]||0,n:1},{k:'w1'+wk(),t:'โพสต์ 5 ครั้ง (รายสัปดาห์)',pt:20,c:mine.filter(p=>Math.floor((p.at+252e5)/6048e5)==wk()).length,n:5}];
+ return `<div class="card"><h3>🎯 ภารกิจ</h3>${M.map(m=>{const done=(me.claimed||{})[m.k],ok=m.c>=m.n;return `<div class="row" style="margin:8px 0"><div style="flex:1">${m.t}<div class="mu">${Math.min(m.c,m.n)}/${m.n}</div></div><button class="btn g" ${done||!ok?'disabled':''} onclick="claim('${m.k}',${m.pt})">${done?'รับแล้ว':'รับ '+m.pt+' แต้ม'}</button></div>`}).join('')}</div>`}
+async function claim(k,pt){if((me.claimed||{})[k])return;await setMe({claimed:{...(me.claimed||{}),[k]:1},points:(me.points||0)+pt})}
+function askLeave(id){const g=groups.find(x=>x.id==id);if(!g||g.owner==uid)return;const m=document.createElement('div');m.id='lv';m.style.cssText='position:fixed;inset:0;background:rgba(0,0,0,.5);display:grid;place-items:center;z-index:50;padding:20px';
+ m.innerHTML=`<div style="background:#fff;color:#1f1633;border-radius:18px;padding:20px;max-width:340px;width:100%"><h3 style="margin:0 0 8px">⚠️ ออกจากกลุ่ม</h3><p>ถ้ากดตกลง คุณจะออกจากกลุ่ม “${esc(g.name)}”</p><div class="row" style="justify-content:flex-end"><button class="btn" onclick="$('lv').remove()">ยกเลิก</button><button class="btn p" onclick="$('lv').remove();leave('${id}')">ตกลง</button></div></div>`;document.body.appendChild(m)}
+async function leave(id){if(id=='demo'){DG.members=DG.members.filter(m=>m!=uid);saveDemo();render();return}const g=groups.find(x=>x.id==id);if(!g||g.owner==uid)return;await setG(id,{members:(g.members||[]).filter(m=>m!=uid),jok:Object.fromEntries(Object.entries(g.jok||{}).filter(e=>e[0]!=uid))});if(db)for(const t of txns.filter(t=>t.gid==id&&t.buyer==uid&&t.status=='รอส่งมอบรหัส'))await db.collection('txns').doc(t.id).update({status:'ยกเลิก'})}
+function fire(g){if(g.demo)return 21;const by={};posts.filter(p=>p.gid==g.id).forEach(p=>{const d=dk(p.at);(by[d]=by[d]||new Set()).add(p.uid)});
+ const act=d=>(by[d]?by[d].size:0)>=2;let f=1,c=Date.parse(dk(g.at||Date.now())+'T00:00:00Z')+864e5;const td=today();
+ while(c<Date.parse(td+'T00:00:00Z')){f=act(new Date(c).toISOString().slice(0,10))?f+1:1;c+=864e5}
+ return act(td)&&dk(g.at||Date.now())!=td?f+1:f}
+const ranked=()=>groups.filter(g=>g.status=='approved').sort((a,b)=>fire(b)-fire(a)||(b.members||[]).length-(a.members||[]).length);
+const topOf=g=>{const i=ranked().findIndex(x=>x.id==g.id);return i>=0&&i<10?i+1:0};
+const nm=(g,u,name,sk)=>{const t=topOf(g);
+ if(u==g.owner){const rd=t>5,c=rd?' rr':'';return t?`<span class="crw"><span class="rbw"><span class="rb${c}">${pmName(u,sk,name)}</span></span><i class="cr c1">👑</i><i class="cr c2">👑</i><i class="cr c3">👑</i><i class="cr c4">👑</i><i class="cr c5">👑</i><i class="cr c6">👑</i><i class="cr c7">👑</i></span><span class="bdg rbw${rd?' rbr':''}" style="border-color:#c026d3"><span class="rb${c}">หัวหน้ากลุ่ม</span></span>`:`<b>${pmName(u,sk,name)}</b><span class="bdg frm">หัวหน้ากลุ่ม</span>`}
+ if((g.admins||[]).includes(u))return `<span class="gd">${pmName(u,sk,name)}</span><span class="bdg gdb"><span class="gd">Adm</span></span>`;
+ return `<b>${pmName(u,sk,name)}</b>`};
+const mname=(g,u)=>(g.names||{})[u]||(posts.find(p=>p.uid==u)||{}).name||'สมาชิก';
+function admCard(g){if(g.owner!=uid)return '';const A=g.admins||[];return `<div class="card"><h3>จัดการแอดมิน (${A.length}/5)</h3>${(g.members||[]).filter(m=>m!=g.owner).map(m=>{const is=A.includes(m);return `<div class="row" style="margin:6px 0"><span style="flex:1">${esc(mname(g,m))}</span><button class="btn ${is?'':'p'}" ${!is&&A.length>=5?'disabled':''} onclick="togAdm('${g.id}','${m}')">${is?'ปลดแอดมิน':A.length>=5?'ครบ 5 คน':'ตั้งเป็นแอดมิน'}</button></div>`}).join('')||'<div class="mu">ยังไม่มีสมาชิก</div>'}</div>`}
+async function togAdm(id,u){const g=groups.find(x=>x.id==id),A=g.admins||[];if(g.owner!=uid)return;await setG(id,{admins:A.includes(u)?A.filter(x=>x!=u):A.length<5?[...A,u]:A})}
+const RW=[[500,200],[400,150],[300,100],[200,50],[100,0]];
+async function addPts(u,p){if(!p)return;const r=db.collection('profiles').doc(u),s=await r.get(),d=s.exists?s.data():{};await r.set({...d,points:(d.points||0)+p})}
+async function evalRank(){if(!db||!isAdmin||window._ev)return;window._ev=1;setTimeout(()=>window._ev=0,60000);
+ const ok=ranked().filter(g=>!g.demo);
+ for(let i=0;i<ok.length;i++){const g=ok[i],top=i<5?i+1:0,ref=db.collection('groups').doc(g.id);
+  if((g.rk||0)!==top){await ref.update({rk:top,rkSince:Date.now()});continue}
+  if(top&&Date.now()-(g.rkSince||0)>=30*864e5){const [lp,ap]=RW[top-1];await addPts(g.owner,lp);for(const a of (g.admins||[]))await addPts(a,ap);await ref.update({rkSince:Date.now(),lastPay:{at:Date.now(),rank:top}})}}}
+try{const u=JSON.parse(localStorage.getItem('gw_ui')||'{}');if(u.tab&&!['chat','admin','viewprof'].includes(u.tab)&&!(u.tab=='group'&&!u.openG)){tab=u.tab;openG=u.openG||null;gt=u.gt||'feed'}}catch(e){}
+/* ===== แถบรางวัลเช็กอินเลื่อนดูได้ (เพิ่มใหม่) ===== */
+let rwSc=null;
+function rwTiles(d,done,st){let h='';const tg=done?Math.min(st+1,30):d;
+ for(let i=1;i<=30;i++){const r=reward(i),past=done?i<=st:i<d,cur=!done&&i==d,sp=i==15||i==29||i==30,
+  ic=i==15?'🖼️':i==29?'🎫':i==30?'👑':'🪙',tx=i==15?(past?'✅ ได้แล้ว':'กรอบพิเศษ'):i==29?'ใบเปลี่ยนชื่อ':i==30?'Premium 1 ชม.':'+'+r.p+' แต้ม';
+  h+=`<div class="rwd${past?' dn':''}${cur?' cu':''}${sp?' sp':''}"${i==tg?' data-t="1"':''}><div class="mu">วันที่ ${i}</div>${i==15?`<div style="height:58px;display:grid;place-items:center"><span class="ava sk-royal" style="width:34px;height:34px;--s:34px;font-size:14px;margin:0;background:linear-gradient(135deg,#6d28d9,#be185d)">ค</span></div>`:`<div style="font-size:22px">${past?'✅':ic}</div>`}<b>${tx}</b></div>`}
+ return h}
+const grantFrame=id=>setMe({frames:[...new Set([...(me.frames||[]),id])]});
+function buyFrame(id){const x=SKINS.find(k=>k.id==id);if(!x||$('bf'))return;const m=document.createElement('div');m.id='bf';m.style.cssText='position:fixed;inset:0;background:rgba(10,5,25,.72);z-index:70;display:grid;place-items:center;padding:20px';
+ m.innerHTML=`<div style="background:linear-gradient(160deg,#1e0f33,#0a0510);color:#fff;border:1px solid #4c1d95;border-radius:22px;padding:24px 20px 20px;max-width:340px;width:100%;text-align:center;box-shadow:0 20px 60px rgba(124,58,237,.55)"><div style="font-size:14px;font-weight:700;color:#c4b5fd">⚡ กรอบพิเศษ</div><div style="display:grid;place-items:center;margin:46px 0 54px"><span class="ava sk-${id}" style="width:84px;height:84px;--s:84px;font-size:31px;margin:0;background:${me.avatar?`url('${me.avatar}') center/cover`:'linear-gradient(135deg,#6d28d9,#be185d)'}">${me.avatar?'':esc(String(me.name||'ค').trim()[0]||'ค')}</span></div><h3 style="margin:0 0 4px">${x.n}</h3><div class="gold" style="font-size:22px">${x.price} บาท</div><div class="mu" style="margin-top:8px;color:#fca5a5">ระบบชำระเงินจริงยังไม่ได้เชื่อมในเวอร์ชันนี้</div><div class="row" style="justify-content:center;margin-top:16px">${isAdmin?`<button class="btn g" onclick="$('bf').remove();grantFrame('${id}')">ปลดล็อกทดสอบ (เจ้าของ)</button>`:''}<button class="btn" onclick="$('bf').remove()">ปิด</button></div></div>`;document.body.appendChild(m)}
+function frameGot(){if($('fg'))return;const m=document.createElement('div');m.id='fg';m.style.cssText='position:fixed;inset:0;background:rgba(10,5,25,.7);z-index:70;display:grid;place-items:center;padding:20px';
+ m.innerHTML=`<div style="background:linear-gradient(160deg,#1e0f33,#0a0510);color:#fff;border:1px solid #4c1d95;border-radius:22px;padding:26px 20px 20px;max-width:340px;width:100%;text-align:center;box-shadow:0 20px 60px rgba(124,58,237,.55)"><div style="font-size:14px;font-weight:700;color:#c4b5fd">🎉 เช็คอินครบ 15 วัน</div><div style="display:grid;place-items:center;margin:34px 0 26px"><span class="ava sk-royal" style="width:84px;height:84px;--s:84px;font-size:31px;margin:0;background:${me.avatar?`url('${me.avatar}') center/cover`:'linear-gradient(135deg,#6d28d9,#be185d)'}">${me.avatar?'':esc(String(me.name||'ค').trim()[0]||'ค')}</span></div><h3 style="margin:0 0 6px">ได้รับกรอบ “ราชันราตรี”</h3><div class="mu" style="color:#c4b5fd">บันทึกเข้าคลังกรอบแล้ว<br>ดูได้ที่ โปรไฟล์ › คลังกรอบโปรไฟล์</div><div class="row" style="justify-content:center;margin-top:16px"><button class="btn" onclick="$('fg').remove()">ไว้ทีหลัง</button><button class="btn p" onclick="$('fg').remove();setMe({skin:'royal'})">ใส่เลย</button></div></div>`;document.body.appendChild(m)}
+function rwFix(){const e=$('rwst');if(!e)return;if(rwSc==null){const t=e.querySelector('[data-t]');rwSc=t?Math.max(0,t.offsetLeft-4):0}e.scrollLeft=rwSc}
+/* ===== จบ ===== */
+/* ===== รีเซ็ตเช็กอิน 00:00 น. เวลาไทย (เพิ่มใหม่) ===== */
+let _dk=today();
+function _midnight(){const ms=864e5-((Date.now()+252e5)%864e5);setTimeout(()=>{_dk=today();rwSc=null;render();_midnight()},ms+500)}
+_midnight();
+document.addEventListener('visibilitychange',()=>{if(!document.hidden&&today()!=_dk){_dk=today();rwSc=null;render()}});
+window.addEventListener('focus',()=>{if(today()!=_dk){_dk=today();rwSc=null;render()}});
+/* ===== จบ ===== */
+/* ===== ระบบเพื่อน (เพิ่มใหม่) ===== */
+let gwFR=[],gwPM={},gwQ='',gwINV=[],gwPrev=null,gwIPrev=null;
+const gwEnc=encodeURIComponent;
+const gwRel=o=>gwFR.find(f=>(f.from==uid&&f.to==o)||(f.from==o&&f.to==uid));
+const gwNm=(id,fb)=>(gwPM[id]&&gwPM[id].name)||fb||'สมาชิก';
+const gwRow=(id,n,r)=>`<div class="pop">${ava(n,id,38)}<div class="t"><b>${esc(n)}</b></div>${r}</div>`;
+function gwFrRes(){
+ const t=gwQ.trim().toLowerCase();
+ if(t.length<2)return '<div class="mu">พิมพ์ชื่อหรือรหัสเพื่อนอย่างน้อย 2 ตัวอักษร</div>';
+ const r=Object.keys(gwPM).filter(id=>id!=uid&&((gwPM[id].name||'').toLowerCase().includes(t)||(t.length>=4&&(gwPM[id].fc||'').toLowerCase()==t))).slice(0,8);
+ if(!r.length)return '<div class="mu">ไม่พบผู้ใช้ที่ค้นหา</div>';
+ return r.map(id=>{const f=gwRel(id);let b;
+  if(!f)b=`<button class="btn p" onclick="gwFr('add','${gwEnc(id)}')">➕ เพิ่มเพื่อน</button>`;
+  else if(f.status=='accepted')b='<span class="tag">เพื่อนแล้ว</span>';
+  else if(f.from==uid)b='<span class="tag">รอตอบรับ</span>';
+  else b=`<button class="btn g" onclick="gwFr('acc','${gwEnc(f.id)}')">รับเพื่อน</button>`;
+  return gwRow(id,gwNm(id),b)}).join('')}
+function gwFrCard(){
+ if(!db)return '<div class="card" id="gwfr"><h3>👫 เพื่อน</h3><div class="mu">ระบบเพื่อนใช้ได้เมื่อเข้าสู่ระบบ</div></div>';
+ const inc=gwFR.filter(f=>f.to==uid&&f.status=='pending'),out=gwFR.filter(f=>f.from==uid&&f.status=='pending'),fl=gwFR.filter(f=>f.status=='accepted'&&(f.from==uid||f.to==uid));
+ const code=me.fcode||'กำลังสร้าง...';
+ return `<div class="card" id="gwfr"><h3>👫 เพื่อน <span class="tag">${fl.length} คน</span></h3>
+ <div class="row" style="margin-bottom:8px"><span class="mu">รหัสของฉัน:</span><b>${esc(code)}</b><button class="btn" onclick="try{navigator.clipboard.writeText('${esc(code)}');this.textContent='คัดลอกแล้ว ✓'}catch(e){}">คัดลอก</button></div>
+ ${inc.length?`<div class="sec" style="font-size:14px;margin:10px 0 4px">📩 คำขอเป็นเพื่อน (${inc.length})</div>${inc.map(f=>gwRow(f.from,gwNm(f.from,f.fromName),`<button class="btn p" onclick="gwFr('acc','${gwEnc(f.id)}')">รับ</button><button class="btn" onclick="gwFr('rej','${gwEnc(f.id)}')">ปฏิเสธ</button>`)).join('')}`:''}
+ ${gwExtra()}<div class="sec" style="font-size:14px;margin:10px 0 4px">🔎 เพิ่มเพื่อน</div>
+ <input id="gwq" placeholder="ค้นหาชื่อ หรือใส่รหัสเพื่อน" value="${esc(gwQ)}" oninput="gwQ=this.value;document.getElementById('gwres').innerHTML=gwFrRes()">
+ <div id="gwres">${gwFrRes()}</div>
+ ${out.length?`<div class="sec" style="font-size:14px;margin:10px 0 4px">⏳ ส่งคำขอแล้ว</div>${out.map(f=>gwRow(f.to,gwNm(f.to,f.toName),`<button class="btn" onclick="gwFr('rej','${gwEnc(f.id)}')">ยกเลิก</button>`)).join('')}`:''}
+ <div class="sec" style="font-size:14px;margin:10px 0 4px">💜 รายชื่อเพื่อน</div>
+ ${fl.length?fl.map(f=>{const o=f.from==uid?f.to:f.from;return gwRow(o,gwNm(o,f.from==uid?f.toName:f.fromName),`<button class="btn p" onclick="gwChat('${gwEnc(o)}')">💬 แชท</button><button class="btn" title="ชวนเข้ากลุ่ม" onclick="gwInv('${gwEnc(o)}')">🎟️</button><button class="btn" onclick="gwFr('unf','${gwEnc(f.id)}')">ลบ</button>`)}).join(''):'<div class="mu">ยังไม่มีเพื่อน</div>'}</div>`}
+window.gwFr=async function(a,id){id=decodeURIComponent(id);
+ try{
+  if(a=='add'){if(gwRel(id))return;await db.collection('friends').doc('fr_'+uid+'_'+id).set({from:uid,to:id,fromName:me.name||'สมาชิก',toName:gwNm(id),status:'pending',at:Date.now()})}
+  else if(a=='acc')await db.collection('friends').doc(id).update({status:'accepted',at:Date.now()});
+  else if(a=='rej')await db.collection('friends').doc(id).delete();
+  else if(a=='unf'){if(confirm('ลบเพื่อนคนนี้?'))await db.collection('friends').doc(id).delete()}
+ }catch(e){alert('ทำรายการไม่สำเร็จ ลองใหม่อีกครั้ง')}};
+function gwFrBtn(){
+ const bl=document.querySelector('.bell');if(!bl)return;
+ let e=document.getElementById('gwfb');
+ if(!e){e=document.createElement('span');e.id='gwfb';e.style.cssText='font-size:22px;position:relative;cursor:pointer;margin-right:2px';
+  e.onclick=function(){tab='profile';render();setTimeout(function(){const c=document.getElementById('gwfr');c&&c.scrollIntoView({behavior:'smooth',block:'start'})},60)};
+  bl.parentNode.insertBefore(e,bl)}
+ const n=db?gwFR.filter(f=>f.to==uid&&f.status=='pending').length+gwINV.length:0;
+ e.innerHTML='👫'+(n?`<span style="position:absolute;top:-4px;right:-8px;background:#ef4444;color:#fff;border-radius:999px;font-size:11px;font-weight:700;padding:1px 6px">${n}</span>`:'')}
+const _gwPf=profile;profile=function(){return _gwPf()+gwFrCard()};
+const _gwR=render;render=function(){const r=_gwR.apply(this,arguments);try{gwFrBtn()}catch(e){}return r};
+const _gwI=init;init=async function(){await _gwI();
+ if(!db)return;
+ try{db.collection('friends').onSnapshot(s=>{const first=gwPrev===null;gwFR=s.docs.map(d=>({id:d.id,...d.data()}));try{gwFrNotify(first)}catch(e){}render()})}catch(e){}
+ try{db.collection('ginv').onSnapshot(s=>{const first=gwIPrev===null;gwINV=s.docs.map(d=>({id:d.id,...d.data()})).filter(i=>i.to==uid);try{gwInvNotify(first)}catch(e){}render()})}catch(e){}
+ try{db.collection('profiles').onSnapshot(s=>{gwPM={};s.docs.forEach(d=>{const x=d.data()||{};gwPM[d.id]={name:x.name||'',fc:x.fcode||''}});try{gwFcode()}catch(e){}const e=document.getElementById('gwres');if(e)e.innerHTML=gwFrRes()})}catch(e){}};
+/* ===== จบ ===== */
+/* ===== แชทเพื่อน ชวนเข้ากลุ่ม แจ้งเตือน (เพิ่มใหม่) ===== */
+function gwSeen(){try{return JSON.parse(localStorage.getItem('gw_frseen')||'[]')}catch(e){return[]}}
+function gwSeenAdd(id){const a=gwSeen();if(!a.includes(id)){a.push(id);try{localStorage.setItem('gw_frseen',JSON.stringify(a.slice(-200)))}catch(e){}}}
+function gwOpenFr(){tab='profile';render();setTimeout(function(){const c=document.getElementById('gwfr');c&&c.scrollIntoView({behavior:'smooth',block:'start'})},60)}
+function gwToast(icon,title,txt,fn){
+ const o=document.getElementById('gwtoast');o&&o.remove();
+ const d=document.createElement('div');d.id='gwtoast';
+ d.style.cssText='position:fixed;top:calc(10px + env(safe-area-inset-top,0px));left:50%;transform:translateX(-50%);width:calc(100% - 24px);max-width:420px;background:linear-gradient(135deg,#2e1065,#1f1633);color:#fff;border:1px solid #6d28d9;border-radius:16px;padding:12px 14px;z-index:81;box-shadow:0 10px 30px rgba(0,0,0,.4);cursor:pointer;display:flex;gap:10px;align-items:center';
+ d.innerHTML='<span style="font-size:20px">'+icon+'</span><div style="min-width:0"><b>'+esc(title)+'</b><div style="font-size:12px;opacity:.85;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">'+esc(txt)+'</div></div>';
+ d.onclick=function(){d.remove();fn&&fn()};document.body.appendChild(d);setTimeout(function(){d.remove()},6500);
+ try{navigator.vibrate&&navigator.vibrate(120)}catch(e){}
+ try{if(document.hidden&&window.Notification&&Notification.permission==='granted')new Notification(title,{body:txt})}catch(e){}}
+function gwFrNotify(first){
+ const seen=gwSeen(),cur={};gwFR.forEach(f=>cur[f.id]=f.status);
+ if(first){const n=gwFR.filter(f=>f.to==uid&&f.status=='pending'&&!seen.includes(f.id));
+  if(n.length){n.forEach(f=>gwSeenAdd(f.id));gwToast('👫','คำขอเป็นเพื่อน',n.length==1?gwNm(n[0].from,n[0].fromName)+' อยากเป็นเพื่อนกับคุณ':'มี '+n.length+' คำขอเป็นเพื่อนรอคุณอยู่',gwOpenFr)}}
+ else gwFR.forEach(f=>{const p=gwPrev[f.id];
+  if(f.to==uid&&f.status=='pending'&&p===undefined&&!seen.includes(f.id)){gwSeenAdd(f.id);gwToast('👫','คำขอเป็นเพื่อนใหม่',gwNm(f.from,f.fromName)+' อยากเป็นเพื่อนกับคุณ',gwOpenFr)}
+  if(f.from==uid&&p=='pending'&&f.status=='accepted')gwToast('🎉','รับเป็นเพื่อนแล้ว',gwNm(f.to,f.toName)+' ตอบรับคำขอของคุณ',gwOpenFr)});
+ gwPrev=cur}
+function gwInvNotify(first){
+ const seen=gwSeen(),nw=gwINV.filter(i=>!seen.includes(i.id)&&(first||!(i.id in gwIPrev)));
+ if(nw.length){nw.forEach(i=>gwSeenAdd(i.id));const i=nw[0];
+  gwToast('🎟️','คำเชิญเข้ากลุ่ม',nw.length==1?gwNm(i.from,i.fromName)+' ชวนเข้ากลุ่ม '+(i.gname||''):'มีคำเชิญเข้ากลุ่ม '+nw.length+' รายการ',gwOpenFr)}
+ gwIPrev={};gwINV.forEach(i=>gwIPrev[i.id]=1)}
+var gwBusy=0;
+function gwFcode(){
+ if(!db||!uid||gwBusy||!gwPM[uid]||!Object.keys(me||{}).length)return;
+ const ids=Object.keys(gwPM).filter(i=>i!=uid),mine=me.fcode;
+ if(mine&&!ids.some(i=>i<uid&&gwPM[i].fc==mine))return;
+ const used=new Set(ids.map(i=>gwPM[i].fc).filter(Boolean)),A='ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
+ let c;do{c='';for(let k=0;k<8;k++)c+=A[Math.floor(Math.random()*A.length)]}while(used.has(c));
+ gwBusy=1;Promise.resolve(setMe({fcode:c})).catch(function(){}).then(function(){gwBusy=0})}
+function gwChat(e){const o=decodeURIComponent(e),f=gwRel(o);openChatFrom(o,gwNm(o,f&&(f.from==o?f.fromName:f.toName)))}
+function gwExtra(){
+ let h='';
+ if(window.Notification&&Notification.permission==='default')h+='<div style="margin:6px 0"><button class="btn" onclick="Notification.requestPermission().then(function(){render()})">🔔 เปิดแจ้งเตือนนอกแอป</button></div>';
+ if(gwINV.length)h+='<div class="sec" style="font-size:14px;margin:10px 0 4px">🎟️ คำเชิญเข้ากลุ่ม ('+gwINV.length+')</div>'+gwINV.map(i=>gwRow(i.from,gwNm(i.from,i.fromName)+' · '+(i.gname||'กลุ่ม'),'<button class="btn p" onclick="gwInvAct(\'go\',\''+gwEnc(i.id)+'\')">ดูกลุ่ม</button><button class="btn" onclick="gwInvAct(\'x\',\''+gwEnc(i.id)+'\')">ปิด</button>')).join('');
+ return h}
+async function gwInvAct(a,e){const id=decodeURIComponent(e),i=gwINV.find(x=>x.id==id);
+ try{
+  if(a=='go'&&i){if(!groups.find(g=>g.id==i.gid)){alert('ไม่พบกลุ่มนี้แล้ว');await db.collection('ginv').doc(id).delete();return}
+   db.collection('ginv').doc(id).delete().catch(function(){});openG=i.gid;tab='group';render()}
+  else await db.collection('ginv').doc(id).delete()
+ }catch(x){}}
+function gwInv(e){
+ const o=decodeURIComponent(e),my=groups.filter(g=>g.status=='approved'&&((g.members||[]).includes(uid)||g.owner==uid));
+ if(!my.length){alert('คุณยังไม่ได้อยู่ในกลุ่มไหน เข้าร่วมกลุ่มก่อนแล้วค่อยชวนเพื่อน');return}
+ const m=document.createElement('div');m.id='gwim';m.style.cssText='position:fixed;inset:0;background:rgba(10,5,25,.6);z-index:75;display:grid;place-items:center;padding:16px';
+ m.innerHTML='<div style="background:#fff;color:#1f1633;border-radius:18px;padding:18px;max-width:360px;width:100%;max-height:80vh;overflow:auto"><h3 style="margin:0 0 8px">🎟️ ชวน '+esc(gwNm(o))+' เข้ากลุ่ม</h3>'+my.map(g=>'<div class="pop"><div class="t"><b>'+esc(g.name)+'</b></div><button class="btn p" onclick="gwInvSend(\''+gwEnc(o)+'\',\''+gwEnc(g.id)+'\')">ชวน</button></div>').join('')+'<div class="row" style="justify-content:flex-end;margin-top:8px"><button class="btn" onclick="document.getElementById(\'gwim\').remove()">ปิด</button></div></div>';
+ document.body.appendChild(m)}
+async function gwInvSend(e,ge){const o=decodeURIComponent(e),gid=decodeURIComponent(ge),g=groups.find(x=>x.id==gid);
+ try{await db.collection('ginv').doc('gi_'+Date.now()+'_'+uid).set({from:uid,fromName:me.name||'สมาชิก',to:o,gid:gid,gname:g?g.name:'',at:Date.now()});
+  const m=document.getElementById('gwim');m&&m.remove();gwToast('✅','ส่งคำเชิญแล้ว',gwNm(o)+' → '+(g?g.name:''))}
+ catch(x){alert('ส่งคำเชิญไม่สำเร็จ ลองใหม่อีกครั้ง')}}
+/* ===== จบ ===== */
+/* ===== เมนู Admin เฉพาะเครื่องที่ผูกไว้ (เพิ่มใหม่) ===== */
+window.gwAdm=false;
+async function gwAdmInit(){
+ if(!db||!isAdmin)return;
+ let t=null;try{t=localStorage.getItem('gw_dev');if(!t){t=Math.random().toString(36).slice(2)+Date.now().toString(36);localStorage.setItem('gw_dev',t)}}catch(e){}
+ if(!t)return;
+ const r=db.collection('cfg').doc('admindev'),s=await r.get();
+ let tok=s&&s.exists?(s.data()||{}).tok:null;
+ if(!tok||location.hash=='#admin-claim'){await r.set({tok:t,at:Date.now()});tok=t}
+ window.gwAdm=(tok===t);render();try{midNotify()}catch(e){}}
+const _gwAd=admin;admin=function(){return window.gwAdm===true?_gwAd():''};
+const _gwI2=init;init=async function(){await _gwI2();try{await gwAdmInit()}catch(e){}};
+/* ===== จบ ===== */
+/* ===== รับงานกลางแล้วเด้งเข้าแชท (เพิ่มใหม่) ===== */
+const _gwMA=midAccept;
+midAccept=async function(id){
+ const m=mids.find(x=>x.id==id),ok=m&&m.status=='waiting';
+ await _gwMA(id);
+ if(ok){openChat(m.by,m.byName);try{await pullMid()}catch(e){}}};
+let gwMPrev=null;
+function gwMidWatch(){
+ const cur={};mids.forEach(m=>cur[m.id]=m.status);
+ if(gwMPrev)mids.forEach(m=>{if(m.by==uid&&m.status=='accepted'&&gwMPrev[m.id]=='waiting')
+  gwToast('🛡️','กลางรับงานแล้ว',(m.midName||'กลาง')+' เข้าแชทให้แล้ว กดเพื่อเข้าแชท',function(){openChatFrom(m.midUid,m.midName||'กลาง')})});
+ gwMPrev=cur}
+const _gwMN=midNotify;
+midNotify=function(){_gwMN.apply(this,arguments);try{gwMidWatch()}catch(e){}};
+/* ===== จบ ===== */
+/* ===== เสียง GENERIA (เพิ่มใหม่) ===== */
+(function(){
+ let ac=null,on=true;try{on=localStorage.getItem('gw_snd')!=='0'}catch(e){}window.gwSnd=function(v){if(v===undefined)return on;on=!!v;try{localStorage.setItem('gw_snd',on?'1':'0')}catch(e){}return on};
+ function ctx(){try{if(!ac)ac=new (window.AudioContext||window.webkitAudioContext)();if(ac.state==='suspended')ac.resume()}catch(e){}return ac}
+ function tone(f,t,d,v,type){const a=ctx();if(!a||!on)return;const o=a.createOscillator(),g=a.createGain(),s=a.currentTime+t;o.type=type||'sine';o.frequency.value=f;g.gain.setValueAtTime(0,s);g.gain.linearRampToValueAtTime(v,s+.01);g.gain.exponentialRampToValueAtTime(.0001,s+d);o.connect(g);g.connect(a.destination);o.start(s);o.stop(s+d+.05)}
+ const N={C5:523.25,E5:659.25,G5:783.99,C6:1046.5,E6:1318.5,G6:1568};
+ window.gwSfx=function(k){
+  if(k==='tap')tone(880,0,.06,.05,'triangle');
+  else if(k==='reward'){[N.C5,N.E5,N.G5,N.C6].forEach((f,i)=>tone(f,i*.09,.35,.12,'triangle'));tone(N.E6,.4,.6,.08);tone(N.G6,.45,.7,.05)}
+  else if(k==='fanfare'){[N.C5,N.G5,N.C6,N.E6,N.G6].forEach((f,i)=>tone(f,i*.11,.5,.13,'triangle'));tone(N.C6,.6,.9,.08,'sine')}
+ };
+ document.addEventListener('click',function(){ctx()},true);
+ const _ci=window.checkin;
+ if(typeof _ci==='function')window.checkin=async function(){const b=me&&me.last;const r=await _ci.apply(this,arguments);if(me&&me.last!==b)gwSfx('reward');return r};
+})();
+/* ===== จบ ===== */
+window.gwBoot=function(){return init()};
+</script>
+
+<style id="gx-dark">
+/* ===== GENERIA Dark Premium (เพิ่มใหม่) ===== */
+:root{--bg:#0B0912;--card:#191625;--tx:#F8F7FC;--mu:#A7A1B5;--pu:#8B5CF6;--pl:#2a2145;--go:#F5C76B;--bd:#302A40;color-scheme:dark;background:#0B0912}
+html,body{background:#0B0912!important;color:#F8F7FC}
+body::before,body::after{opacity:.14!important;animation:none!important}
+.mu{color:#A7A1B5}
+.hd{background:linear-gradient(135deg,#191625,#12101C)!important;border:1px solid #302A40;border-radius:20px;box-shadow:0 6px 20px rgba(0,0,0,.35)!important}
+.hd .logo{background:linear-gradient(135deg,#6D28D9,#8B5CF6)!important;box-shadow:0 4px 14px rgba(139,92,246,.35)!important}
+.hd .brand h1{background:linear-gradient(90deg,#F8F7FC,#A78BFA 60%,#F5C76B)!important;-webkit-background-clip:text!important;background-clip:text!important;-webkit-text-fill-color:transparent;letter-spacing:.14em;font-size:20px;font-weight:800;animation:none!important}
+.hd .brand h1::after{-webkit-text-fill-color:#F5C76B;color:#F5C76B}
+.card,.pc,.comp,.fc,.rwd,.tray,.tp,.gbar,.bar,.abt,.cmb,.skt,.ci,.pop,.rsum span{background-color:#191625!important;color:#F8F7FC;border-color:#302A40!important;border-radius:18px;box-shadow:0 4px 16px rgba(0,0,0,.3)}
+.rwd.sp{background:linear-gradient(135deg,#2b2312,#3a2d12)!important}
+.rwd.cu{border-color:#8B5CF6!important}
+input,select,textarea,.cin input,.comp textarea{background:#12101C!important;color:#F8F7FC!important;border:1px solid #302A40!important;border-radius:12px}
+input::placeholder,textarea::placeholder{color:#7d7790}
+.comp textarea:focus{outline:2px solid #6D28D9;background:#12101C!important}
+.nav button,.btn{background:#211C30;color:#F8F7FC;border:1px solid #302A40;transition:filter .15s,transform .15s}
+.nav button.on,.btn.p{background:linear-gradient(135deg,#8B5CF6,#6D28D9)!important;color:#fff!important;border-color:transparent!important;box-shadow:0 4px 14px rgba(109,40,217,.4)!important}
+.btn.g,.pb .btn{background:#F5C76B!important;color:#1b1405!important;border-color:#F5C76B!important}
+.btn:hover{filter:brightness(1.12)}.btn:disabled,button:disabled{opacity:.5;cursor:not-allowed;filter:none}
+#nav{background:rgba(18,16,28,.96)!important;border-top:1px solid #302A40!important;backdrop-filter:blur(10px)}
+#nav button{background:none!important;border:0!important;color:#A7A1B5!important;box-shadow:none!important;text-shadow:none!important}
+#nav button.on{color:#A78BFA!important;border-bottom:3px solid #8B5CF6!important;font-weight:700}
+#nav button.on .ic svg{stroke:#A78BFA!important;filter:none!important}
+[style*="background:#fff"],[style*="background:#f5f2ff"],[style*="background:#faf8ff"],[style*="background:#ede9fe"]{background:#191625!important;color:#F8F7FC!important}
+[style*="color:#1f1633"]{color:#F8F7FC!important}
+#midpop>div,#dpm>div,#bk>div,#lv>div,#gwim>div,#im>div{background:#191625!important;color:#F8F7FC!important;border:1px solid #302A40}
+hr{border-color:#302A40}
+::selection{background:#6D28D9;color:#fff}
+/* ===== ชื่อและป้าย Premium ตัวหนังสือหยินหยาง (เพิ่มใหม่) ===== */
+@property --a{syntax:'<angle>';initial-value:0deg;inherits:false}
+.yy{background:linear-gradient(90deg,#fff,#000,#fff,#000,#fff);background-size:300% 100%;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;-webkit-text-stroke:.4px rgba(255,255,255,.4);font-weight:800;filter:drop-shadow(0 0 5px rgba(255,255,255,.55)) drop-shadow(0 0 12px rgba(167,139,250,.5));animation:yyrun 3s linear infinite,yyaura 2.4s ease-in-out infinite}
+.pmbox{display:inline-block;margin-left:7px;padding:2px 10px;border-radius:6px;border:1.5px solid transparent;vertical-align:middle;line-height:1.4;font-size:11px;letter-spacing:.16em;text-transform:uppercase;background:linear-gradient(#151221,#151221) padding-box,conic-gradient(from var(--a),#fff,#000,#fff,#000,#fff) border-box;box-shadow:0 0 10px rgba(255,255,255,.22),0 0 22px rgba(139,92,246,.3);animation:pmspin 3s linear infinite}
+.pmbox .yy{font-weight:900}
+@keyframes yyrun{to{background-position:300% 0}}
+@keyframes yyaura{50%{filter:drop-shadow(0 0 3px rgba(255,255,255,.35)) drop-shadow(0 0 18px rgba(167,139,250,.8))}}
+@keyframes pmspin{to{--a:360deg}}
+</style>
+<script>
+/* ===== จำสถานะการใช้งานทั้งหมดก่อนออกจากแอป (เพิ่มใหม่) ===== */
+(function(){
+ var K='gw_ui2',tm=null;
+ function snap(){try{
+  var d={};document.querySelectorAll('#app input[id],#app textarea[id],#app select[id]').forEach(function(e){if(e.type!='file'&&e.type!='password'&&e.value)d[e.id]=e.value});
+  localStorage.setItem(K,JSON.stringify({tab:tab,openG:openG,gt:gt,flt:flt,q:q,skOpen:skOpen,viewId:viewId,peer:peer,y:Math.round(window.scrollY),d:d}));
+ }catch(e){}}
+ function later(){clearTimeout(tm);tm=setTimeout(snap,350)}
+ ['input','change','click','scroll','touchend'].forEach(function(ev){window.addEventListener(ev,later,{capture:true,passive:true})});
+ document.addEventListener('visibilitychange',function(){if(document.hidden)snap()});
+ window.addEventListener('pagehide',snap);window.addEventListener('beforeunload',snap);
+ setInterval(snap,4000);
+ try{
+  var s=JSON.parse(localStorage.getItem(K)||'null');if(!s||!s.tab)return;
+  var okTab=['chat','viewprof','admin','group'].indexOf(s.tab)<0||(s.tab=='group'&&s.openG)||(s.tab=='chat'&&s.peer)||(s.tab=='admin'&&isAdmin&&window.gwAdm===true);
+  if(!okTab)return;
+  tab=s.tab;openG=s.openG||null;gt=s.gt||'feed';flt=s.flt||'all';q=s.q||'';skOpen=!!s.skOpen;viewId=s.viewId||null;if(s.peer)peer=s.peer;
+  try{render()}catch(e){tab='home';openG=null;render()}
+  setTimeout(function(){try{var d=s.d||{};for(var k in d){var el=document.getElementById(k);if(el&&!el.value)el.value=d[k]}window.scrollTo(0,s.y||0)}catch(e){}},80);
+ }catch(e){}
+})();
+</script>
+<style>
+#gwlogin{position:fixed;inset:0;z-index:300;background:radial-gradient(circle at 50% 35%,#4c1d95,#0B0912 70%);display:grid;place-items:center;padding:24px;text-align:center;color:#F8F7FC;font-family:system-ui,"Noto Sans Thai",sans-serif}
+#gwlogin .box{max-width:340px;width:100%}
+#gwlogin .lg{width:84px;height:84px;margin:0 auto;border-radius:26px;background:linear-gradient(135deg,#6d28d9,#c026d3 70%,#f59e0b);display:grid;place-items:center;box-shadow:0 0 44px rgba(192,38,211,.6)}
+#gwlogin h1{font-size:29px;margin:14px 0 4px;letter-spacing:.14em;font-weight:900}
+#gwlogin p{margin:0;color:#A7A1B5;font-size:13px}
+#gwlogin .gbtn{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;padding:14px;border:0;border-radius:14px;background:#fff;color:#1f1f1f;font-size:15px;font-weight:600;cursor:pointer;margin-top:26px;font-family:inherit}
+#gwlogin .gbtn:active{transform:scale(.97)}
+#gwlogin .err{color:#fca5a5;font-size:12px;min-height:20px;margin-top:12px;line-height:1.5}
+</style>
+<div id="gwlogin">
+ <div class="box">
+  <div class="lg"><svg viewBox="0 0 40 40" width="58" height="58" fill="none"><path d="M31 13.5A12.5 12.5 0 1 0 32.5 22H21" stroke="#fff" stroke-width="4.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M30.5 6.5l1.6 3.4 3.4 1.6-3.4 1.6-1.6 3.4-1.6-3.4-3.4-1.6 3.4-1.6z" fill="#fbbf24"/></svg></div>
+  <h1>GENERIA</h1>
+  <p id="gwmsg">กำลังตรวจสอบบัญชี…</p>
+  <button class="gbtn" id="gwgo" hidden>
+   <svg width="20" height="20" viewBox="0 0 48 48"><path fill="#EA4335" d="M24 9.5c3.5 0 6.6 1.2 9.1 3.6l6.8-6.8C35.9 2.4 30.4 0 24 0 14.6 0 6.5 5.4 2.6 13.2l7.9 6.1C12.4 13.6 17.7 9.5 24 9.5z"/><path fill="#4285F4" d="M46.5 24.5c0-1.6-.1-3.1-.4-4.5H24v9h12.7c-.6 3-2.2 5.5-4.7 7.2l7.3 5.7c4.3-4 6.8-9.8 6.8-17.4z"/><path fill="#FBBC05" d="M10.5 28.7c-.5-1.5-.8-3-.8-4.7s.3-3.2.8-4.7l-7.9-6.1C1 16.4 0 20.1 0 24s1 7.6 2.6 10.8l7.9-6.1z"/><path fill="#34A853" d="M24 48c6.5 0 11.9-2.1 15.9-5.8l-7.3-5.7c-2 1.4-4.7 2.3-8.6 2.3-6.3 0-11.6-4.1-13.5-9.8l-7.9 6.1C6.5 42.6 14.6 48 24 48z"/></svg>
+   ล็อกอินด้วย Google
+  </button>
+  <div class="err" id="gwerr"></div>
+ </div>
+</div>
+<script id="gwguard">
+(function(){
+ var m=document.getElementById('gwmsg');
+ if(location.protocol!=='http:'&&location.protocol!=='https:'){m.innerHTML='เปิดจากในเครื่องไม่ได้<br>ต้องอัปโหลดขึ้นเว็บก่อน แล้วเปิดผ่านลิงก์ https://';return}
+ setTimeout(function(){var l=document.getElementById('gwlogin');var b=document.getElementById('gwgo');
+  if(l&&l.style.display!=='none'&&b&&b.hidden)m.innerHTML='เชื่อมต่อไม่สำเร็จ<br>ลองรีเฟรช หรือเปิดด้วย Chrome';},8000);
+})();
+</script>
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/13.3.0/firebase-app.js";
+import { getAuth, GoogleAuthProvider, signInWithPopup, signInWithRedirect, signOut, onAuthStateChanged }
+  from "https://www.gstatic.com/firebasejs/13.3.0/firebase-auth.js";
+import { initializeFirestore, collection, doc, getDoc, setDoc, updateDoc, deleteDoc, onSnapshot }
+  from "https://www.gstatic.com/firebasejs/13.3.0/firebase-firestore.js";
+
+/* ===== ตั้งค่า (แก้ตรงนี้ได้) ===== */
+const OWNER_EMAILS = ["rngcard85@gmail.com"]; // อีเมล Google ที่เป็นเจ้าของระบบ (เมนู Admin / อนุมัติกลุ่ม)
+const firebaseConfig = {
+  apiKey: "AIzaSyC3SE7pqaijotb7_xNElbkis9xG82qQsfQ",
+  authDomain: "generai-edb31.firebaseapp.com",
+  projectId: "generai-edb31",
+  storageBucket: "generai-edb31.firebasestorage.app",
+  messagingSenderId: "1012861067957",
+  appId: "1:1012861067957:web:80411e2bdbafda2c20d4fc"
+};
+
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+const fs = initializeFirestore(app, { ignoreUndefinedProperties: true, experimentalAutoDetectLongPolling: true });
+const $ = id => document.getElementById(id);
+let cur = null;
+
+/* ===== ตัวแปลง: ให้ Firestore ทำงานเหมือน API เดิมที่แอปเรียกใช้ ===== */
+const snapDoc = s => ({ id: s.id, exists: s.exists(), data: () => s.data() });
+const snapQ = s => ({ docs: s.docs.map(d => ({ id: d.id, exists: true, data: () => d.data() })) });
+const onErr = e => console.error("Firestore:", e.code || "", e.message || e);
+const dbAdapter = {
+  collection: n => ({
+    onSnapshot: cb => onSnapshot(collection(fs, n), s => cb(snapQ(s)), onErr),
+    doc: id => {
+      const r = doc(fs, n, id);
+      return {
+        set: d => setDoc(r, d),
+        update: d => updateDoc(r, d),
+        delete: () => deleteDoc(r),
+        get: async () => snapDoc(await getDoc(r)),
+        onSnapshot: cb => onSnapshot(r, s => cb(snapDoc(s)), onErr)
+      };
+    }
+  })
+};
+const userAdapter = {
+  me: async () => ({ name: (cur && cur.displayName) || "" }),
+  id: async () => cur.uid,
+  isOwner: async () => !!cur && OWNER_EMAILS.includes((cur.email || "").toLowerCase())
+};
+/* ไม่มี 'assets' (ยังไม่เปิด Storage) แอปจะใช้วิธีสำรองเอง */
+window.claude = { use: async n => {
+  if (n === "db") return dbAdapter;
+  if (n === "user") return userAdapter;
+  throw new Error("unsupported: " + n);
+}};
+
+/* ===== ล็อกอิน / ออกจากระบบ ===== */
+$("gwgo").onclick = async () => {
+  $("gwerr").textContent = "";
+  const p = new GoogleAuthProvider();
+  p.setCustomParameters({ prompt: "select_account" });
+  try { await signInWithPopup(auth, p); }
+  catch (e) {
+    if (["auth/popup-blocked", "auth/operation-not-supported-in-this-environment", "auth/web-storage-unsupported"].includes(e.code)) {
+      try { await signInWithRedirect(auth, p); return; } catch (e2) { e = e2; }
+    }
+    if (["auth/popup-closed-by-user", "auth/cancelled-popup-request"].includes(e.code)) return;
+    $("gwerr").textContent = e.code === "auth/unauthorized-domain"
+      ? "โดเมนนี้ยังไม่ได้เพิ่มใน Firebase > Authentication > Settings > Authorized domains"
+      : "ล็อกอินไม่สำเร็จ (" + (e.code || e.message) + ")";
+  }
+};
+window.gwLogout = async () => { await signOut(auth); location.reload(); };
+
+let booted = false;
+onAuthStateChanged(auth, u => {
+  cur = u;
+  if (u) {
+    $("gwlogin").style.display = "none";
+    if (!booted) { booted = true; try { window.gwBoot && window.gwBoot(); } catch (e) { console.error(e); } }
+  } else {
+    if (booted) { location.reload(); return; }
+    $("gwmsg").textContent = "เข้าสู่ระบบเพื่อเริ่มใช้งาน";
+    $("gwgo").hidden = false;
+  }
+});
+
+/* ปุ่มออกจากระบบในหน้าโปรไฟล์ */
+const _p = window.profile;
+if (typeof _p === "function") window.profile = function () {
+  return _p() + '<div class="card"><button class="btn" onclick="gwLogout()">ออกจากระบบ</button></div>';
+};
+</script>
+<style id="gw-set-css">
+.gear{font-size:19px;cursor:pointer;display:inline-grid;place-items:center;width:34px;height:34px;border-radius:50%;user-select:none;-webkit-tap-highlight-color:transparent;flex:none}
+.gear:active{background:var(--pl)}
+#gwset{position:fixed;inset:0;z-index:80;background:rgba(10,5,25,.7);display:grid;place-items:center;padding:16px}
+#gwset .gs-bx{background:var(--card);color:var(--tx);border:1px solid var(--bd);border-radius:20px;width:100%;max-width:420px;max-height:84vh;overflow:auto;padding:16px;box-shadow:0 12px 40px rgba(0,0,0,.5)}
+#gwset .gs-tp{display:flex;align-items:center;gap:8px;margin-bottom:8px}
+#gwset .gs-tp h3{flex:1;margin:0;font-size:16px}
+#gwset .gs-x{border:0;background:var(--pl);color:var(--tx);width:30px;height:30px;border-radius:50%;font-size:14px;cursor:pointer;flex:none}
+#gwset .gs-it{display:flex;align-items:center;gap:10px;width:100%;text-align:left;border:1px solid var(--bd);background:var(--bg);color:var(--tx);border-radius:14px;padding:12px;margin:6px 0;font:inherit;cursor:pointer}
+#gwset .gs-it .gs-s{margin-left:auto;color:var(--mu);font-size:12px;white-space:nowrap}
+#gwset .gs-me{color:var(--mu);font-size:12px;margin:0 0 4px}
+#gwset ol{margin:4px 0 0;padding-left:20px;line-height:1.6}
+#gwset li{margin:9px 0}
+#gwset li b{color:var(--go)}
+#gwset .gs-ft{color:var(--mu);font-size:11px;margin-top:12px;line-height:1.5}
+</style>
+<script id="gw-set-js">
+/* ===== ตั้งค่า (ฟันเฟืองมุมขวาบน) ===== */
+function gwSetClose(){var o=document.getElementById('gwset');if(o)o.remove()}
+function gwSet(v){
+ var o=document.getElementById('gwset');
+ if(!o){o=document.createElement('div');o.id='gwset';o.onclick=function(e){if(e.target===o)gwSetClose()};document.body.appendChild(o)}
+ var nm='';try{nm=esc(me&&me.name||'')}catch(e){}
+ var h;
+ if(v==='rules'){
+  h='<div class="gs-bx"><div class="gs-tp"><button class="gs-x" onclick="gwSet()" aria-label="ย้อนกลับ">‹</button><h3>📜 กฎของ GENERIA</h3><button class="gs-x" onclick="gwSetClose()" aria-label="ปิด">✕</button></div>'
+  +'<ol>'
+  +'<li><b>ซื้อขายผ่านกลางเสมอ</b> ทุกดีลต้องมีกลางดูแล ห้ามโอนเงินหรือส่งของก่อนกลางยืนยัน ดีลที่ทำนอกระบบทีมงานไม่รับผิดชอบ</li>'
+  +'<li><b>ค่ากลาง</b> ยอด 1-30 บาทไม่คิดค่ากลาง ตั้งแต่ 31 บาทขึ้นไปคิด 5% ของยอด และตั้งแต่ 2,000 บาทขึ้นไปคิด 150 บาท สมาชิก Premium ไม่เสียค่ากลาง</li>'
+  +'<li><b>ห้ามโกงและหลอกลวง</b> ห้ามขายของปลอม ใช้ข้อมูลเท็จ หรือชักชวนให้โอนนอกระบบ ฝ่าฝืนมีสิทธิ์ถูกระงับบัญชี</li>'
+  +'<li><b>ห้ามสแปม</b> ห้ามโพสต์ซ้ำๆ โฆษณานอกเรื่อง หรือส่งลิงก์แปลกๆ ให้คนอื่น</li>'
+  +'<li><b>เคารพกัน</b> ห้ามด่าทอ คุกคาม เหยียด หรือโพสต์เนื้อหาลามกและรุนแรง</li>'
+  +'<li><b>ข้อมูลส่วนตัว</b> ห้ามเปิดเผยข้อมูลของผู้อื่น และห้ามโพสต์รหัสผ่านบัญชีเกมในที่สาธารณะ ส่งในแชทกับกลางเท่านั้น</li>'
+  +'<li><b>แต้มและ Premium</b> ห้ามใช้ช่องโหว่หรือหลายบัญชีเพื่อปั๊มแต้ม เช็คอินได้วันละครั้ง</li>'
+  +'<li><b>กลุ่มซื้อขาย</b> ต้องให้แอดมินอนุมัติก่อนเปิด ส่วนกลุ่ม Premium ที่สร้างโดยสมาชิก Premium เปิดได้ทันที กลุ่มที่ผิดกฎอาจถูกปิดโดยไม่แจ้งล่วงหน้า</li>'
+  +'<li><b>คำตัดสินของทีมงานถือเป็นที่สุด</b> และกฎอาจถูกปรับปรุงได้ โดยจะแจ้งในแอป</li>'
+  +'</ol><div class="gs-ft">การใช้งาน GENERIA ต่อ ถือว่ายอมรับกฎข้างต้น</div></div>';
+ }else{
+  var snd=true;try{snd=window.gwSnd?window.gwSnd():true}catch(e){}
+  h='<div class="gs-bx"><div class="gs-tp"><h3>⚙️ ตั้งค่า</h3><button class="gs-x" onclick="gwSetClose()" aria-label="ปิด">✕</button></div>'
+  +(nm?'<div class="gs-me">บัญชี: '+nm+'</div>':'')
+  +'<button class="gs-it" onclick="gwSet(\'rules\')">📜 <span>กฎของ GENERIA</span><span class="gs-s">›</span></button>'
+  +'<button class="gs-it" onclick="gwSetClose();tab=\'profile\';render()">👤 <span>โปรไฟล์ของฉัน</span><span class="gs-s">›</span></button>'
+  +'<button class="gs-it" onclick="window.gwSnd&&gwSnd(!gwSnd());gwSet()">🔊 <span>เสียงเอฟเฟกต์</span><span class="gs-s">'+(snd?'เปิด':'ปิด')+'</span></button>'
+  +'<button class="gs-it" onclick="if(confirm(\'ออกจากระบบ?\')){gwSetClose();gwLogout()}">🚪 <span>ออกจากระบบ</span></button>'
+  +'</div>';
+ }
+ o.innerHTML=h;
+}
+</script>
+</body></html>
